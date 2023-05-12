@@ -121,7 +121,7 @@ public class List<T> implements Iterable<T>
     /**
      * Methode zum Ausgeben des Index eines bekannten Objektes
      * @param object Objekt des Typen T
-     * @param comparator Benutzer spezifizierte Funktion zum Überprüfen
+     * @param equality Benutzer spezifizierte Funktion zum Überprüfen
      *                   der Gleichheit zweier Objekte
      * @return Index des Objektes
      */
