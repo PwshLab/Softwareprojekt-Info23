@@ -72,4 +72,16 @@ public class Branch<T> extends Node<T>
             next.setObject(index - 1, object);
         }
     }
+
+    public int getIndexOf(T object, int index)
+    {
+        if (data.equals(object))
+        {
+            return index;
+        }
+        else
+        {
+            return next.getIndexOf(object, index + 1);
+        }
+    }
 }

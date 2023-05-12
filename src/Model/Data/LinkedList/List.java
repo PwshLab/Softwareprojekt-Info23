@@ -75,6 +75,11 @@ public class List<T> implements Iterable<T>
         }
     }
 
+    public int indexOf(T object)
+    {
+        return first.getIndexOf(object, 0);
+    }
+
     public Node<T> first()
     {
         return first;

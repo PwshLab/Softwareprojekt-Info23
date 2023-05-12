@@ -10,5 +10,6 @@ public abstract class Node<T>
     public abstract T getIndex(int index);
     public abstract boolean isLast();
     public abstract void setObject(int index, T object);
+    public abstract int getIndexOf(T object, int index);
 
 }

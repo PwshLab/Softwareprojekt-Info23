@@ -40,4 +40,9 @@ public class Leaf<T> extends Node<T>
     public void setObject(int index, T object)
     {
     }
+
+    public int getIndexOf(T object, int index)
+    {
+        return -1;
+    }
 }
