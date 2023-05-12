@@ -4,8 +4,8 @@ import src.Model.Data.LinkedList.List;
 
 public class Graph<T>
 {
-    private List<Node<T>> nodes;
-    private List<List<Double>> matrix;
+    private final List<Node<T>> nodes;
+    private final List<List<Double>> matrix;
 
     public Graph()
     {
