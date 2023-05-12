@@ -1,10 +1,16 @@
 package src.Model.Data.LinkedList;
 
+import java.util.Comparator;
 import java.util.function.BiPredicate;
 
 public class Leaf<T> extends Node<T>
 {
     public Node<T> addObject(T object)
+    {
+        return new Branch<>(this, object);
+    }
+
+    public Node<T> addObjectSorted(T object, Comparator<T> comparator)
     {
         return new Branch<>(this, object);
     }

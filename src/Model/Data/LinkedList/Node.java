@@ -1,10 +1,12 @@
 package src.Model.Data.LinkedList;
 
+import java.util.Comparator;
 import java.util.function.BiPredicate;
 
 public abstract class Node<T>
 {
     public abstract Node<T> addObject(T object);
+    public abstract Node<T> addObjectSorted(T object, Comparator<T> comparator);
     public abstract Node<T> removeObject(T object, BiPredicate<T, T> comparator);
     public abstract Node<T> getNext();
     public abstract T getData();

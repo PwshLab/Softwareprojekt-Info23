@@ -1,5 +1,6 @@
 package src.Model.Data.LinkedList;
 
+import java.util.Comparator;
 import java.util.function.BiPredicate;
 
 public class Branch<T> extends Node<T>
@@ -16,6 +17,19 @@ public class Branch<T> extends Node<T>
     public Node<T> addObject(T object)
     {
         next = next.addObject(object);
+        return this;
+    }
+
+    public Node<T> addObjectSorted(T object, Comparator<T> comparator)
+    {
+        if (comparator.compare(data, object) < 0)
+        {
+            next = next.addObject(object);
+        }
+        else
+        {
+            next = new Branch<>(next, object);
+        }
         return this;
     }
 

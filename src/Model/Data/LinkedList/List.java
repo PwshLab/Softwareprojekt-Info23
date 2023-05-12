@@ -5,8 +5,8 @@ import java.util.Iterator;
 
 public class List<T> implements Iterable<T>
 {
-    private Node<T> first;
-    private int count;
+    protected Node<T> first;
+    protected int count;
     private boolean changed;
 
     public List()
