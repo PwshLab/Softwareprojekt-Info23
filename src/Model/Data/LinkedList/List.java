@@ -56,6 +56,7 @@ public class List<T> implements Iterable<T>
          * ein Objekt entfernt wurde, oder nicht. Deshalb werden
          * die Objekte beim nächsten Aufruf erneut gezählt.
          */
+
         if (changed)
         {
             count = first.getCount();
@@ -150,6 +151,7 @@ public class List<T> implements Iterable<T>
          * Liste mit einer foreach Schleife zu referenzieren als dies
          * Anderweitig möglich wäre
          */
+
         return new ListIterator<>(this);
     }
 }
