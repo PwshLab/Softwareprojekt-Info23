@@ -1,4 +1,5 @@
 package src.View;
 
-public class View {
+public class View
+{
 }
