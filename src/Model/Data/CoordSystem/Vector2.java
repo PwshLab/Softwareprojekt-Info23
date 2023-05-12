@@ -5,6 +5,8 @@ package src.Model.Data.CoordSystem;
  */
 public class Vector2 extends Vector3
 {
+    public static Vector2 zero = new Vector2(0, 0);
+
     /**
      * Standartkonstruktor des Vektors
      * @param x1 X1 Koordinate
