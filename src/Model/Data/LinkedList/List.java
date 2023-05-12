@@ -55,7 +55,7 @@ public class List<T> implements Iterable<T>
         if (index < this.count())
         {
             T object = first.getIndex(index);
-            this.remove(object, (T a, T b) -> a.equals(b));
+            this.remove(object, Object::equals);
             return object;
         }
         else
