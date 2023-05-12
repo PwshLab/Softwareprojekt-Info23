@@ -5,7 +5,7 @@ package src.Model.Data.CoordSystem;
  */
 public class Vector3
 {
-    private double x1, x2, x3;
+    private final double x1, x2, x3;
 
     public static Vector3 zero = new Vector3(0, 0, 0);
 
