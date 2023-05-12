@@ -51,7 +51,7 @@ public class List<T> implements Iterable<T>
      */
     public int count()
     {
-        /**
+        /*
          * Bei der Remove Methode ist nicht sicher, ob
          * ein Objekt entfernt wurde, oder nicht. Deshalb werden
          * die Objekte beim nächsten Aufruf erneut gezählt.
@@ -145,7 +145,7 @@ public class List<T> implements Iterable<T>
      */
     public Iterator<T> iterator()
     {
-        /**
+        /*
          * Der Iterator ist hier ein effizienterer Weg die Objekte in der
          * Liste mit einer foreach Schleife zu referenzieren als dies
          * Anderweitig möglich wäre
