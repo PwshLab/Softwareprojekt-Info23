@@ -11,12 +11,13 @@ public class Branch<T> extends Node<T>
         this.data = data;
     }
 
-    public Node addObject(T object)
+    public Node<T> addObject(T object)
     {
-        return next.addObject(object);
+        next = next.addObject(object);
+        return this;
     }
 
-    public Node removeObject(T object)
+    public Node<T> removeObject(T object)
     {
         if (data.equals(object))
         {
@@ -28,7 +29,7 @@ public class Branch<T> extends Node<T>
         }
     }
 
-    public Node getNext()
+    public Node<T> getNext()
     {
         return next;
     }

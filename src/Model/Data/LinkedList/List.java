@@ -10,7 +10,7 @@ public class List<T> implements Iterable<T>
 
     public List()
     {
-        first = new Leaf();
+        first = new Leaf<>();
         count = 0;
         changed = false;
     }
@@ -82,6 +82,6 @@ public class List<T> implements Iterable<T>
 
     public Iterator<T> iterator()
     {
-        return new ListIterator<T>(this);
+        return new ListIterator<>(this);
     }
 }

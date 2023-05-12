@@ -2,17 +2,17 @@ package src.Model.Data.LinkedList;
 
 public class Leaf<T> extends Node<T>
 {
-    public Node addObject(T object)
+    public Node<T> addObject(T object)
     {
-        return new Branch(this, object);
+        return new Branch<T>(this, object);
     }
 
-    public Node removeObject(T object)
+    public Node<T> removeObject(T object)
     {
         return this;
     }
 
-    public Node getNext()
+    public Node<T> getNext()
     {
         return this;
     }
