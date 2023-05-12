@@ -4,7 +4,7 @@ import java.util.Comparator;
 
 public class SortedList<T> extends List<T>
 {
-    private Comparator<T> comparator;
+    private final Comparator<T> comparator;
 
     public SortedList(Comparator<T> comparator)
     {
