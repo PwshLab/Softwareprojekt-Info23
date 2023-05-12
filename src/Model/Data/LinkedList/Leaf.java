@@ -15,7 +15,7 @@ public class Leaf<T> extends Node<T>
         return new Branch<>(this, object);
     }
 
-    public Node<T> removeObject(T object, BiPredicate<T, T> comparator)
+    public Node<T> removeObject(T object, BiPredicate<T, T> equality)
     {
         return this;
     }
@@ -49,7 +49,7 @@ public class Leaf<T> extends Node<T>
     {
     }
 
-    public int getIndexOf(T object, BiPredicate<T, T> comparator, int index)
+    public int getIndexOf(T object, BiPredicate<T, T> equality, int index)
     {
         return -1;
     }

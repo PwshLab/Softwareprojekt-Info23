@@ -33,9 +33,9 @@ public class Branch<T> extends Node<T>
         return this;
     }
 
-    public Node<T> removeObject(T object, BiPredicate<T, T> comparator)
+    public Node<T> removeObject(T object, BiPredicate<T, T> equality)
     {
-        if (comparator.test(data, object))
+        if (equality.test(data, object))
         {
             return next;
         }
@@ -89,15 +89,15 @@ public class Branch<T> extends Node<T>
         }
     }
 
-    public int getIndexOf(T object, BiPredicate<T, T> comparator, int index)
+    public int getIndexOf(T object, BiPredicate<T, T> equality, int index)
     {
-        if (comparator.test(data, object))
+        if (equality.test(data, object))
         {
             return index;
         }
         else
         {
-            return next.getIndexOf(object, comparator,  index + 1);
+            return next.getIndexOf(object, equality,  index + 1);
         }
     }
 }
