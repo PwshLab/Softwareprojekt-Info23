@@ -32,7 +32,7 @@ public class Graph<T>
 
     public void remove(T object)
     {
-        int index = nodes.indexOf(new Node(object), (Node<T>a, Node<T>b) -> a.getData().equals(b.getData()));
+        int index = nodes.indexOf(new Node<>(object), (Node<T>a, Node<T>b) -> a.getData().equals(b.getData()));
         nodes.pop(index);
 
         for (List<Double> list: matrix)
