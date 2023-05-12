@@ -4,7 +4,7 @@ public class Leaf<T> extends Node<T>
 {
     public Node<T> addObject(T object)
     {
-        return new Branch<T>(this, object);
+        return new Branch<>(this, object);
     }
 
     public Node<T> removeObject(T object)
