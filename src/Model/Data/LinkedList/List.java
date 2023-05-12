@@ -1,5 +1,6 @@
 package src.Model.Data.LinkedList;
 
+import java.util.function.BiPredicate;
 import java.util.Iterator;
 
 public class List<T> implements Iterable<T>
@@ -21,9 +22,9 @@ public class List<T> implements Iterable<T>
         count++;
     }
 
-    public void remove(T object)
+    public void remove(T object, BiPredicate<T, T> comparator)
     {
-        first = first.removeObject(object);
+        first = first.removeObject(object, comparator);
         changed = true;
     }
 
@@ -54,7 +55,7 @@ public class List<T> implements Iterable<T>
         if (index < this.count())
         {
             T object = first.getIndex(index);
-            this.remove(object);
+            this.remove(object, (T a, T b) -> a.equals(b));
             return object;
         }
         else
@@ -75,9 +76,9 @@ public class List<T> implements Iterable<T>
         }
     }
 
-    public int indexOf(T object)
+    public int indexOf(T object, BiPredicate<T, T> comparator)
     {
-        return first.getIndexOf(object, 0);
+        return first.getIndexOf(object, comparator, 0);
     }
 
     public Node<T> first()

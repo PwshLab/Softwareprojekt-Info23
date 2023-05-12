@@ -1,5 +1,7 @@
 package src.Model.Data.LinkedList;
 
+import java.util.function.BiPredicate;
+
 public class Leaf<T> extends Node<T>
 {
     public Node<T> addObject(T object)
@@ -7,7 +9,7 @@ public class Leaf<T> extends Node<T>
         return new Branch<>(this, object);
     }
 
-    public Node<T> removeObject(T object)
+    public Node<T> removeObject(T object, BiPredicate<T, T> comparator)
     {
         return this;
     }
@@ -41,7 +43,7 @@ public class Leaf<T> extends Node<T>
     {
     }
 
-    public int getIndexOf(T object, int index)
+    public int getIndexOf(T object, BiPredicate<T, T> comparator, int index)
     {
         return -1;
     }

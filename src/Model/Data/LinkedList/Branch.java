@@ -1,5 +1,7 @@
 package src.Model.Data.LinkedList;
 
+import java.util.function.BiPredicate;
+
 public class Branch<T> extends Node<T>
 {
     private Node<T> next;
@@ -17,9 +19,9 @@ public class Branch<T> extends Node<T>
         return this;
     }
 
-    public Node<T> removeObject(T object)
+    public Node<T> removeObject(T object, BiPredicate<T, T> comparator)
     {
-        if (data.equals(object))
+        if (comparator.test(data, object))
         {
             return next;
         }
@@ -73,15 +75,15 @@ public class Branch<T> extends Node<T>
         }
     }
 
-    public int getIndexOf(T object, int index)
+    public int getIndexOf(T object, BiPredicate<T, T> comparator, int index)
     {
-        if (data.equals(object))
+        if (comparator.test(data, object))
         {
             return index;
         }
         else
         {
-            return next.getIndexOf(object, index + 1);
+            return next.getIndexOf(object, comparator,  index + 1);
         }
     }
 }
