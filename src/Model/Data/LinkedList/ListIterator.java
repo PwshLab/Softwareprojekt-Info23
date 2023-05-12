@@ -9,7 +9,7 @@ public class ListIterator<T> implements Iterator<T>
 
     public ListIterator(List<T> list)
     {
-        current = list.getFirst();
+        current = list.first();
     }
 
     public boolean hasNext()

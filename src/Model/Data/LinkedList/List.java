@@ -75,7 +75,7 @@ public class List<T> implements Iterable<T>
         }
     }
 
-    public Node<T> getFirst()
+    public Node<T> first()
     {
         return first;
     }
