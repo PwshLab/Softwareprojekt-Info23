@@ -2,9 +2,12 @@ package src.Model.Data.CoordSystem;
 
 import src.Model.Data.LinkedList.List;
 
-public class Grid
+public final class Grid
 {
-    private static Vector3 origin = Vector3.zero;
+
+    private Grid()
+    {
+    }
 
     public static double getPathLength(List<Vector2> path)
     {
