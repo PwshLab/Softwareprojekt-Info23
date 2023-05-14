@@ -44,6 +44,6 @@ public class SortedList<T> extends List<T>
      */
     public void add(T object)
     {
-        first = first.addObjectSorted(null, object, comparator);
+        first = first.addObjectSorted(object, comparator);
     }
 }
