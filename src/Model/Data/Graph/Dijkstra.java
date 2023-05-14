@@ -26,7 +26,7 @@ public class Dijkstra<T>
 
     /**
      * Methode zum Initialisieren des Algorithmus
-     * @param startNode
+     * @param startNode Anfangsknoten
      */
     private void initialize(int startNode)
     {
