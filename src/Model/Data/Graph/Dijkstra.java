@@ -2,10 +2,13 @@ package src.Model.Data.Graph;
 
 import src.Model.Data.LinkedList.List;
 
-public class Dijkstra
+/**
+ * Dijkstra Pfadsuche Algorithmus
+ * @param <T> Datentyp T des Graphen
+ */
+public class Dijkstra<T>
 {
-    private Graph graph;
-    private int startNode;
+    private final Graph<T> graph;
     private int count;
     private double[][] weights;
     private double[] distances;
@@ -13,14 +16,13 @@ public class Dijkstra
     private List<Integer> remaining;
 
 
-    public Dijkstra(Graph graph)
+    public Dijkstra(Graph<T> graph)
     {
         this.graph = graph;
     }
 
     private void initialize(int startNode)
     {
-        this.startNode = startNode;
         this.count = graph.getElements().count();
         this.weights = graph.getWeights();
         this.distances = new double[count];
