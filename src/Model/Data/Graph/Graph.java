@@ -94,4 +94,16 @@ public class Graph<T>
     {
         return matrix.get(i1).get(i2);
     }
+
+    /**
+     * Methode zum Ausgeben der Objekte im Graphen
+     * @return Liste mit den Objekten im Graphen
+     */
+    public List<T> getElements()
+    {
+        List<T> elements = new List<>();
+        for (Node<T> node: nodes)
+            elements.add(node.getData());
+        return elements;
+    }
 }
