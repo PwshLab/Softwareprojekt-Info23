@@ -15,12 +15,19 @@ public class Dijkstra<T>
     private int[] previous;
     private List<Integer> remaining;
 
-
+    /**
+     * Standartkonstruktor der Klasse
+     * @param graph Graph in welchem ein Pfad gesucht wird
+     */
     public Dijkstra(Graph<T> graph)
     {
         this.graph = graph;
     }
 
+    /**
+     * Methode zum Initialisieren des Algorithmus
+     * @param startNode
+     */
     private void initialize(int startNode)
     {
         this.count = graph.getElements().count();
@@ -38,6 +45,31 @@ public class Dijkstra<T>
         distances[startNode] = 0;
     }
 
+    /**
+     * Methode zum Ausgeben des Knotens mit der geringsten
+     * Distanz zum Anfangsknoten
+     * @return Knoten mit der geringsten Distanz
+     */
+    private int getMinRemaining()
+    {
+        double value = Double.MAX_VALUE;
+        int minimum = -1;
+        for (int node: remaining)
+        {
+            if (distances[node] < value)
+            {
+                minimum = node;
+                value = distances[node];
+            }
+        }
+        return minimum;
+    }
+
+    /**
+     * Methode zum Aktualisieren der Entfernung eines Knotens
+     * @param node Knoten zu dem die Entfernung aktualisiert werden soll
+     * @param prevNode Vorgängerknoten
+     */
     private void updateDistance(int node, int prevNode)
     {
         double alternate = distances[prevNode] + weights[prevNode][node];
@@ -48,19 +80,10 @@ public class Dijkstra<T>
         }
     }
 
-    public List<Integer> getShortestPath(int node)
-    {
-        int currentNode = node;
-        List<Integer> path = new List<>();
-        path.add(currentNode);
-        while (previous[currentNode] >= 0)
-        {
-            currentNode = previous[currentNode];
-            path.insert(0, currentNode);
-        }
-        return path;
-    }
-
+    /**
+     * Methode zum Suchen der kürzesten Pfade im Graphen
+     * @param startNode Anfangsknoten
+     */
     public void findShortestPaths(int startNode)
     {
         initialize(startNode);
@@ -81,18 +104,21 @@ public class Dijkstra<T>
         }
     }
 
-    private int getMinRemaining()
+    /**
+     * Methode zum Ausgeben des kürzesten Pfades im Graphen
+     * @param node Zielknoten des Pfades
+     * @return Besuchte Knoten des Pfades
+     */
+    public List<Integer> getShortestPath(int node)
     {
-        double value = Double.MAX_VALUE;
-        int minimum = -1;
-        for (int node: remaining)
+        int currentNode = node;
+        List<Integer> path = new List<>();
+        path.add(currentNode);
+        while (previous[currentNode] >= 0)
         {
-            if (distances[node] < value)
-            {
-                minimum = node;
-                value = distances[node];
-            }
+            currentNode = previous[currentNode];
+            path.insert(0, currentNode);
         }
-        return minimum;
+        return path;
     }
 }
