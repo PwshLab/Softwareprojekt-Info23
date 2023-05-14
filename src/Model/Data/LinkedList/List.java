@@ -163,7 +163,14 @@ public class List<T> implements Iterable<T>
      */
     public T[] toArray(Class<T> type)
     {
-        T[] arr = (T[]) Array.newInstance(type, this.count());
+        T[] arr;
+        try {
+            arr = (T[]) Array.newInstance(type, this.count());
+        } catch (ClassCastException exception)
+        {
+            throw new IllegalArgumentException();
+        }
+
         int index = 0;
         for (T object: this)
         {
