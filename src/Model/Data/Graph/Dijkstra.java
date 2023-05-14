@@ -2,9 +2,9 @@ package src.Model.Data.Graph;
 
 import src.Model.Data.LinkedList.List;
 
-public class Dijkstra<T>
+public class Dijkstra
 {
-    private Graph<T> graph;
+    private Graph graph;
     private int startNode;
     private int count;
     private double[][] weights;
@@ -12,7 +12,8 @@ public class Dijkstra<T>
     private int[] previous;
     private List<Integer> remaining;
 
-    public Dijkstra(Graph<T> graph)
+
+    public Dijkstra(Graph graph)
     {
         this.graph = graph;
     }
@@ -30,8 +31,7 @@ public class Dijkstra<T>
         {
             distances[i] = Double.MAX_VALUE;
             previous[i] = -1;
-            if (i != startNode)
-                remaining.add(i);
+            remaining.add(i);
         }
         distances[startNode] = 0;
     }
@@ -54,7 +54,43 @@ public class Dijkstra<T>
         while (previous[currentNode] >= 0)
         {
             currentNode = previous[currentNode];
-            path.add(currentNode);
+            path.insert(0, currentNode);
         }
+        return path;
+    }
+
+    public void findShortestPaths(int startNode)
+    {
+        initialize(startNode);
+        while (remaining.count() > 0)
+        {
+            int nearestNode = getMinRemaining();
+            remaining.remove(nearestNode, Integer::equals);
+            for (int neighbourNode = 0; neighbourNode < count; neighbourNode++)
+            {
+                if (weights[nearestNode][neighbourNode] < Double.MAX_VALUE)
+                {
+                    if (remaining.contains(neighbourNode, Integer::equals))
+                    {
+                        updateDistance(nearestNode, neighbourNode);
+                    }
+                }
+            }
+        }
+    }
+
+    private int getMinRemaining()
+    {
+        double value = Double.MAX_VALUE;
+        int minimum = -1;
+        for (int node: remaining)
+        {
+            if (distances[node] < value)
+            {
+                minimum = node;
+                value = distances[node];
+            }
+        }
+        return minimum;
     }
 }
