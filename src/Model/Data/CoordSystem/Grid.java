@@ -9,20 +9,6 @@ public final class Grid
     {
     }
 
-    public static double getPathLength(List<Vector2> path)
-    {
-        double length = 0;
-        Vector2 prevPoint = null;
-        for (Vector2 point: path)
-        {
-            if (prevPoint == null)
-                prevPoint = point;
-            length += prevPoint.distance(point);
-            prevPoint = point;
-        }
-        return length;
-    }
-
     public static int[] getNNearest(Vector2 startPoint, List<Vector2> otherPoints, int number)
     {
         if (number > otherPoints.count())
