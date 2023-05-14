@@ -24,12 +24,23 @@ public class List<T> implements Iterable<T>
     }
 
     /**
-     * Methode zum Hinzufügen eines Objektes Liste
+     * Methode zum Hinzufügen eines Objektes in die Liste
      * @param object Objekt des Typen T
      */
     public void add(T object)
     {
         first = first.addObject(object);
+        count++;
+    }
+
+    /**
+     * Methode zum Einfügen eines Objektes an einer Position in der Liste
+     * @param index Position des Objektes
+     * @param object Objekt des Typen T
+     */
+    public void insert(int index, T object)
+    {
+        first = first.addObjectAt(index, object);
         count++;
     }
 

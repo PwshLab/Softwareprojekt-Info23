@@ -10,6 +10,11 @@ public class Leaf<T> extends Node<T>
         return new Branch<>(this, object);
     }
 
+    public Node<T> addObjectAt(int index, T object)
+    {
+        return new Branch<>(this, object);
+    }
+
     public Node<T> addObjectSorted(T object, Comparator<T> comparator)
     {
         return new Branch<>(this, object);

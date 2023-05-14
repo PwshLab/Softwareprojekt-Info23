@@ -20,6 +20,18 @@ public class Branch<T> extends Node<T>
         return this;
     }
 
+    public Node<T> addObjectAt(int index, T object)
+    {
+        if (index <= 0)
+        {
+            return new Branch<>(this, object);
+        }
+        else
+        {
+            return next.addObjectAt(index - 1, object);
+        }
+    }
+
     public Node<T> addObjectSorted(T object, Comparator<T> comparator)
     {
         if (comparator.compare(data, object) < 0)
