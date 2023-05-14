@@ -40,13 +40,13 @@ public class Graph<T>
 
         for (List<Double> list: matrix)
         {
-            list.add(0.0);
+            list.add(Double.MAX_VALUE);
         }
 
         List<Double> list = new List<>();
         for (int i = 0; i < nodes.count(); i++)
         {
-            list.add(0.0);
+            list.add(Double.MAX_VALUE);
         }
         matrix.add(list);
     }
@@ -105,5 +105,25 @@ public class Graph<T>
         for (Node<T> node: nodes)
             elements.add(node.getData());
         return elements;
+    }
+
+    /**
+     * Methode zum Ausgeben der Kantenwerte im Graphen
+     * @return 2-Dimensionales Array der Kantenwerte
+     */
+    public double[][] getWeights()
+    {
+        double[][] weights = new double[nodes.count()][nodes.count()];
+        int index1 = 0, index2 = 0;
+        for (List<Double> row: matrix)
+        {
+            for (double value: row)
+            {
+                weights[index1][index2] = value;
+                index2++;
+            }
+            index1++;
+        }
+        return weights;
     }
 }
