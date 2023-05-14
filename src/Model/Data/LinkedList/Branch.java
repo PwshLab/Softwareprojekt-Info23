@@ -5,30 +5,31 @@ import java.util.function.BiPredicate;
 
 public class Branch<T> extends Node<T>
 {
-    private Node<T> next;
+    private Node<T> next, previous;
     private T data;
 
-    public Branch(Node<T> next, T data)
+    public Branch(Node<T> previous, Node<T> next, T data)
     {
+        this.previous = previous;
         this.next = next;
         this.data = data;
     }
 
-    public Node<T> addObject(T object)
+    public Node<T> addObject(Node<T> parent, T object)
     {
-        next = next.addObject(object);
+        next = next.addObject(this, object);
         return this;
     }
 
-    public Node<T> addObjectSorted(T object, Comparator<T> comparator)
+    public Node<T> addObjectSorted(Node<T> parent, T object, Comparator<T> comparator)
     {
         if (comparator.compare(data, object) < 0)
         {
-            next = next.addObject(object);
+            next = next.addObject(this, object);
         }
         else
         {
-            next = new Branch<>(next, object);
+            next = new Branch<>(this, next, object);
         }
         return this;
     }
@@ -48,6 +49,11 @@ public class Branch<T> extends Node<T>
     public Node<T> getNext()
     {
         return next;
+    }
+
+    public Node<T> getPrevious()
+    {
+        return previous;
     }
 
     public T getData()
