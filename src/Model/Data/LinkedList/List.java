@@ -29,7 +29,7 @@ public class List<T> implements Iterable<T>
      */
     public void add(T object)
     {
-        first = first.addObject(null, object);
+        first = first.addObject(object);
         count++;
     }
 

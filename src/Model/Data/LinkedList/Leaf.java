@@ -5,18 +5,14 @@ import java.util.function.BiPredicate;
 
 public class Leaf<T> extends Node<T>
 {
-    private Node<T> previous;
-
-    public Node<T> addObject(Node<T> parent, T object)
+    public Node<T> addObject(T object)
     {
-        previous = parent;
-        return new Branch<>(parent, this, object);
+        return new Branch<>(this, object);
     }
 
-    public Node<T> addObjectSorted(Node<T> parent, T object, Comparator<T> comparator)
+    public Node<T> addObjectSorted(T object, Comparator<T> comparator)
     {
-        previous = parent;
-        return new Branch<>(parent, this, object);
+        return new Branch<>(this, object);
     }
 
     public Node<T> removeObject(T object, BiPredicate<T, T> equality)
@@ -27,11 +23,6 @@ public class Leaf<T> extends Node<T>
     public Node<T> getNext()
     {
         return this;
-    }
-
-    public Node<T> getPrevious()
-    {
-        return previous;
     }
 
     public T getData()
