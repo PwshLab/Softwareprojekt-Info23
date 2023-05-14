@@ -143,6 +143,18 @@ public class List<T> implements Iterable<T>
     }
 
     /**
+     * Methode zum Überprüfen, ob die Liste ein Objekt enthält
+     * @param object Objekt des Typen T
+     * @param equality Benutzer spezifizierte Funktion zum Überprüfen
+     *                 der Gleichheit zweier Objekte
+     * @return Wahrheitswert, ob sich das Objekt in der Liste befindet
+     */
+    public boolean contains(T object, BiPredicate<T, T> equality)
+    {
+        return this.indexOf(object, equality) >= 0;
+    }
+
+    /**
      * Methode zum Ausgeben des ersten Knotens der Liste
      * @return Knoten mit Objekt des Typen T
      */
