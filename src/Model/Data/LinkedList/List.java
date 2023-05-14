@@ -1,6 +1,5 @@
 package src.Model.Data.LinkedList;
 
-import java.util.function.Function;
 import java.util.function.BiPredicate;
 import java.util.Iterator;
 
