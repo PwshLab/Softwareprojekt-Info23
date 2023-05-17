@@ -11,6 +11,11 @@ public class Model extends Observable
 {
     private Graph<Locality> graph;
 
+    public Model()
+    {
+        graph = new Graph<>();
+    }
+
     public List<Locality> getElements()
     {
         return graph.getElements();
