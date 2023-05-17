@@ -73,7 +73,7 @@ public class Model extends Observable
         double distance;
         List<Pair<Locality, Double>> edges = new List<>();
 
-        for (int i : nearest)
+        for (int i: nearest)
         {
             distance = locality.getPosition().distance(localities[i].getPosition());
             distance += distance * variance * rnd.nextGaussian();
