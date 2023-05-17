@@ -57,14 +57,14 @@ public class Graph<T>
      * Methode zum Entfernen eines Objektes aus dem Graphen
      * @param object Objekt des Typen T
      */
-    public void remove(T object)
+    public void remove(T object, BiPredicate<T, T> equality)
     {
         /*
          * Die Abschnitte der Adjazenzmatrix zu dem jeweiligen
          * Objekt werden ebenfalls mit entfernt
          */
 
-        int index = nodes.indexOf(new Node<>(object), (Node<T>a, Node<T>b) -> a.getData().equals(b.getData()));
+        int index = indexOf(object, equality);
         nodes.pop(index);
 
         for (List<Double> list: matrix)
