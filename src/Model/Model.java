@@ -56,6 +56,11 @@ public class Model extends Observable
         graph.remove(locality, Object::equals);
     }
 
+    public double getEdge(Locality loc1, Locality loc2)
+    {
+        return graph.getEdge(loc1, loc2, Object::equals);
+    }
+
     public List<Pair<Locality, Double>> generateEdges(Locality locality, int n, double variance)
     {
         Locality[] localities = graph.getElements().toArray();
@@ -78,11 +83,11 @@ public class Model extends Observable
         return edges;
     }
 
-    private List<Integer> getPath(Locality start, Locality end)
+    public List<Integer> getPath(Locality loc1, Locality loc2)
     {
-        int index = graph.indexOf(start, Object::equals);
+        int index = graph.indexOf(loc1, Object::equals);
         if (dijkstra.getStartNode() != index || dijkstra.getPathLength(index) > 0)
             dijkstra.findShortestPaths(index);
-        return dijkstra.getShortestPath(graph.indexOf(end, Object::equals));
+        return dijkstra.getShortestPath(graph.indexOf(loc2, Object::equals));
     }
 }
