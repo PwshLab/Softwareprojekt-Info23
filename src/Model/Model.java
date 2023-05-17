@@ -2,6 +2,7 @@ package src.Model;
 
 import src.Model.Data.CoordSystem.Grid;
 import src.Model.Data.CoordSystem.Vector2;
+import src.Model.Data.Graph.Dijkstra;
 import src.Model.Data.Graph.Graph;
 import src.Model.Data.LinkedList.List;
 import src.Model.Data.LinkedList.SortedList;
@@ -16,11 +17,13 @@ public class Model extends Observable
 {
     private final Random rnd;
     private final Graph<Locality> graph;
+    private final Dijkstra<Locality> dijkstra;
 
     public Model()
     {
         rnd = new Random();
         graph = new Graph<>();
+        dijkstra = new Dijkstra<>(graph);
     }
 
     public List<Locality> getElements()
@@ -73,5 +76,13 @@ public class Model extends Observable
         }
 
         return edges;
+    }
+
+    private List<Integer> getPath(Locality start, Locality end)
+    {
+        int index = graph.indexOf(start, Object::equals);
+        if (dijkstra.getStartNode() != index || dijkstra.getPathLength(index) > 0)
+            dijkstra.findShortestPaths(index);
+        return dijkstra.getShortestPath(graph.indexOf(end, Object::equals));
     }
 }
