@@ -5,11 +5,12 @@ import src.Model.Data.LinkedList.List;
 import src.Model.Data.LinkedList.SortedList;
 import src.Model.Data.Locality.Locality;
 import src.Model.Data.Locality.LocalityOrder;
+import src.Model.Data.Value.Pair;
 import src.Model.Observer.Observable;
 
 public class Model extends Observable
 {
-    private Graph<Locality> graph;
+    private final Graph<Locality> graph;
 
     public Model()
     {
@@ -25,14 +26,19 @@ public class Model extends Observable
     {
         List<Locality> elements = getElements();
 
-        switch (order)
+        return switch (order)
         {
-            case 1:
-                return new SortedList<>(elements, LocalityOrder::ByName);
-            case 2:
-                return new SortedList<>(elements, LocalityOrder::ByType);
-            default:
-                return elements;
-        }
+            case 1 -> new SortedList<>(elements, LocalityOrder::ByName);
+            case 2 -> new SortedList<>(elements, LocalityOrder::ByType);
+            default -> elements;
+        };
+    }
+
+    public void addElement(Locality locality, List<Pair<Locality, Double>> edges)
+    {
+        graph.add(locality);
+
+        for (Pair<Locality, Double> edge: edges)
+            graph.setEdge(locality, edge.getValue1(), edge.getValue2(), Object::equals);
     }
 }
