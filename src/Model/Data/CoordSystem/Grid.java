@@ -9,6 +9,13 @@ public final class Grid
     {
     }
 
+    /**
+     * Methode zum Berechnen der N nächsten Punkte zu einem Ausgangspunkt
+     * @param startPoint Position des Ausgangspunktes
+     * @param otherPoints Liste der anderen Punkte
+     * @param number Die Zahl N
+     * @return Indices der N nächsten Punkte
+     */
     public static int[] getNNearest(Vector2 startPoint, List<Vector2> otherPoints, int number)
     {
         if (number > otherPoints.count())
