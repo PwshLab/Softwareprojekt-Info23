@@ -2,8 +2,8 @@ package src.Model.Data.Value;
 
 public class Pair<T, U>
 {
-    private T value1;
-    private U value2;
+    private final T value1;
+    private final U value2;
 
     public Pair(T value1, U value2)
     {
