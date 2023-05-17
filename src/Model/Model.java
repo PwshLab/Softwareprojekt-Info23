@@ -1,5 +1,7 @@
 package src.Model;
 
+import src.Model.Data.CoordSystem.Grid;
+import src.Model.Data.CoordSystem.Vector2;
 import src.Model.Data.Graph.Graph;
 import src.Model.Data.LinkedList.List;
 import src.Model.Data.LinkedList.SortedList;
@@ -8,12 +10,16 @@ import src.Model.Data.Locality.LocalityOrder;
 import src.Model.Data.Value.Pair;
 import src.Model.Observer.Observable;
 
+import java.util.Random;
+
 public class Model extends Observable
 {
+    private final Random rnd;
     private final Graph<Locality> graph;
 
     public Model()
     {
+        rnd = new Random();
         graph = new Graph<>();
     }
 
@@ -45,5 +51,27 @@ public class Model extends Observable
     public void removeElement(Locality locality)
     {
         graph.remove(locality, Object::equals);
+    }
+
+    public List<Pair<Locality, Double>> generateEdges(Locality locality, int n, double variance)
+    {
+        Locality[] localities = graph.getElements().toArray();
+        List<Vector2> points = new List<>();
+
+        for (Locality l: localities)
+            points.add(l.getPosition());
+
+        int[] nearest = Grid.getNNearest(locality.getPosition(), points, n);
+        double distance;
+        List<Pair<Locality, Double>> edges = new List<>();
+
+        for (int i : nearest)
+        {
+            distance = locality.getPosition().distance(localities[i].getPosition());
+            distance += distance * variance * rnd.nextGaussian();
+            edges.add(new Pair<>(localities[i], distance));
+        }
+
+        return edges;
     }
 }
