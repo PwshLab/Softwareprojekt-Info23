@@ -126,6 +126,16 @@ public class Dijkstra<T>
     }
 
     /**
+     * Methode zum Ausgeben der Länge des kürzesten Pfades im Graphem
+     * @param node Zielknoten des Pfades
+     * @return Länge des Pfades
+     */
+    public double getPathLength(int node)
+    {
+        return distances[node];
+    }
+
+    /**
      * Methode zum Ausgeben des Anfangsknotens
      * @return Index des Anfangsknotens
      */
