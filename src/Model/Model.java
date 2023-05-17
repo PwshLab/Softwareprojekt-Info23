@@ -41,4 +41,9 @@ public class Model extends Observable
         for (Pair<Locality, Double> edge: edges)
             graph.setEdge(locality, edge.getValue1(), edge.getValue2(), Object::equals);
     }
+
+    public void removeElement(Locality locality)
+    {
+        graph.remove(locality, Object::equals);
+    }
 }
