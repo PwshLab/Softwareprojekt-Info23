@@ -9,6 +9,7 @@ import src.Model.Data.LinkedList.List;
 public class Dijkstra<T>
 {
     private final Graph<T> graph;
+    private int startNode;
     private int count;
     private double[][] weights;
     private double[] distances;
@@ -22,14 +23,16 @@ public class Dijkstra<T>
     public Dijkstra(Graph<T> graph)
     {
         this.graph = graph;
+        this.startNode = -1;
     }
 
     /**
      * Methode zum Initialisieren des Algorithmus
-     * @param startNode Anfangsknoten
+     * @param startNode Index des Anfangsknotens
      */
     private void initialize(int startNode)
     {
+        this.startNode = startNode;
         this.count = graph.getElements().count();
         this.weights = graph.getWeights();
         this.distances = new double[count];
@@ -120,5 +123,14 @@ public class Dijkstra<T>
             path.insert(0, currentNode);
         }
         return path;
+    }
+
+    /**
+     * Methode zum Ausgeben des Anfangsknotens
+     * @return Index des Anfangsknotens
+     */
+    public int getStartNode()
+    {
+        return startNode;
     }
 }
