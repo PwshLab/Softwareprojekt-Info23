@@ -152,8 +152,7 @@ public class Graph<T>
     public void setEdge(T obj1, T obj2, double weight, BiPredicate<T, T> equality)
     {
         int i1 = indexOf(obj1, equality), i2 = indexOf(obj2, equality);
-        matrix.get(i1).set(i2, weight);
-        matrix.get(i2).set(i1, weight);
+        setEdge(i1, i2, weight);
     }
 
     /**
@@ -167,6 +166,6 @@ public class Graph<T>
     public double getEdge(T obj1, T obj2, BiPredicate<T, T> equality)
     {
         int i1 = indexOf(obj1, equality), i2 = indexOf(obj2, equality);
-        return matrix.get(i1).get(i2);
+        return getEdge(i1, i2);
     }
 }
