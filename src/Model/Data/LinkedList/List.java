@@ -177,4 +177,20 @@ public class List<T> implements Iterable<T>
 
         return new ListIterator<>(this);
     }
+
+    /**
+     * Methode zum Ausgeben der Objekte in der Liste in einem Array
+     * @return Array mit den Objekten der Liste
+     */
+    public T[] toArray()
+    {
+        @SuppressWarnings("unchecked") T[] arr = (T[])new Object[count()];
+        int index = 0;
+        for (T object: this)
+        {
+            arr[index] = object;
+            index++;
+        }
+        return arr;
+    }
 }
