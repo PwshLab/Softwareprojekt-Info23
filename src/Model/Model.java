@@ -76,7 +76,7 @@ public class Model extends Observable
         for (int i: nearest)
         {
             distance = locality.getPosition().distance(localities[i].getPosition());
-            distance += distance * variance * rnd.nextGaussian();
+            distance += distance * variance * Math.abs(rnd.nextGaussian());
             edges.add(new Pair<>(localities[i], distance));
         }
 
