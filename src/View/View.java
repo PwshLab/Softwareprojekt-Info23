@@ -12,7 +12,7 @@ public class View
     public View(Model model)
     {
         this.model = model;
-        navigation = new Navigation();
+        navigation = new Navigation(model);
 
         registerViews();
     }

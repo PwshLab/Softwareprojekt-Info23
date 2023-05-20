@@ -1,5 +1,6 @@
 package src.View.Window;
 
+import src.Model.Model;
 import src.Model.Observer.Observer;
 
 import javax.swing.*;
@@ -8,10 +9,12 @@ import java.awt.*;
 
 public class Navigation extends JFrame implements Observer
 {
+    private Model model;
     private JFrame frame;
 
-    public Navigation()
+    public Navigation(Model model)
     {
+        this.model = model;
         createNavigationGUI();
     }
 
