@@ -4,7 +4,7 @@ import src.Model.Data.LinkedList.List;
 
 public class Observable
 {
-    private List<Observer> observers;
+    private final List<Observer> observers;
 
     public Observable()
     {

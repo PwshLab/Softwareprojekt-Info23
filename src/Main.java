@@ -3,7 +3,6 @@ package src;
 import src.Controller.Controller;
 import src.Model.Model;
 import src.View.View;
-import src.View.Window.Navigation;
 
 public class Main {
 

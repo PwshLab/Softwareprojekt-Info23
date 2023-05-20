@@ -1,19 +1,20 @@
 package src.View;
 
 import src.Model.Model;
-import src.View.Screen.ListView.ListView;
 import src.View.Window.Navigation;
 
 public class View
 {
-    private Model model;
+    private final Model model;
 
-    private Navigation navigation;
+    private final Navigation navigation;
 
     public View(Model model)
     {
         this.model = model;
         navigation = new Navigation();
+
+        registerViews();
     }
 
     private void registerViews()
