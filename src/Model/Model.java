@@ -19,11 +19,14 @@ public class Model extends Observable
     private final Graph<Locality> graph;
     private final Dijkstra<Locality> dijkstra;
 
+    private List<Integer> lastPath;
+
     public Model()
     {
         rnd = new Random();
         graph = new Graph<>();
         dijkstra = new Dijkstra<>(graph);
+        lastPath = new List<>();
     }
 
     public List<Locality> getElements()
@@ -65,14 +68,22 @@ public class Model extends Observable
         notifyObservers();
     }
 
-    public double getEdge(Locality loc1, Locality loc2)
+    public List<Pair<Integer, Integer>> getEdges()
     {
-        return graph.getEdge(loc1, loc2, Object::equals);
+        double[][] matrix = graph.getWeights();
+        List<Pair<Integer, Integer>> edges = new List<>();
+
+        for (int i = 0; i < matrix.length; i++)
+            for (int j = 0; j < matrix.length - i; j++)
+                if (matrix[i][j] < Double.MAX_VALUE)
+                    edges.add(new Pair<>(i, j));
+
+        return edges;
     }
 
     public List<Pair<Locality, Double>> generateEdges(Locality locality, int n, double variance)
     {
-        Locality[] localities = graph.getElements().toArray();
+        Locality[] localities = graph.getElements().toArray(Locality.class);
         List<Vector2> points = new List<>();
 
         n = Math.min(n, localities.length);
@@ -99,6 +110,13 @@ public class Model extends Observable
         int index = graph.indexOf(loc1, Object::equals);
         if (dijkstra.getStartNode() != index || dijkstra.getPathLength(index) > 0)
             dijkstra.findShortestPaths(index);
-        return dijkstra.getShortestPath(graph.indexOf(loc2, Object::equals));
+        lastPath = dijkstra.getShortestPath(graph.indexOf(loc2, Object::equals));
+        notifyObservers();
+        return lastPath;
+    }
+
+    public List<Integer> getLastPath()
+    {
+        return lastPath;
     }
 }
