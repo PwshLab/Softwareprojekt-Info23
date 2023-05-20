@@ -5,7 +5,7 @@ package src.Model.Data.CoordSystem;
  */
 public class Vector3
 {
-    private final double x1, x2, x3;
+    protected final double x1, x2, x3;
 
     public static Vector3 zero = new Vector3(0, 0, 0);
 
@@ -97,5 +97,14 @@ public class Vector3
     public Vector3 normalized()
     {
         return this.multiply(1 / this.magnitude());
+    }
+
+    /**
+     * Methode zum Ausgeben eines Vektors als String
+     * @return Vektor als String
+     */
+    public String toString()
+    {
+        return "(" + x1 + "/" + x2 + "/" + x3 + ")";
     }
 }

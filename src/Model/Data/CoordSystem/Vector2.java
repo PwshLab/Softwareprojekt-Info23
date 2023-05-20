@@ -16,4 +16,13 @@ public class Vector2 extends Vector3
     {
         super(x1, x2, 0);
     }
+
+    /**
+     * Methode zum Ausgeben eines Vektors als String
+     * @return Vektor als String
+     */
+    public String toString()
+    {
+        return "(" + x1 + "/" + x2 + ")";
+    }
 }
