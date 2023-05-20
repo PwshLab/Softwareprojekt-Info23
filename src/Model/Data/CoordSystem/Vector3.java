@@ -27,7 +27,7 @@ public class Vector3
      * @param other Anderer Vektor
      * @return Resultierender Vektor
      */
-    private Vector3 add(Vector3 other)
+    public Vector3 add(Vector3 other)
     {
         return new Vector3(this.x1 + other.x1, this.x2 + other.x2, this.x3 + other.x3);
     }
@@ -36,7 +36,7 @@ public class Vector3
      * Methode für den Gegenvektor eines Vektors
      * @return Gegenvektor des Vektors
      */
-    private Vector3 neg()
+    public Vector3 neg()
     {
         return new Vector3(-this.x1, -this.x2, -this.x3);
     }
@@ -46,7 +46,7 @@ public class Vector3
      * @param other Anderer Vektor
      * @return Resultierender Vektor
      */
-    private Vector3 sub(Vector3 other)
+    public Vector3 sub(Vector3 other)
     {
         return this.add(other.neg());
     }
