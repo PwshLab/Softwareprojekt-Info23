@@ -19,12 +19,12 @@ public class Observable
         }
     }
 
-    protected void addObserver(Observer observer)
+    public void addObserver(Observer observer)
     {
         observers.add(observer);
     }
 
-    protected void removeObserver(Observer observer)
+    public void removeObserver(Observer observer)
     {
         observers.remove(observer, Object::equals);
     }
