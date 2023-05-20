@@ -43,17 +43,26 @@ public class Model extends Observable
         };
     }
 
+    public List<Locality> getElementsByDistance(Vector2 position, double distance)
+    {
+        List<Locality> elements = getElements();
+        return elements.filter((Locality l) -> l.getPosition().distance(position) <= distance);
+    }
+
     public void addElement(Locality locality, List<Pair<Locality, Double>> edges)
     {
         graph.add(locality);
 
         for (Pair<Locality, Double> edge: edges)
             graph.setEdge(locality, edge.getValue1(), edge.getValue2(), Object::equals);
+
+        notifyObservers();
     }
 
     public void removeElement(Locality locality)
     {
         graph.remove(locality, Object::equals);
+        notifyObservers();
     }
 
     public double getEdge(Locality loc1, Locality loc2)
