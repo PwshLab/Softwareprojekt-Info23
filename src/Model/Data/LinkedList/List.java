@@ -1,5 +1,6 @@
 package src.Model.Data.LinkedList;
 
+import java.lang.reflect.Array;
 import java.util.function.BiPredicate;
 import java.util.Iterator;
 import java.util.function.Predicate;
@@ -181,11 +182,12 @@ public class List<T> implements Iterable<T>
 
     /**
      * Methode zum Ausgeben der Objekte in der Liste in einem Array
+     * @param classT Typ des Arrays
      * @return Array mit den Objekten der Liste
      */
-    public T[] toArray()
+    public T[] toArray(Class<T> classT)
     {
-        @SuppressWarnings("unchecked") T[] arr = (T[])new Object[count()];
+        @SuppressWarnings("unchecked") T[] arr = (T[]) Array.newInstance(classT, count());
         int index = 0;
         for (T object: this)
         {
