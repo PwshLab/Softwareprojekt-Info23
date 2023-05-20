@@ -58,7 +58,7 @@ public class Navigation extends JFrame implements Observer
         //frame.setContentPane(listView);
 
         mapView = new MapView(400, 400);
-        mapView.setBackground(Color.BLUE);
+        //mapView.setBackground(Color.BLUE);
         panelRight.add(mapView);
 
         frame.pack();
