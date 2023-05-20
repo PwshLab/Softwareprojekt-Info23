@@ -6,14 +6,10 @@ import src.View.View;
 
 public class Main {
 
-    private Model model;
-    private View view;
-    private Controller controller;
-
-    public void main(String[] args)
+    public static void main(String[] args)
     {
-        model = new Model();
-        view = new View();
-        controller = new Controller();
+        Model model = new Model();
+        View view = new View();
+        Controller controller = new Controller();
     }
 }
