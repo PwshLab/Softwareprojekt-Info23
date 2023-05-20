@@ -107,4 +107,19 @@ public class Vector3
     {
         return "(" + x1 + "/" + x2 + "/" + x3 + ")";
     }
+
+    /**
+     * Methode zum Ausgeben der N-Ten Koordinate
+     * @param n Der Wert N
+     * @return Wert der zugehörigen Koordinate
+     */
+    public double getX(int n)
+    {
+        return switch (n) {
+            case 1 -> x1;
+            case 2 -> x2;
+            case 3 -> x3;
+            default -> 0;
+        };
+    }
 }
