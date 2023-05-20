@@ -2,6 +2,7 @@ package src.Model.Data.LinkedList;
 
 import java.util.function.BiPredicate;
 import java.util.Iterator;
+import java.util.function.Predicate;
 
 /**
  * Generische einfach verknüpfte Liste
@@ -192,5 +193,20 @@ public class List<T> implements Iterable<T>
             index++;
         }
         return arr;
+    }
+
+    /**
+     * Methode zum Ausgeben der Objekte in der Liste, gemäß danach,
+     * ob sie ein gegebenes Kriterium erfüllen
+     * @param predicate Funktion zum Überprüfen des Kriteriums
+     * @return Liste mit den Objekten, welche das Kriterium erfüllen
+     */
+    public List<T> filter(Predicate<T> predicate)
+    {
+        List<T> filtered = new List<>();
+        for (T object: this)
+            if (predicate.test(object))
+                filtered.add(object);
+        return filtered;
     }
 }
