@@ -3,7 +3,6 @@ package src.View.Screen;
 import src.Model.Data.Locality.Locality;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class ListView extends JPanel
 {
