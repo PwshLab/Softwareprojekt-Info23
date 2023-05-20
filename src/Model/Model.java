@@ -75,6 +75,8 @@ public class Model extends Observable
         Locality[] localities = graph.getElements().toArray();
         List<Vector2> points = new List<>();
 
+        n = Math.min(n, localities.length);
+
         for (Locality l: localities)
             points.add(l.getPosition());
 
