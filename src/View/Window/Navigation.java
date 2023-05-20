@@ -40,11 +40,13 @@ public class Navigation extends JFrame implements Observer
         JPanel panelLeft = new JPanel();
         panelLeft.setLayout(new BoxLayout(panelLeft, BoxLayout.Y_AXIS));
         panelLeft.setBackground(Color.GREEN);
+        panelLeft.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         mainPanel.add(panelLeft);
 
         JPanel panelRight = new JPanel();
         panelRight.setLayout(new BoxLayout(panelRight, BoxLayout.Y_AXIS));
         panelRight.setBackground(Color.CYAN);
+        panelRight.setBorder(BorderFactory.createEmptyBorder(25, 25, 50, 25));
         mainPanel.add(panelRight);
 
         JLabel emptyLabel = new JLabel("Lorem Ipsum Dolor Sit Amet");

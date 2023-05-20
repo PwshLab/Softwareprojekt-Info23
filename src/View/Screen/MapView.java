@@ -26,6 +26,7 @@ public class MapView extends JPanel
         setOpaque(true);
         setVisible(true);
         setPreferredSize(new Dimension(width, height));
+        setBackground(Color.WHITE);
 
         localities = new Locality[0];
         edges = new Pair[0];

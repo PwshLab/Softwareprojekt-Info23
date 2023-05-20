@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class ListView extends JPanel
 {
-    String[] columnNames = {"Name", "Typ", "Beschreibung", "Position"};
+    String[] columnNames = {"Index", "Name", "Typ", "Beschreibung", "Position"};
     JScrollPane scrollPane;
 
     public ListView()
@@ -24,10 +24,11 @@ public class ListView extends JPanel
         String[][] columnData = new String[localities.length][columnNames.length];
         for (int i = 0; i < localities.length; i++)
         {
-            columnData[i][0] = localities[i].getName();
-            columnData[i][1] = localities[i].getDescription();
-            columnData[i][2] = localities[i].getType().toString();
-            columnData[i][3] = localities[i].getPosition().toString();
+            columnData[i][0] = Integer.toString(i);
+            columnData[i][1] = localities[i].getName();
+            columnData[i][2] = localities[i].getDescription();
+            columnData[i][3] = localities[i].getType().toString();
+            columnData[i][4] = localities[i].getPosition().toString();
         }
 
         JTable table = new JTable(columnData, columnNames);
