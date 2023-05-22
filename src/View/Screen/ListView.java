@@ -16,6 +16,8 @@ public class ListView extends JPanel
         displayData(new Locality[0]);
     }
 
+    //TODO : Implement searching and sorting by attributes
+    //TODO : Add information block for selected entry
     public void displayData(Locality[] localities)
     {
         if (scrollPane != null)

@@ -4,23 +4,52 @@ import src.Model.Model;
 import src.View.View;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class Controller
 {
     private final Model model;
     private final View view;
 
-    private JFrame mainWindow;
+    private JFrame mainFrame;
+    private JPanel navigationWindow;
 
     public Controller(Model model, View view)
     {
         this.model = model;
         this.view = view;
+
+        initialize();
     }
 
     private void initializeMainWindow()
     {
-        mainWindow = new JFrame("Search a Bar");
-        mainWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        mainFrame = new JFrame("Search a Bar");
+        mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        mainFrame.pack();
+        mainFrame.setVisible(true);
+    }
+
+    private void initializeNavigationWindow()
+    {
+        navigationWindow = new JPanel();
+        navigationWindow.setPreferredSize(new Dimension(1200, 750));
+        navigationWindow.setLayout(new BoxLayout(navigationWindow, BoxLayout.Y_AXIS));
+        navigationWindow.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        navigationWindow.add(view.getNavigationView());
+        //TODO : Add fields for start and endpoint together with search path button
+    }
+
+    private void setWindowNavigation()
+    {
+        mainFrame.setContentPane(navigationWindow);
+        mainFrame.pack();
+    }
+
+    private void initialize()
+    {
+        initializeMainWindow();
+        initializeNavigationWindow();
+        setWindowNavigation();
     }
 }

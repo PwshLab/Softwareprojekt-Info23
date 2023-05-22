@@ -11,7 +11,7 @@ import javax.swing.*;
 import java.awt.*;
 
 
-public class Navigation extends JFrame implements Observer
+public class Navigation extends JPanel implements Observer
 {
     private final Model model;
     private ListView listView;
@@ -20,6 +20,7 @@ public class Navigation extends JFrame implements Observer
     public Navigation(Model model)
     {
         this.model = model;
+
         initializeNavigationGUI();
         update();
     }
@@ -30,7 +31,7 @@ public class Navigation extends JFrame implements Observer
         //frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         JPanel mainPanel = new JPanel();
-        setContentPane(mainPanel);
+        add(mainPanel);
 
         mainPanel.setPreferredSize(new Dimension(1200, 600));
         mainPanel.setBackground(Color.RED);
@@ -48,7 +49,7 @@ public class Navigation extends JFrame implements Observer
         panelRight.setBorder(BorderFactory.createEmptyBorder(25, 25, 50, 25));
         mainPanel.add(panelRight);
 
-        JLabel emptyLabel = new JLabel("Lorem Ipsum Dolor Sit Amet");
+        //JLabel emptyLabel = new JLabel("Lorem Ipsum Dolor Sit Amet");
         //emptyLabel.setPreferredSize(new Dimension(1200, 600));
         //panelRight.add(emptyLabel, BorderLayout.CENTER);
 
@@ -62,7 +63,7 @@ public class Navigation extends JFrame implements Observer
         //mapView.setBackground(Color.BLUE);
         panelRight.add(mapView);
 
-        pack();
+        //pack();
         setVisible(true);
     }
 
