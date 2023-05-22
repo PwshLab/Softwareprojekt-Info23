@@ -14,24 +14,23 @@ import java.awt.*;
 public class Navigation extends JFrame implements Observer
 {
     private final Model model;
-    private JFrame frame;
     private ListView listView;
     private MapView mapView;
 
     public Navigation(Model model)
     {
         this.model = model;
-        createNavigationGUI();
+        initializeNavigationGUI();
         update();
     }
 
-    public void createNavigationGUI()
+    public void initializeNavigationGUI()
     {
-        frame = new JFrame("Navigation");
-        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        //frame = new JFrame("Navigation");
+        //frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         JPanel mainPanel = new JPanel();
-        frame.setContentPane(mainPanel);
+        setContentPane(mainPanel);
 
         mainPanel.setPreferredSize(new Dimension(1200, 600));
         mainPanel.setBackground(Color.RED);
@@ -63,8 +62,8 @@ public class Navigation extends JFrame implements Observer
         //mapView.setBackground(Color.BLUE);
         panelRight.add(mapView);
 
-        frame.pack();
-        frame.setVisible(true);
+        pack();
+        setVisible(true);
     }
 
     public void update()
