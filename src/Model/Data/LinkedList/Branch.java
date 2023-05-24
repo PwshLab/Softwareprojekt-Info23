@@ -53,6 +53,7 @@ public class Branch<T> extends Node<T>
         }
         else
         {
+            next = next.removeObject(object, equality);
             return this;
         }
     }
