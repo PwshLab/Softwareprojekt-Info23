@@ -1,10 +1,9 @@
 package src.View;
 
 import src.Model.Model;
-import src.Model.Observer.Observer;
 import src.View.Window.Navigation;
 
-public class View implements Observer
+public class View
 {
     private final Model model;
 
@@ -14,21 +13,10 @@ public class View implements Observer
     {
         this.model = model;
         navigation = new Navigation(model);
-
-        registerViews();
-    }
-
-    private void registerViews()
-    {
-        model.addObserver(navigation);
     }
 
     public Navigation getNavigationView()
     {
         return navigation;
-    }
-
-    public void update() {
-
     }
 }
