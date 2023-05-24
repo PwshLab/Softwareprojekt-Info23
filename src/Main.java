@@ -9,6 +9,7 @@ import src.Model.Data.Value.Pair;
 import src.Model.Model;
 import src.View.View;
 
+import javax.swing.*;
 import java.util.Random;
 
 public class Main
@@ -35,7 +36,11 @@ public class Main
                     );
             List<Pair<Locality, Double>> edges = model.generateEdges(l, 1, 0.25);
             model.addElement(l, edges);
-            System.out.println("#" + i + " Edges: " + edges.count());
+            if (edges.count() > 0)
+            {
+                int j = model.getElements().indexOf(edges.get(0).getValue1(), Object::equals);
+                System.out.println("#" + i + " Edges: " + edges.count() + " First Edge: " + j + " Edge Distance: " + model.getEdge(edges.get(0).getValue1(), l));
+            }
         }
     }
 }
