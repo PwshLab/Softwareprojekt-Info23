@@ -14,7 +14,7 @@ import java.awt.geom.Point2D;
 
 public class MapView extends JPanel implements Observer
 {
-    private Model model;
+    private final Model model;
     private final int width, height;
 
     private Locality[] localities;
@@ -106,7 +106,7 @@ public class MapView extends JPanel implements Observer
             g2.setColor(Color.RED);
             g2.fill(locCircle);
             g2.setColor(Color.MAGENTA);
-            g2.drawString("" + i, (float)(points[i].getX() + circleSize), (float)(points[i].getY() + circleSize));
+            g2.drawString(String.valueOf(i), (float)(points[i].getX() + circleSize), (float)(points[i].getY() + circleSize));
         }
     }
 

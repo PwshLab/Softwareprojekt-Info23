@@ -1,9 +1,7 @@
 package src.View.Screen.ListView;
 
 import src.Model.Data.LinkedList.List;
-import src.Model.Data.LinkedList.SortedList;
 import src.Model.Data.Locality.Locality;
-import src.Model.Data.Locality.LocalityOrder;
 import src.Model.Model;
 import src.Model.Observer.Observer;
 
@@ -13,7 +11,7 @@ import java.lang.reflect.InvocationTargetException;
 
 public class ListTableModel extends AbstractTableModel implements Observer
 {
-    private Model model;
+    private final Model model;
     private static final String[] columnNames = {"Index", "Name", "Beschreibung", "Typ", "Position"};
     private List<Locality> orderedData;
     private String[][] formattedData;
@@ -62,9 +60,7 @@ public class ListTableModel extends AbstractTableModel implements Observer
         // ab und an ArrayIndex Fehler
         try {
             SwingUtilities.invokeAndWait(() -> {fireTableStructureChanged();});
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
+        } catch (InterruptedException | InvocationTargetException e) {
             throw new RuntimeException(e);
         }
     }

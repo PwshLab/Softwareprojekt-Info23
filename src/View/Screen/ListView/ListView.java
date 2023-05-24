@@ -1,30 +1,17 @@
 package src.View.Screen.ListView;
 
-import src.Model.Data.LinkedList.List;
-import src.Model.Data.LinkedList.SortedList;
-import src.Model.Data.Locality.Locality;
-import src.Model.Data.Locality.LocalityOrder;
 import src.Model.Model;
-import src.Model.Observer.Observer;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
 
 public class ListView extends JPanel
 {
     private JTable table;
-    private RowSorter<ListTableModel> rowSorter;
-    private int currentOrder;
-    private String currentSearch;
 
     public ListView(Model model)
     {
-        this.currentOrder = 1;
-        this.currentSearch = "";
-
         initialize();
         table.setModel(new ListTableModel(model));
     }
@@ -48,14 +35,10 @@ public class ListView extends JPanel
 
     private void initializeSorter()
     {
-        rowSorter = new TableRowSorter<>();
+        RowSorter<ListTableModel> rowSorter = new TableRowSorter<>();
         table.setRowSorter(rowSorter);
     }
 
     //TODO : Implement searching and sorting by attributes
     //TODO : Add information block for selected entry
-    public void displayData()
-    {
-
-    }
 }

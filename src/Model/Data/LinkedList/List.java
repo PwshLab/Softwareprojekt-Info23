@@ -1,7 +1,6 @@
 package src.Model.Data.LinkedList;
 
 import java.lang.reflect.Array;
-import java.util.Comparator;
 import java.util.function.BiPredicate;
 import java.util.Iterator;
 import java.util.function.Predicate;
