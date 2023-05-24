@@ -36,14 +36,21 @@ public class Model extends Observable
 
     public List<Locality> getElements(int order)
     {
-        List<Locality> elements = getElements();
-
-        return switch (order)
+        // 1: Sortierung nach der Nummerierung
+        // 2: Sortierung nach dem Namen
+        // 3: Sortierung nach dem Typen
+        List<Locality> elements = switch (Math.abs(order))
         {
-            case 1 -> new SortedList<>(elements, LocalityOrder::ByName);
-            case 2 -> new SortedList<>(elements, LocalityOrder::ByType);
-            default -> elements;
+            case 2 -> new SortedList<>(getElements(), LocalityOrder::ByName);
+            case 3 -> new SortedList<>(getElements(), LocalityOrder::ByType);
+            default -> getElements();
         };
+
+        // Negativer Wert: Umgekehrte Sortierung
+        if (order < 0)
+            return elements.reversed();
+        else
+            return elements;
     }
 
     public List<Locality> getElementsByDistance(Vector2 position, double distance)
