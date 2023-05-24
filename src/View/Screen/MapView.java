@@ -52,6 +52,7 @@ public class MapView extends JPanel implements Observer
         repaint();
     }
 
+    //TODO : Add labels to every point on the map
     @Override
     protected void paintComponent(Graphics g)
     {
@@ -61,19 +62,10 @@ public class MapView extends JPanel implements Observer
 
         Vector2 center = new Vector2((double) width / 2, (double) height / 2);
         Point2D.Double[] points = new Point2D.Double[localities.length];
-        g2.setColor(Color.RED);
         for (int i = 0; i < localities.length; i++)
         {
-            Vector2 pos = (Vector2) localities[i].getPosition().add(center);
+            Vector2 pos = localities[i].getPosition().add(center);
             points[i] = new Point2D.Double(pos.getX(1), pos.getX(2));
-
-            Ellipse2D.Double locCircle = new Ellipse2D.Double(
-                    pos.getX(1) + circleSize / 2,
-                    pos.getX(2) + circleSize / 2,
-                    circleSize,
-                    circleSize
-            );
-            g2.draw(locCircle);
         }
 
         g2.setColor(Color.BLACK);
@@ -99,6 +91,22 @@ public class MapView extends JPanel implements Observer
                 g2.draw(edgeLine);
                 lastPoint = points[lastPath[i]];
             }
+        }
+
+        Font font = g2.getFont();
+        g2.setFont(new Font(font.getName(), font.getStyle(), 18));
+        for (int i = 0; i < points.length; i++)
+        {
+            Ellipse2D.Double locCircle = new Ellipse2D.Double(
+                    points[i].getX() - circleSize / 2,
+                    points[i].getY() - circleSize / 2,
+                    circleSize,
+                    circleSize
+            );
+            g2.setColor(Color.RED);
+            g2.fill(locCircle);
+            g2.setColor(Color.MAGENTA);
+            g2.drawString("" + i, (float)(points[i].getX() + circleSize), (float)(points[i].getY() + circleSize));
         }
     }
 
