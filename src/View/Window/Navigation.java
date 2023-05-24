@@ -1,5 +1,6 @@
 package src.View.Window;
 
+import src.Model.Data.LinkedList.List;
 import src.Model.Data.Locality.Locality;
 import src.Model.Data.Value.Pair;
 import src.Model.Model;
@@ -57,12 +58,12 @@ public class Navigation extends JPanel implements Observer
 
     public void update()
     {
-        Locality[] localities = model.getElements().toArray(Locality.class);
-        listView.displayData(localities);
+        List<Locality> localities = model.getElements();
+        listView.setViewData(localities);
 
         @SuppressWarnings("unchecked") Class<Pair<Integer, Integer>> pairClass = (Class<Pair<Integer, Integer>>)(Class<?>)Pair.class;
         Pair<Integer, Integer>[] edges = model.getEdges().toArray(pairClass);
         Integer[] lastPath = model.getLastPath().toArray(Integer.class);
-        mapView.displayData(localities, edges, lastPath);
+        mapView.displayData(localities.toArray(Locality.class), edges, lastPath);
     }
 }
