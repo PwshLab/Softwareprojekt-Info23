@@ -11,7 +11,8 @@ import src.View.View;
 
 import java.util.Random;
 
-public class Main {
+public class Main
+{
 
     public static void main(String[] args)
     {
@@ -32,7 +33,7 @@ public class Main {
                     LocalityType.values()[rnd.nextInt(LocalityType.values().length)],
                     new Vector2(rnd.nextInt(-200, 200), rnd.nextInt(-200, 200))
                     );
-            List<Pair<Locality, Double>> edges = model.generateEdges(l, 5, 0.25);
+            List<Pair<Locality, Double>> edges = model.generateEdges(l, 1, 0.25);
             model.addElement(l, edges);
             System.out.println("#" + i + " Edges: " + edges.count());
         }
