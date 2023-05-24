@@ -52,7 +52,6 @@ public class MapView extends JPanel implements Observer
         repaint();
     }
 
-    //TODO : Add labels to every point on the map
     @Override
     protected void paintComponent(Graphics g)
     {
