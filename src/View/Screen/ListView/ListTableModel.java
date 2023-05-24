@@ -13,25 +13,19 @@ public class ListTableModel extends AbstractTableModel implements Observer
 {
     private final Model model;
     private static final String[] columnNames = {"Index", "Name", "Beschreibung", "Typ", "Position"};
-    private List<Locality> orderedData;
-    private String[][] formattedData;
-    private String[][] filteredData;
-    private int currentOrder;
-    private String currentSearch;
+    private Object[][] data;
 
     public ListTableModel(Model model)
     {
         this.model = model;
-        this.currentOrder = 1;
-        this.currentSearch = "";
         model.addObserver(this);
-        updateOrderedData();
+        updateData();
     }
 
     @Override
     public int getRowCount()
     {
-        return filteredData.length;
+        return data.length;
     }
 
     @Override
@@ -48,13 +42,13 @@ public class ListTableModel extends AbstractTableModel implements Observer
     @Override
     public Object getValueAt(int rowIndex, int columnIndex)
     {
-        return filteredData[rowIndex][columnIndex];
+        return data[rowIndex][columnIndex];
     }
 
     @Override
     public void update()
     {
-        updateOrderedData();
+        updateData();
 
         // Ohne warten gibt es beim Darstellen der Tabelle
         // ab und an ArrayIndex Fehler
@@ -65,79 +59,25 @@ public class ListTableModel extends AbstractTableModel implements Observer
         }
     }
 
-    private void updateOrderedData()
+    private void updateData()
     {
-        orderedData = model.getElements(currentOrder);
-        updateFormattedData();
-    }
-
-    private void updateFormattedData()
-    {
-        if (orderedData == null)
-            return;
-
-        formattedData = new String[orderedData.count()][columnNames.length];
+        List<Locality> localities = model.getElements();
+        data = new Object[localities.count()][columnNames.length];
         int index = 0;
-        for (Locality l: orderedData)
+        for (Locality l: localities)
         {
-            formattedData[index][0] = Integer.toString(index);
-            formattedData[index][1] = l.getName();
-            formattedData[index][2] = l.getDescription();
-            formattedData[index][3] = l.getType().toString();
-            formattedData[index][4] = l.getPosition().toString();
+            data[index][0] = index;
+            data[index][1] = l.getName();
+            data[index][2] = l.getDescription();
+            data[index][3] = l.getType().toString();
+            data[index][4] = l.getPosition().toString();
             index++;
         }
-        updateFilteredData();
     }
 
-    private void updateFilteredData()
+    @Override
+    public Class getColumnClass(int column)
     {
-        if (formattedData == null)
-            return;
-
-        if (currentSearch.length() < 1)
-        {
-            filteredData = formattedData;
-        }
-        else
-        {
-            List<Integer> columnIndices = new List<>();
-            for (int i = 0; i < formattedData.length; i++)
-            {
-                boolean contains = false;
-                for (String column: formattedData[i])
-                    contains = contains || column.contains(currentSearch);
-                if (contains)
-                    columnIndices.add(i);
-            }
-
-            filteredData = new String[columnIndices.count()][columnNames.length];
-            int index = 0;
-            for (Integer i: columnIndices) {
-                filteredData[index] = formattedData[i];
-                index++;
-            }
-        }
-    }
-
-    public void setCurrentOrder(int newOrder)
-    {
-        if (Math.abs(currentOrder) == newOrder)
-        {
-            currentOrder *= -1;
-        }
-        else
-        {
-            currentOrder = newOrder;
-        }
-        updateOrderedData();
-        fireTableDataChanged();
-    }
-
-    public void setCurrentSearch(String newSearch)
-    {
-        currentSearch = newSearch;
-        updateFilteredData();
-        fireTableDataChanged();
+        return column == 0 ? Integer.class : String.class;
     }
 }

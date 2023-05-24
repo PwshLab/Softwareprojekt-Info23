@@ -9,11 +9,12 @@ import java.awt.*;
 public class ListView extends JPanel
 {
     private JTable table;
+    private TableRowSorter<ListTableModel> rowSorter;
 
     public ListView(Model model)
     {
         initialize();
-        table.setModel(new ListTableModel(model));
+        initializeSorter(model);
     }
 
     private void initialize()
@@ -33,12 +34,18 @@ public class ListView extends JPanel
         add(scrollPane);
     }
 
-    private void initializeSorter()
+    private void initializeSorter(Model model)
     {
-        RowSorter<ListTableModel> rowSorter = new TableRowSorter<>();
+        ListTableModel tableModel = new ListTableModel(model);
+        rowSorter = new TableRowSorter<>();
+        rowSorter.setModel(tableModel);
+        table.setModel(tableModel);
         table.setRowSorter(rowSorter);
     }
 
-    //TODO : Implement searching and sorting by attributes
+    public void setSearchString(String searchString)
+    {
+        rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + searchString));
+    }
     //TODO : Add information block for selected entry
 }
