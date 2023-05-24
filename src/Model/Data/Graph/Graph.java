@@ -125,6 +125,7 @@ public class Graph<T>
                 index2++;
             }
             index1++;
+            index2 = 0;
         }
         return weights;
     }
