@@ -9,8 +9,6 @@ import src.Model.Data.Value.Pair;
 import src.Model.Model;
 import src.View.View;
 
-import javax.swing.*;
-import java.util.Objects;
 import java.util.Random;
 
 public class Main
@@ -22,7 +20,7 @@ public class Main
         View view = new View(model);
         Controller controller = new Controller(model, view);
 
-        generateData(model, 15);
+        generateData(model, 25);
 
         model.getPath(model.getElements().get(2), model.getElements().get(7));
         System.out.println("Last Path Length: " + model.getLastPath().count());
