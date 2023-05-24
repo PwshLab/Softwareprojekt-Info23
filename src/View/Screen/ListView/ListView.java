@@ -38,9 +38,9 @@ public class ListView extends JPanel
         table.setPreferredScrollableViewportSize(new Dimension(500, 300));
         table.setFillsViewportHeight(true);
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        table.setRowSelectionAllowed(false);
-        table.setColumnSelectionAllowed(false);
         table.setCellSelectionEnabled(false);
+        table.setColumnSelectionAllowed(false);
+        table.setRowSelectionAllowed(true);
         table.setDragEnabled(false);
         JScrollPane scrollPane = new JScrollPane(table);
         add(scrollPane);
