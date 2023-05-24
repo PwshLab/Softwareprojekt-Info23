@@ -5,7 +5,7 @@ import src.Model.Data.Locality.Locality;
 import src.Model.Data.Value.Pair;
 import src.Model.Model;
 import src.Model.Observer.Observer;
-import src.View.Screen.ListView;
+import src.View.Screen.ListView.ListView;
 import src.View.Screen.MapView;
 
 import javax.swing.*;
@@ -47,10 +47,10 @@ public class Navigation extends JPanel implements Observer
         panelRight.setBorder(BorderFactory.createEmptyBorder(25, 25, 50, 25));
         mainPanel.add(panelRight);
 
-        listView = new ListView();
+        listView = new ListView(model);
         panelLeft.add(listView);
 
-        mapView = new MapView(400, 400);
+        mapView = new MapView(model, 400, 400);
         panelRight.add(mapView);
 
         setVisible(true);
@@ -59,8 +59,6 @@ public class Navigation extends JPanel implements Observer
     public void update()
     {
         List<Locality> localities = model.getElements();
-        listView.setViewData(localities);
-
         @SuppressWarnings("unchecked") Class<Pair<Integer, Integer>> pairClass = (Class<Pair<Integer, Integer>>)(Class<?>)Pair.class;
         Pair<Integer, Integer>[] edges = model.getEdges().toArray(pairClass);
         Integer[] lastPath = model.getLastPath().toArray(Integer.class);
