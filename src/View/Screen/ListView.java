@@ -11,6 +11,11 @@ public class ListView extends JPanel
 
     public ListView()
     {
+        initialize();
+    }
+
+    private void initialize()
+    {
         setOpaque(true);
         setVisible(true);
         displayData(new Locality[0]);

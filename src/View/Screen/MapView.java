@@ -23,14 +23,19 @@ public class MapView extends JPanel
     {
         this.width = width;
         this.height = height;
+        localities = new Locality[0];
+        edges = new Pair[0];
+        lastPath = new Integer[0];
+
+        intialize();
+    }
+
+    private void intialize()
+    {
         setOpaque(true);
         setVisible(true);
         setPreferredSize(new Dimension(width, height));
         setBackground(Color.WHITE);
-
-        localities = new Locality[0];
-        edges = new Pair[0];
-        lastPath = new Integer[0];
     }
 
     public void displayData(Locality[] localities, Pair<Integer, Integer>[] edges, Integer[] lastPath)
