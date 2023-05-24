@@ -11,7 +11,7 @@ public class SortedList<T> extends List<T>
     private final Comparator<T> comparator;
 
     /**
-     * Standartkonstruktor der Liste
+     * Standartkonstruktor der sortierten Liste
      * @param comparator Benutzer spezifizierte Funktion zum Überprüfen
      *                   der Sortierreihenfolge zweier Objekte
      */
@@ -22,8 +22,9 @@ public class SortedList<T> extends List<T>
     }
 
     /**
-     * Konstruktor zum Sortieren einer bereits vorhandenen Liste
-     * @param list Andere Liste
+     * Konstruktor zum Erstellen einer sortierten Liste mit den Elementen
+     * aus einer schon vorhandenen Liste
+     * @param list Eine andere Liste eines gleichen Typen
      * @param comparator Benutzer spezifizierte Funktion zum Überprüfen
      *                   der Sortierreihenfolge zweier Objekte
      */
@@ -33,6 +34,24 @@ public class SortedList<T> extends List<T>
         this.comparator = comparator;
 
         for (T object: list)
+        {
+            add(object);
+        }
+    }
+
+    /**
+     * Konstruktor zum Erstellen einer sortierten Liste mit den Elementen
+     * aus einer schon vorhandenen Liste
+     * @param array Ein Array eines gleichen Typen
+     * @param comparator Benutzer spezifizierte Funktion zum Überprüfen
+     *                   der Sortierreihenfolge zweier Objekte
+     */
+    public SortedList(T[] array, Comparator<T> comparator)
+    {
+        super();
+        this.comparator = comparator;
+
+        for (T object: array)
         {
             add(object);
         }

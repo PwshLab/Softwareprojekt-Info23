@@ -1,6 +1,7 @@
 package src.Model.Data.LinkedList;
 
 import java.lang.reflect.Array;
+import java.util.Comparator;
 import java.util.function.BiPredicate;
 import java.util.Iterator;
 import java.util.function.Predicate;
@@ -23,6 +24,40 @@ public class List<T> implements Iterable<T>
         first = new Leaf<>();
         count = 0;
         changed = false;
+    }
+
+    /**
+     * Konstruktor zum Erstellen einer Liste mit den Elementen
+     * aus einer schon vorhandenen Liste
+     * @param list Eine andere Liste eines gleichen Typen
+     */
+    public List(List<T> list)
+    {
+        first = new Leaf<>();
+        count = 0;
+        changed = false;
+
+        for (T object: list)
+        {
+            this.add(object);
+        }
+    }
+
+    /**
+     * Konstruktor zum Erstellen einer Liste mit den Elementen
+     * aus einem Array
+     * @param array Ein Array eines gleichen Typen
+     */
+    public List(T[] array)
+    {
+        first = new Leaf<>();
+        count = 0;
+        changed = false;
+
+        for (T object: array)
+        {
+            this.add(object);
+        }
     }
 
     /**
@@ -210,5 +245,18 @@ public class List<T> implements Iterable<T>
             if (predicate.test(object))
                 filtered.add(object);
         return filtered;
+    }
+
+    /**
+     * Methode zum Ausgeben der Objekte in der Liste
+     * in der umgekehrten Reihenfolge
+     * @return Liste mit den Objekten der Liste
+     */
+    public List<T> reversed()
+    {
+        List<T> reversed = new List<>();
+        for (T object: this)
+            reversed.insert(reversed().count(), object);
+        return reversed;
     }
 }
