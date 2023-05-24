@@ -1,6 +1,7 @@
 package src.View.Screen;
 
 import src.Model.Data.CoordSystem.Vector2;
+import src.Model.Data.LinkedList.List;
 import src.Model.Data.Locality.Locality;
 import src.Model.Data.Value.Pair;
 import src.Model.Model;
@@ -17,8 +18,8 @@ public class MapView extends JPanel implements Observer
     private final Model model;
     private final int width, height;
 
-    private Locality[] localities;
-    private Pair<Integer, Integer>[] edges;
+    private List<Locality> localities;
+    private List<Pair<Integer, Integer>> edges;
     private Integer[] lastPath;
     private static final double circleSize = 5;
 
@@ -27,12 +28,11 @@ public class MapView extends JPanel implements Observer
         this.model = model;
         this.width = width;
         this.height = height;
-        localities = new Locality[0];
-        edges = new Pair[0];
-        lastPath = new Integer[0];
+        this.localities = new List<>();
+        this.edges = new List<>();
+        this.lastPath = new Integer[0];
 
         model.addObserver(this);
-
         initialize();
     }
 
@@ -44,14 +44,6 @@ public class MapView extends JPanel implements Observer
         setBackground(Color.WHITE);
     }
 
-    public void displayData(Locality[] localities, Pair<Integer, Integer>[] edges, Integer[] lastPath)
-    {
-        this.localities = localities;
-        this.edges = edges;
-        this.lastPath = lastPath;
-        repaint();
-    }
-
     @Override
     protected void paintComponent(Graphics g)
     {
@@ -60,11 +52,13 @@ public class MapView extends JPanel implements Observer
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
         Vector2 center = new Vector2((double) width / 2, (double) height / 2);
-        Point2D.Double[] points = new Point2D.Double[localities.length];
-        for (int i = 0; i < localities.length; i++)
+        Point2D.Double[] points = new Point2D.Double[localities.count()];
+        int index = 0;
+        for (Locality l: localities)
         {
-            Vector2 pos = localities[i].getPosition().add(center);
-            points[i] = new Point2D.Double(pos.getX(1), pos.getX(2));
+            Vector2 pos = l.getPosition().add(center);
+            points[index] = new Point2D.Double(pos.getX(1), pos.getX(2));
+            index++;
         }
 
         g2.setColor(Color.BLACK);
@@ -112,6 +106,9 @@ public class MapView extends JPanel implements Observer
     @Override
     public void update()
     {
-
+        localities = model.getElements();
+        edges = model.getEdges();
+        lastPath = model.getLastPath().toArray(Integer.class);
+        repaint();
     }
 }
