@@ -2,11 +2,12 @@ package src.View;
 
 import src.Controller.Controller;
 import src.Model.Model;
+import src.Model.Observer.Observer;
 import src.View.Window.Navigation;
 
 import javax.swing.*;
 
-public class View
+public class View implements Observer
 {
     private final Model model;
 
@@ -28,5 +29,9 @@ public class View
     public Navigation getNavigationView()
     {
         return navigation;
+    }
+
+    public void update() {
+
     }
 }
