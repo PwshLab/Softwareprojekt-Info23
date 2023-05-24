@@ -7,7 +7,9 @@ import src.Model.Data.Locality.LocalityOrder;
 import src.Model.Model;
 import src.Model.Observer.Observer;
 
+import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
+import java.lang.reflect.InvocationTargetException;
 
 public class ListTableModel extends AbstractTableModel implements Observer
 {
@@ -55,28 +57,21 @@ public class ListTableModel extends AbstractTableModel implements Observer
     public void update()
     {
         updateOrderedData();
-        fireTableStructureChanged();
+
+        // Ohne warten gibt es beim Darstellen der Tabelle
+        // ab und an ArrayIndex Fehler
+        try {
+            SwingUtilities.invokeAndWait(() -> {fireTableStructureChanged();});
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        } catch (InvocationTargetException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void updateOrderedData()
     {
-        // 1: Sortierung nach der Nummerierung
-        // 2: Sortierung nach dem Namen
-        // 3: Sortierung nach dem Typen
-
-        int orderingType = Math.abs(currentOrder);
-        List<Locality> sortedEntries = switch (orderingType)
-        {
-            case 2 -> new SortedList<>(model.getElements(), LocalityOrder::ByName);
-            case 3 -> new SortedList<>(model.getElements(), LocalityOrder::ByType);
-            default -> model.getElements();
-        };
-
-        // Negativer Wert: Umgekehrte Sortierung
-        if (currentOrder < 0)
-            sortedEntries = sortedEntries.reversed();
-
-        orderedData = sortedEntries;
+        orderedData = model.getElements(currentOrder);
         updateFormattedData();
     }
 
