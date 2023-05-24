@@ -81,11 +81,16 @@ public class Model extends Observable
         List<Pair<Integer, Integer>> edges = new List<>();
 
         for (int i = 0; i < matrix.length; i++)
-            for (int j = 0; j < matrix.length - i; j++)
+            for (int j = i; j < matrix.length; j++)
                 if (matrix[i][j] < Double.MAX_VALUE)
                     edges.add(new Pair<>(i, j));
 
         return edges;
+    }
+
+    public double getEdge(Locality l1, Locality l2)
+    {
+        return graph.getEdge(l1, l2, Object::equals);
     }
 
     public List<Pair<Locality, Double>> generateEdges(Locality locality, int n, double variance)
