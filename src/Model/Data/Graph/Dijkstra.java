@@ -100,7 +100,7 @@ public class Dijkstra<T>
                 {
                     if (remaining.contains(neighbourNode, Integer::equals))
                     {
-                        updateDistance(nearestNode, neighbourNode);
+                        updateDistance(neighbourNode, nearestNode);
                     }
                 }
             }
