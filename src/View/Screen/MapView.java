@@ -3,6 +3,8 @@ package src.View.Screen;
 import src.Model.Data.CoordSystem.Vector2;
 import src.Model.Data.Locality.Locality;
 import src.Model.Data.Value.Pair;
+import src.Model.Model;
+import src.Model.Observer.Observer;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,8 +12,9 @@ import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 
-public class MapView extends JPanel
+public class MapView extends JPanel implements Observer
 {
+    private Model model;
     private final int width, height;
 
     private Locality[] localities;
@@ -19,13 +22,16 @@ public class MapView extends JPanel
     private Integer[] lastPath;
     private static final double circleSize = 5;
 
-    public MapView(int width, int height)
+    public MapView(Model model, int width, int height)
     {
+        this.model = model;
         this.width = width;
         this.height = height;
         localities = new Locality[0];
         edges = new Pair[0];
         lastPath = new Integer[0];
+
+        model.addObserver(this);
 
         initialize();
     }
@@ -94,5 +100,11 @@ public class MapView extends JPanel
                 lastPoint = points[lastPath[i]];
             }
         }
+    }
+
+    @Override
+    public void update()
+    {
+
     }
 }
