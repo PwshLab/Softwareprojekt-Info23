@@ -27,10 +27,10 @@ public class MapView extends JPanel
         edges = new Pair[0];
         lastPath = new Integer[0];
 
-        initialize();
+        intialize();
     }
 
-    private void initialize()
+    private void intialize()
     {
         setOpaque(true);
         setVisible(true);
