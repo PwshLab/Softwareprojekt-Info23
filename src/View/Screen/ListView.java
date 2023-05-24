@@ -6,8 +6,8 @@ import javax.swing.*;
 
 public class ListView extends JPanel
 {
-    String[] columnNames = {"Index", "Name", "Typ", "Beschreibung", "Position"};
-    JScrollPane scrollPane;
+    private static final String[] columnNames = {"Index", "Name", "Typ", "Beschreibung", "Position"};
+    private JScrollPane scrollPane;
 
     public ListView()
     {
