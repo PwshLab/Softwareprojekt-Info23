@@ -35,7 +35,7 @@ public class Graph<T>
     {
         /*
          * Noch nicht beschriebene Kanten werden mit dem
-         * Wert 0 Initialisiert
+         * Wert von Double.MAX_VALUE Initialisiert
          */
 
         nodes.add(new Node<>(object));
