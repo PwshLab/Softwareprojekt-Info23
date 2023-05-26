@@ -4,16 +4,19 @@ import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 import java.awt.*;
 
 public class ListDetailDisplay extends JPanel implements ListSelectionListener
 {
+    private final JTable table;
     private final TableModel tableModel;
     private final ListDisplayField[] displayFields;
     private Class<?>[] columnClasses;
 
     public ListDetailDisplay(JTable table)
     {
+        this.table = table;
         this.tableModel = table.getModel();
         this.displayFields = new ListDisplayField[tableModel.getColumnCount()];
         this.columnClasses = null;
@@ -51,16 +54,15 @@ public class ListDetailDisplay extends JPanel implements ListSelectionListener
             columnClasses[i] = tableModel.getColumnClass(i);
     }
 
-    //TODO : Fix mismatch between search and selection indices
     private void displayData(int index)
     {
         getColumnClasses();
         String columnContent;
         for (int i = 0; i < displayFields.length; i++)
         {
-            if (index > 0)
+            if (index >= 0)
             {
-                columnContent = columnClasses[i].cast(tableModel.getValueAt(index, i)).toString();
+                columnContent = columnClasses[i].cast(table.getValueAt(index, i)).toString();
                 displayFields[i].setContent(columnContent);
             }
             else
@@ -72,9 +74,7 @@ public class ListDetailDisplay extends JPanel implements ListSelectionListener
     public void valueChanged(ListSelectionEvent e)
     {
         ListSelectionModel lsm = (ListSelectionModel) e.getSource();
-        int firstIndex = e.getFirstIndex();
-        displayData(firstIndex);
-
-        System.out.println("First Index: " + firstIndex + " LSM Index: " + lsm.getLeadSelectionIndex());
+        int selectedIndex = lsm.getLeadSelectionIndex();
+        displayData(selectedIndex);
     }
 }
