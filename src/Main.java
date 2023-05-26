@@ -34,15 +34,17 @@ public class Main
             Locality l = new Locality(
                     "Test" + i,
                     LocalityType.values()[rnd.nextInt(LocalityType.values().length)],
-                    new Vector2(rnd.nextInt(-200, 200), rnd.nextInt(-200, 200))
+                    model.generatePosition()
                     );
-            List<Pair<Locality, Double>> edges = model.generateEdges(l, 1, 0.25);
-            model.addElement(l, edges);
+            //List<Pair<Locality, Double>> edges = model.generateEdges(l, 1, 0.25);
+            model.addElement(l);
+            /*
             if (edges.count() > 0)
             {
                 int j = model.getElements().indexOf(edges.get(0).getValue1(), Object::equals);
                 System.out.println("#" + i + " Edges: " + edges.count() + " First Edge: " + j + " Edge Distance: " + model.getEdge(edges.get(0).getValue1(), l));
             }
+             */
         }
     }
 }
