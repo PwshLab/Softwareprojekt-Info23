@@ -1,32 +1,10 @@
 package src.View.Screen.ListView;
 
 import src.Model.Model;
-
-import javax.swing.*;
-<<<<<<< Updated upstream
-import javax.swing.table.TableRowSorter;
-import java.awt.*;
-
-public class ListView extends JPanel
-{
-    private JTable table;
-    private TableRowSorter<ListTableModel> rowSorter;
-
-    public ListView(Model model)
-    {
-        initialize();
-        initializeSorter(model);
-    }
-
-    private void initialize()
-    {
-        setOpaque(true);
-        setVisible(true);
-
-=======
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.TableRowSorter;
+import javax.swing.*;
 import java.awt.*;
 
 public class ListView extends JPanel implements DocumentListener
@@ -54,7 +32,6 @@ public class ListView extends JPanel implements DocumentListener
 
     private void initializeTable()
     {
->>>>>>> Stashed changes
         table = new JTable();
         table.setPreferredScrollableViewportSize(new Dimension(500, 300));
         table.setFillsViewportHeight(true);
@@ -76,11 +53,6 @@ public class ListView extends JPanel implements DocumentListener
         table.setRowSorter(rowSorter);
     }
 
-<<<<<<< Updated upstream
-    public void setSearchString(String searchString)
-    {
-        rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + searchString));
-=======
     private void initializeTextField()
     {
         textField = new JTextField();
@@ -108,7 +80,6 @@ public class ListView extends JPanel implements DocumentListener
             setSearchString(searchText);
         else
             setSearchString("");
-        System.out.println(searchText);
     }
 
     @Override
@@ -127,7 +98,5 @@ public class ListView extends JPanel implements DocumentListener
     public void changedUpdate(DocumentEvent e)
     {
         handleDocumentEvent(e);
->>>>>>> Stashed changes
     }
-    //TODO : Add information block for selected entry
 }
