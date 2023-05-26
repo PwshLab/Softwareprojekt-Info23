@@ -15,6 +15,11 @@ import java.util.Random;
 
 public class Model extends Observable
 {
+    private static final int interconnectedness = 3;
+    private static final double distanceVariance = 0.25;
+    private static final double worldBound = 200; // Wird in jede richtung vom Ursprung gezählt
+    private static final double minGenDistance = 20;
+
     private final Random rnd;
     private final Graph<Locality> graph;
     private final Dijkstra<Locality> dijkstra;
@@ -59,12 +64,10 @@ public class Model extends Observable
         return elements.filter((Locality l) -> l.getPosition().distance(position) <= distance);
     }
 
-    public void addElement(Locality locality, List<Pair<Locality, Double>> edges)
+    public void addElement(Locality locality)
     {
         graph.add(locality);
-
-        for (Pair<Locality, Double> edge: edges)
-            graph.setEdge(locality, edge.getValue1(), edge.getValue2(), Object::equals);
+        recalculateEdges(locality);
 
         notifyObservers();
     }
@@ -93,24 +96,24 @@ public class Model extends Observable
         return graph.getEdge(l1, l2, Object::equals);
     }
 
-    public List<Pair<Locality, Double>> generateEdges(Locality locality, int n, double variance)
+    private List<Pair<Locality, Double>> generateEdges(Locality locality)
     {
         Locality[] localities = graph.getElements().toArray(Locality.class);
         List<Vector2> points = new List<>();
 
-        n = Math.min(n, localities.length);
+        int nextNodeCount = Math.min(interconnectedness, localities.length);
 
         for (Locality l: localities)
             points.add(l.getPosition());
 
-        int[] nearest = Grid.getNNearest(locality.getPosition(), points, n);
+        int[] nearest = Grid.getNNearest(locality.getPosition(), points, nextNodeCount);
         double distance;
         List<Pair<Locality, Double>> edges = new List<>();
 
         for (int i: nearest)
         {
             distance = locality.getPosition().distance(localities[i].getPosition());
-            distance += distance * variance * Math.abs(rnd.nextGaussian());
+            distance += distance * distanceVariance * Math.abs(rnd.nextGaussian());
             edges.add(new Pair<>(localities[i], distance));
         }
 
@@ -130,5 +133,23 @@ public class Model extends Observable
     public List<Integer> getLastPath()
     {
         return lastPath;
+    }
+
+    private void recalculateEdges(Locality locality)
+    {
+        List<Pair<Locality, Double>> edges = generateEdges(locality);
+        graph.clearEdges(locality, Object::equals);
+        graph.setEdges(locality, edges, Object::equals);
+    }
+
+    public Vector2 generatePosition()
+    {
+        Vector2 position = null;
+        while (position == null || getElementsByDistance(position, minGenDistance).count() > 0)
+            position = new Vector2(
+                    Math.floor(rnd.nextDouble(-worldBound, worldBound)),
+                    Math.floor(rnd.nextDouble(-worldBound, worldBound))
+            );
+        return position;
     }
 }
