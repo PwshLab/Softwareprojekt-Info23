@@ -1,7 +1,10 @@
 package src.Model.Data.Graph;
 
 import src.Model.Data.LinkedList.List;
+import src.Model.Data.Locality.Locality;
+import src.Model.Data.Value.Pair;
 
+import java.util.Arrays;
 import java.util.function.BiPredicate;
 
 /**
@@ -41,15 +44,12 @@ public class Graph<T>
         nodes.add(new Node<>(object));
 
         for (List<Double> list: matrix)
-        {
             list.add(Double.MAX_VALUE);
-        }
 
         List<Double> list = new List<>();
         for (int i = 0; i < nodes.count(); i++)
-        {
             list.add(Double.MAX_VALUE);
-        }
+
         matrix.add(list);
     }
 
@@ -68,9 +68,8 @@ public class Graph<T>
         nodes.pop(index);
 
         for (List<Double> list: matrix)
-        {
             list.pop(index);
-        }
+
         matrix.pop(index);
     }
 
@@ -168,5 +167,36 @@ public class Graph<T>
     {
         int i1 = indexOf(obj1, equality), i2 = indexOf(obj2, equality);
         return getEdge(i1, i2);
+    }
+
+    /**
+     * Methode zum Entfernen aller Kannten eins bestimmten Knotens
+     * @param object Objekt des Typen T
+     * @param equality Benutzer spezifizierte Funktion zum Überprüfen
+     *                 der Gleichheit zweier Objekte
+     */
+    public void clearEdges(T object, BiPredicate<T, T> equality)
+    {
+        int index = indexOf(object, equality);
+        List<Double> defaultValues = new List<>();
+        for (int i = 0; i < nodes.count(); i++)
+            defaultValues.add(Double.MAX_VALUE);
+
+        matrix.set(index, defaultValues);
+        for (List<Double> row: matrix)
+            row.set(index, Double.MAX_VALUE);
+    }
+
+    /**
+     * Methode zum Setzen der Kanten eines Knotens
+     * @param object Objekt des Typen T
+     * @param edges Liste von Knoten
+     * @param equality Benutzer spezifizierte Funktion zum Überprüfen
+     *                 der Gleichheit zweier Objekte
+     */
+    public void setEdges(T object, List<Pair<T, Double>> edges, BiPredicate<T, T> equality)
+    {
+        for (Pair<T, Double> edge: edges)
+            setEdge(object, edge.getValue1(), edge.getValue2(), equality);
     }
 }
