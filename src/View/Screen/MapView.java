@@ -16,20 +16,14 @@ import java.awt.geom.Point2D;
 public class MapView extends JPanel implements Observer
 {
     private final Model model;
-    private final int width, height;
-
-    private static final double displayFactor = 0.875;
-
     private List<Locality> localities;
     private List<Pair<Integer, Integer>> edges;
     private Integer[] lastPath;
     private static final double circleSize = 5;
 
-    public MapView(Model model, int width, int height)
+    public MapView(Model model)
     {
         this.model = model;
-        this.width = width;
-        this.height = height;
         this.localities = new List<>();
         this.edges = new List<>();
         this.lastPath = new Integer[0];
@@ -42,9 +36,9 @@ public class MapView extends JPanel implements Observer
     {
         setOpaque(true);
         setVisible(true);
-        setPreferredSize(new Dimension(width, height));
+        setPreferredSize(new Dimension(model.getWorldBound() * 2 + 10, model.getWorldBound() * 2 + 10));
         setBackground(Color.WHITE);
-        setBorder(BorderFactory.createEmptyBorder(5, 0, 0, 0));
+        setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
     }
 
     @Override
@@ -54,13 +48,16 @@ public class MapView extends JPanel implements Observer
         Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-        Vector2 center = new Vector2((double) width / 2, (double) height / 2);
+        double averageSize = (double) (getBounds().width + getBounds().height) / 2;
+        double displayFactor = averageSize / (model.getWorldBound() * 2) * 0.875;
+        System.out.println("Display Factor: " + displayFactor);
+        Vector2 center = new Vector2((double) getBounds().width / 2, (double) getBounds().height / 2);
         Point2D.Double[] points = new Point2D.Double[localities.count()];
         int index = 0;
         for (Locality l: localities)
         {
-            Vector2 pos = l.getPosition().add(center);
-            points[index] = new Point2D.Double(pos.getX(1) * displayFactor, pos.getX(2) * displayFactor);
+            Vector2 pos = l.getPosition().multiply(displayFactor).add(center);
+            points[index] = new Point2D.Double(pos.getX(1), pos.getX(2));
             index++;
         }
 
