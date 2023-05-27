@@ -2,20 +2,27 @@ package src.Controller.Component;
 
 public class NumberField extends TextDataField<Double>
 {
-    public NumberField()
+    public NumberField(String fieldLabel)
     {
-        super();
+        super(fieldLabel);
     }
 
     @Override
     protected boolean checkError()
     {
-        return false;
+        try
+        {
+            Double.parseDouble(textField.getText());
+            return false;
+        } catch (NumberFormatException e)
+        {
+            return true;
+        }
     }
 
     @Override
     protected Double parseData()
     {
-        return null;
+        return Double.parseDouble(textField.getText());
     }
 }
