@@ -6,7 +6,7 @@ import java.awt.*;
 
 public class PointField extends DataField<Vector2>
 {
-    private NumberField field1, field2;
+    private final NumberField field1, field2;
 
     public PointField(String fieldLabel)
     {
