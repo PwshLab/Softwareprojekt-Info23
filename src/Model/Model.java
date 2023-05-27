@@ -172,10 +172,12 @@ public class Model extends Observable
         filterByDistance = true;
         filterPosition = newFilterPosition;
         filterDistance = newFilterDistance;
+        notifyObservers();
     }
 
     public void resetFilterByDistance()
     {
         filterByDistance = false;
+        notifyObservers();
     }
 }
