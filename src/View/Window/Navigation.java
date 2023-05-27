@@ -3,6 +3,7 @@ package src.View.Window;
 import src.Model.Model;
 import src.View.Screen.ListView.ListView;
 import src.View.Screen.MapView;
+import src.View.Screen.PanelTitle;
 
 import javax.swing.*;
 import java.awt.*;
@@ -32,17 +33,22 @@ public class Navigation extends JPanel
         JPanel panelLeft = new JPanel();
         panelLeft.setLayout(new BoxLayout(panelLeft, BoxLayout.Y_AXIS));
         panelLeft.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        panelLeft.setPreferredSize(new Dimension(600, 600));
         mainPanel.add(panelLeft);
 
         JPanel panelRight = new JPanel();
         panelRight.setLayout(new BoxLayout(panelRight, BoxLayout.Y_AXIS));
-        panelRight.setBorder(BorderFactory.createEmptyBorder(25, 25, 50, 25));
+        panelRight.setBorder(BorderFactory.createEmptyBorder(5, 25, 45, 25));
+        panelRight.setPreferredSize(new Dimension(600, 600));
         mainPanel.add(panelRight);
 
+        panelLeft.add(new PanelTitle("Lokalitäten"));
         listView = new ListView(model);
         panelLeft.add(listView);
 
-        mapView = new MapView(model, 400, 400);
+        panelRight.add(new PanelTitle("Stadtkarte"));
+        int worldSize = model.getWorldBound() * 2;
+        mapView = new MapView(model, worldSize, worldSize);
         panelRight.add(mapView);
 
         setVisible(true);
