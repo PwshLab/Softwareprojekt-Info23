@@ -18,6 +18,8 @@ public class MapView extends JPanel implements Observer
     private final Model model;
     private final int width, height;
 
+    private static final double displayFactor = 0.875;
+
     private List<Locality> localities;
     private List<Pair<Integer, Integer>> edges;
     private Integer[] lastPath;
@@ -42,6 +44,7 @@ public class MapView extends JPanel implements Observer
         setVisible(true);
         setPreferredSize(new Dimension(width, height));
         setBackground(Color.WHITE);
+        setBorder(BorderFactory.createEmptyBorder(5, 0, 0, 0));
     }
 
     @Override
@@ -57,7 +60,7 @@ public class MapView extends JPanel implements Observer
         for (Locality l: localities)
         {
             Vector2 pos = l.getPosition().add(center);
-            points[index] = new Point2D.Double(pos.getX(1), pos.getX(2));
+            points[index] = new Point2D.Double(pos.getX(1) * displayFactor, pos.getX(2) * displayFactor);
             index++;
         }
 
