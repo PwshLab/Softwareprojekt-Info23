@@ -34,6 +34,7 @@ public class Main
             Locality l = new Locality(
                     "Test" + i,
                     LocalityType.values()[rnd.nextInt(LocalityType.values().length)],
+                    "Lorem Ipsum Dolor Sit Amtet, Consetetur Sadipiscing Elitir, Nonumy",
                     model.generatePosition()
                     );
             //List<Pair<Locality, Double>> edges = model.generateEdges(l, 1, 0.25);

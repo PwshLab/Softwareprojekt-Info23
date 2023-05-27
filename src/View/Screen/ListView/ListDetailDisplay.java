@@ -31,17 +31,30 @@ public class ListDetailDisplay extends JPanel implements ListSelectionListener
         setOpaque(true);
         setVisible(true);
         setLayout(new GridLayout());
+        //setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+        //setLayout(new FlowLayout());
+        setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
         initializeDisplayFields();
     }
 
     private void initializeDisplayFields()
     {
+        JPanel valuePanel = new JPanel();
+        valuePanel.setLayout(new BoxLayout(valuePanel, BoxLayout.Y_AXIS));
+        JPanel descriptionPanel = new JPanel();
+        descriptionPanel.setLayout(new GridLayout());
+
         for (int i = 0; i < displayFields.length; i++)
         {
             displayFields[i] = new ListDisplayField(tableModel.getColumnName(i));
-            add(displayFields[i]);
+            if (i != 2)
+                valuePanel.add(displayFields[i]);
+            else
+                descriptionPanel.add(displayFields[i]);
         }
+        add(valuePanel);
+        add(descriptionPanel);
     }
 
     private void getColumnClasses()
@@ -60,7 +73,7 @@ public class ListDetailDisplay extends JPanel implements ListSelectionListener
         String columnContent;
         for (int i = 0; i < displayFields.length; i++)
         {
-            if (index >= 0)
+            if (index >= 0 && index < table.getRowCount())
             {
                 columnContent = columnClasses[i].cast(table.getValueAt(index, i)).toString();
                 displayFields[i].setContent(columnContent);
