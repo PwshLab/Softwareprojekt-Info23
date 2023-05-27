@@ -2,9 +2,9 @@ package src.Controller.Component;
 
 public class TextField extends TextDataField<String>
 {
-    public TextField()
+    public TextField(String fieldLabel)
     {
-        super();
+        super(fieldLabel);
     }
 
     @Override
