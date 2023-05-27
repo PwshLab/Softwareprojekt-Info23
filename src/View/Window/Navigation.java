@@ -47,8 +47,7 @@ public class Navigation extends JPanel
         panelLeft.add(listView);
 
         panelRight.add(new PanelTitle("Stadtkarte"));
-        int worldSize = model.getWorldBound() * 2;
-        mapView = new MapView(model, worldSize, worldSize);
+        mapView = new MapView(model);
         panelRight.add(mapView);
 
         setVisible(true);
