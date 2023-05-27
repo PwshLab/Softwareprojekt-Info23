@@ -37,15 +37,7 @@ public class Main
                     "Lorem Ipsum Dolor Sit Amtet, Consetetur Sadipiscing Elitir, Nonumy",
                     model.generatePosition()
                     );
-            //List<Pair<Locality, Double>> edges = model.generateEdges(l, 1, 0.25);
             model.addElement(l);
-            /*
-            if (edges.count() > 0)
-            {
-                int j = model.getElements().indexOf(edges.get(0).getValue1(), Object::equals);
-                System.out.println("#" + i + " Edges: " + edges.count() + " First Edge: " + j + " Edge Distance: " + model.getEdge(edges.get(0).getValue1(), l));
-            }
-             */
         }
     }
 }
