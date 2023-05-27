@@ -4,9 +4,13 @@ import src.Model.Data.Locality.LocalityType;
 
 public class TypeField extends SelectDataField<LocalityType>
 {
-    public TypeField()
+    public TypeField(String fieldLabel)
     {
-        super();
+        super(fieldLabel);
+
+        for (LocalityType type: LocalityType.values())
+            comboBox.addItem(type);
+        comboBox.setSelectedIndex(0);
     }
 
     @Override
@@ -18,7 +22,7 @@ public class TypeField extends SelectDataField<LocalityType>
     @Override
     protected LocalityType parseData()
     {
-        return null;
+        return comboBox.getItemAt(comboBox.getSelectedIndex());
     }
 
 }
