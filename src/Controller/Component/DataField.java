@@ -1,19 +1,26 @@
 package src.Controller.Component;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 
 public abstract class DataField<T> extends JPanel
 {
     private boolean isError;
 
+    // TODO : Fix JLabel and TextField misalignment
     public DataField(String fieldLabel)
     {
         setOpaque(true);
         setVisible(true);
         setLayout(new BorderLayout());
-        setBackground(Color.WHITE);
-        add(new JLabel(fieldLabel));
+        setMaximumSize(new Dimension(600, 19));
+
+        JPanel panel = new JPanel();
+        panel.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        JLabel label = new JLabel(fieldLabel);
+        panel.add(label);
+        add(panel, BorderLayout.WEST);
 
         isError = false;
     }
