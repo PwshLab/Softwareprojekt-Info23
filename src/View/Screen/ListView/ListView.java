@@ -55,10 +55,14 @@ public class ListView extends JPanel implements DocumentListener
 
     private void initializeTextField()
     {
+        JPanel textPanel = new JPanel();
+        textPanel.add(new JLabel("Suche: "));
+        textPanel.setLayout(new BoxLayout(textPanel, BoxLayout.X_AXIS));
         textField = new JTextField();
         textField.getDocument().addDocumentListener(this);
-        textField.setMaximumSize(new Dimension(600, 5));
-        add(textField);
+        textField.setMaximumSize(new Dimension(600, 19));
+        textPanel.add(textField);
+        add(textPanel);
     }
 
     private void initializeDetailDisplay()
