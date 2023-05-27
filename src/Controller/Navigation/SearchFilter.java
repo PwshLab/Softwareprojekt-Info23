@@ -2,17 +2,23 @@ package src.Controller.Navigation;
 
 import src.Controller.Component.NumberField;
 import src.Controller.Component.PointField;
+import src.Model.Model;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class SearchFilter extends JPanel
+public class SearchFilter extends JPanel implements ActionListener
 {
+    private final Model model;
     private final PointField pointField;
     private final NumberField numberField;
 
-    public SearchFilter()
+    public SearchFilter(Model model)
     {
+        this.model = model;
+
         setOpaque(true);
         setVisible(true);
         setLayout(new BorderLayout());
@@ -34,6 +40,16 @@ public class SearchFilter extends JPanel
 
         JButton button = new JButton("Anwenden");
         button.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        button.addActionListener(this);
         centerPanel.add(button);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e)
+    {
+        if (pointField.hasError() || numberField.hasError())
+        {
+            model.resetFilterByDistance();
+        }
     }
 }

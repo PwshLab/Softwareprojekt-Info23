@@ -42,8 +42,8 @@ public class Controller
         navigationWindow.add(view.getNavigationView());
         JPanel bottomUI = new JPanel();
         bottomUI.setLayout(new GridLayout());
-        bottomUI.add(new SearchFilter());
-        bottomUI.add(new SearchPath());
+        bottomUI.add(new SearchFilter(model));
+        bottomUI.add(new SearchPath(model));
         bottomUI.setPreferredSize(new Dimension(1200, 75));
         navigationWindow.add(bottomUI);
         //TODO : Add fields for start and endpoint together with search path button
