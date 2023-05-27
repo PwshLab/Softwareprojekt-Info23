@@ -2,22 +2,32 @@ package src.Controller.Component;
 
 import src.Model.Data.CoordSystem.Vector2;
 
+import java.awt.*;
+
 public class PointField extends DataField<Vector2>
 {
-    public PointField()
+    private NumberField field1, field2;
+
+    public PointField(String fieldLabel)
     {
-        super();
+        super(fieldLabel);
+
+        setLayout(new GridLayout());
+        field1 = new NumberField("X");
+        add(field1);
+        field2 = new NumberField("Y");
+        add(field2);
     }
 
     @Override
     protected boolean checkError()
     {
-        return false;
+        return field1.checkError() || field2.checkError();
     }
 
     @Override
     protected Vector2 parseData()
     {
-        return null;
+        return new Vector2(field1.parseData(), field2.parseData());
     }
 }
