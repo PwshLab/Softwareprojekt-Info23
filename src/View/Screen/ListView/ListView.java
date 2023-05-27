@@ -40,6 +40,7 @@ public class ListView extends JPanel implements DocumentListener
         table.setColumnSelectionAllowed(false);
         table.setRowSelectionAllowed(true);
         table.setDragEnabled(false);
+        table.getTableHeader().setReorderingAllowed(false);
         JScrollPane scrollPane = new JScrollPane(table);
         add(scrollPane);
     }
