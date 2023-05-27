@@ -1,24 +1,30 @@
 package src.View.Screen.ListView;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class ListDisplayField extends JPanel
 {
-    private final JLabel contentField;
+    private final JTextPane contentField;
 
     public ListDisplayField(String fieldLabel)
     {
         setOpaque(true);
         setVisible(true);
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        setLayout(new BorderLayout());
 
         JLabel labelField = new JLabel();
         labelField.setText(fieldLabel);
-        add(labelField);
+        labelField.setBackground(Color.LIGHT_GRAY);
+        labelField.setOpaque(true);
+        labelField.setBorder(BorderFactory.createBevelBorder(0));
+        add(labelField, BorderLayout.NORTH);
 
-        contentField = new JLabel();
+        contentField = new JTextPane();
         contentField.setText(" ");
-        add(contentField);
+        contentField.setEditable(false);
+        contentField.setBorder(BorderFactory.createBevelBorder(0));
+        add(contentField, BorderLayout.CENTER);
     }
 
     public void setContent(String content)
