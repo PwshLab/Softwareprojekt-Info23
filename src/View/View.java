@@ -6,7 +6,6 @@ import src.View.Window.Navigation;
 public class View
 {
     private final Model model;
-
     private final Navigation navigation;
 
     public View(Model model)
