@@ -1,5 +1,7 @@
 package src.Controller;
 
+import src.Controller.Navigation.SearchFilter;
+import src.Controller.Navigation.SearchPath;
 import src.Model.Model;
 import src.View.View;
 
@@ -26,6 +28,7 @@ public class Controller
     {
         mainFrame = new JFrame("Search a Bar");
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        mainFrame.setResizable(false);
         mainFrame.pack();
         mainFrame.setVisible(true);
     }
@@ -37,6 +40,10 @@ public class Controller
         navigationWindow.setLayout(new BoxLayout(navigationWindow, BoxLayout.Y_AXIS));
         navigationWindow.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         navigationWindow.add(view.getNavigationView());
+        JPanel bottomUI = new JPanel();
+        bottomUI.setLayout(new GridLayout());
+        bottomUI.add(new SearchFilter());
+        bottomUI.add(new SearchPath());
         //TODO : Add fields for start and endpoint together with search path button
     }
 
