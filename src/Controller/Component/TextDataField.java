@@ -7,9 +7,9 @@ public abstract class TextDataField<T> extends DataField<T>
 {
     protected JTextField textField;
 
-    public TextDataField()
+    public TextDataField(String fieldLabel)
     {
-        super();
+        super(fieldLabel);
 
         textField = new JTextField();
         add(textField, BorderLayout.CENTER);
