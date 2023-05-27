@@ -44,6 +44,8 @@ public class Controller
         bottomUI.setLayout(new GridLayout());
         bottomUI.add(new SearchFilter());
         bottomUI.add(new SearchPath());
+        bottomUI.setPreferredSize(new Dimension(1200, 75));
+        navigationWindow.add(bottomUI);
         //TODO : Add fields for start and endpoint together with search path button
     }
 
