@@ -17,14 +17,16 @@ public class Model extends Observable
 {
     private static final int interconnectedness = 3;
     private static final double distanceVariance = 0.25;
-    private static final double worldBound = 200; // Wird in jede richtung vom Ursprung gezählt
+    private static final int worldBound = 200; // Wird in jede richtung vom Ursprung gezählt
     private static final double minGenDistance = 20;
 
     private final Random rnd;
     private final Graph<Locality> graph;
     private final Dijkstra<Locality> dijkstra;
-
     private List<Integer> lastPath;
+    private boolean filterByDistance;
+    private Vector2 filterPosition;
+    private double filterDistance;
 
     public Model()
     {
@@ -32,11 +34,18 @@ public class Model extends Observable
         graph = new Graph<>();
         dijkstra = new Dijkstra<>(graph);
         lastPath = new List<>();
+        filterByDistance = false;
+        filterPosition = Vector2.zero;
+        filterDistance = 0;
+
     }
 
     public List<Locality> getElements()
     {
-        return graph.getElements();
+        if (!filterByDistance)
+            return graph.getElements();
+        else
+            return graph.getElements().filter((Locality l) -> l.getPosition().distance(filterPosition) <= filterDistance);
     }
 
     public List<Locality> getElements(int order)
@@ -147,9 +156,26 @@ public class Model extends Observable
         Vector2 position = null;
         while (position == null || getElementsByDistance(position, minGenDistance).count() > 0)
             position = new Vector2(
-                    Math.floor(rnd.nextDouble(-worldBound, worldBound)),
-                    Math.floor(rnd.nextDouble(-worldBound, worldBound))
+                    rnd.nextInt(-worldBound, worldBound),
+                    rnd.nextInt(-worldBound, worldBound)
             );
         return position;
+    }
+
+    public int getWorldBound()
+    {
+        return worldBound;
+    }
+
+    public void setFilterByDistance(Vector2 newFilterPosition, double newFilterDistance)
+    {
+        filterByDistance = true;
+        filterPosition = newFilterPosition;
+        filterDistance = newFilterDistance;
+    }
+
+    public void resetFilterByDistance()
+    {
+        filterByDistance = false;
     }
 }
