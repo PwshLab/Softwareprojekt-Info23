@@ -12,6 +12,10 @@ public abstract class TextDataField<T> extends DataField<T>
         super(fieldLabel);
 
         textField = new JTextField();
-        add(textField, BorderLayout.CENTER);
+        JPanel panel = new JPanel();
+        panel.add(textField, BorderLayout.CENTER);
+        panel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        panel.setLayout(new GridLayout());
+        add(panel);
     }
 }
