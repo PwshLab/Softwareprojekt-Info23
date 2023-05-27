@@ -39,6 +39,7 @@ public abstract class DataField<T> extends JPanel
 
     public boolean hasError()
     {
+        checkError();
         return isError;
     }
 
