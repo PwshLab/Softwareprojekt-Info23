@@ -7,12 +7,13 @@ public abstract class DataField<T> extends JPanel
 {
     private boolean isError;
 
-    public DataField()
+    public DataField(String fieldLabel)
     {
         setOpaque(true);
         setVisible(true);
         setLayout(new BorderLayout());
         setBackground(Color.WHITE);
+        add(new JLabel(fieldLabel));
 
         isError = false;
     }
