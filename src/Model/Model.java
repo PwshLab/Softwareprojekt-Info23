@@ -48,6 +48,26 @@ public class Model extends Observable
             return graph.getElements().filter((Locality l) -> l.getPosition().distance(filterPosition) <= filterDistance);
     }
 
+    public List<Locality> getElementsUnfiltered()
+    {
+        return graph.getElements();
+    }
+
+    public boolean isFilterByDistance()
+    {
+        return filterByDistance;
+    }
+
+    public Vector2 getFilterPosition()
+    {
+        return filterPosition;
+    }
+
+    public double getFilterDistance()
+    {
+        return filterDistance;
+    }
+
     public List<Locality> getElements(int order)
     {
         // 1: Sortierung nach der Nummerierung
