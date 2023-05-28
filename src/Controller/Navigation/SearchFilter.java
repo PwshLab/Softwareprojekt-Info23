@@ -47,7 +47,7 @@ public class SearchFilter extends JPanel implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e)
     {
-        // TODO : Fix mistakes in error checking
+        // TODO: Fix mistakes in error checking
         if (pointField.hasError() || numberField.hasError())
         {
             model.resetFilterByDistance();
