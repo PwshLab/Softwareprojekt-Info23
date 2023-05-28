@@ -50,7 +50,7 @@ public class MapView extends JPanel implements Observer
 
         double averageSize = (double) (getBounds().width + getBounds().height) / 2;
         double displayFactor = averageSize / (model.getWorldBound() * 2) * 0.875;
-        System.out.println("Display Factor: " + displayFactor);
+
         Vector2 center = new Vector2((double) getBounds().width / 2, (double) getBounds().height / 2);
         Point2D.Double[] points = new Point2D.Double[localities.count()];
         int index = 0;
@@ -86,6 +86,23 @@ public class MapView extends JPanel implements Observer
             }
         }
 
+        if (model.isFilterByDistance())
+        {
+            Vector2 filterPos = model.getFilterPosition().multiply(displayFactor).add(center);
+            double filterDist = model.getFilterDistance() * displayFactor;
+            Ellipse2D.Double filtCircle = new Ellipse2D.Double(
+                    filterPos.getX(1) - filterDist,
+                    filterPos.getX(2) - filterDist,
+                    filterDist * 2,
+                    filterDist * 2
+            );
+            g2.setColor(Color.CYAN);
+            g2.draw(filtCircle);
+            Color transparentCyan = new Color(Color.CYAN.getRed(), Color.CYAN.getGreen(), Color.CYAN.getBlue(), 25);
+            g2.setColor(transparentCyan);
+            g2.fill(filtCircle);
+        }
+
         Font font = g2.getFont();
         g2.setFont(new Font(font.getName(), font.getStyle(), 18));
         for (int i = 0; i < points.length; i++)
@@ -106,7 +123,7 @@ public class MapView extends JPanel implements Observer
     @Override
     public void update()
     {
-        localities = model.getElements();
+        localities = model.getElementsUnfiltered();
         edges = model.getEdges();
         lastPath = model.getLastPath().toArray(Integer.class);
         repaint();
