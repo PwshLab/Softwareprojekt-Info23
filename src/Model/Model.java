@@ -53,6 +53,11 @@ public class Model extends Observable
         return graph.getElements();
     }
 
+    public int getElementCount()
+    {
+        return graph.getElements().count();
+    }
+
     public boolean isFilterByDistance()
     {
         return filterByDistance;
