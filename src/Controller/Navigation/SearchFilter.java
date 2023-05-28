@@ -38,10 +38,13 @@ public class SearchFilter extends JPanel implements ActionListener
         upperCenter.add(numberField);
         add(centerPanel, BorderLayout.CENTER);
 
+        JPanel buttonPanel = new JPanel();
         JButton button = new JButton("Anwenden");
+        buttonPanel.add(button);
         button.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        button.setMaximumSize(new Dimension(50, 30));
         button.addActionListener(this);
-        centerPanel.add(button);
+        centerPanel.add(buttonPanel);
     }
 
     @Override
