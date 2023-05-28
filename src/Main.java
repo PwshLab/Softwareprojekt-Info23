@@ -18,9 +18,6 @@ public class Main
         Controller controller = new Controller(model, view);
 
         generateData(model, 25);
-
-        model.getPath(model.getElements().get(2), model.getElements().get(7));
-        System.out.println("Last Path Length: " + model.getLastPath().count());
     }
 
     private static void generateData(Model model, int ammount)
