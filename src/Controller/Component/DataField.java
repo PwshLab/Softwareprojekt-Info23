@@ -6,8 +6,6 @@ import java.awt.*;
 
 public abstract class DataField<T> extends JPanel
 {
-    private boolean isError;
-
     // TODO : Fix JLabel and TextField misalignment
     public DataField(String fieldLabel)
     {
@@ -21,26 +19,30 @@ public abstract class DataField<T> extends JPanel
         JLabel label = new JLabel(fieldLabel);
         panel.add(label);
         add(panel, BorderLayout.WEST);
-
-        isError = false;
     }
 
     private void setError()
     {
-        isError = true;
         setBackground(Color.RED);
     }
 
     private void clearError()
     {
-        isError = false;
         setBackground(Color.WHITE);
     }
 
     public boolean hasError()
     {
-        checkError();
-        return isError;
+        if (checkError())
+        {
+            setError();
+            return true;
+        }
+        else
+        {
+            clearError();
+            return false;
+        }
     }
 
     protected abstract boolean checkError();
@@ -49,14 +51,8 @@ public abstract class DataField<T> extends JPanel
     public T readData()
     {
         if (checkError())
-        {
-            setError();
             return null;
-        }
         else
-        {
-            clearError();
             return parseData();
-        }
     }
 }
