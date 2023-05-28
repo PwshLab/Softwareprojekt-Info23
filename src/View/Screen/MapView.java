@@ -72,6 +72,7 @@ public class MapView extends JPanel implements Observer
         }
 
         g2.setColor(Color.BLUE);
+        g2.setStroke(new BasicStroke(2));
         if (lastPath.length >= 2)
         {
             Point2D.Double lastPoint = points[lastPath[0]];
