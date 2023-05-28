@@ -46,7 +46,6 @@ public class Controller
         bottomUI.add(new SearchPath(model));
         bottomUI.setPreferredSize(new Dimension(1200, 75));
         navigationWindow.add(bottomUI);
-        //TODO : Add fields for start and endpoint together with search path button
     }
 
     private void setWindowNavigation()
