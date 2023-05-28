@@ -15,6 +15,7 @@ public class Controller
 
     private JFrame mainFrame;
     private JPanel navigationWindow;
+    private JPanel administrationWindow;
 
     public Controller(Model model, View view)
     {
@@ -52,6 +53,11 @@ public class Controller
     {
         mainFrame.setContentPane(navigationWindow);
         mainFrame.pack();
+    }
+
+    private void initializeAdministrationWindow()
+    {
+        administrationWindow = new JPanel();
     }
 
     private void initialize()
