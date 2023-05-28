@@ -50,13 +50,17 @@ public class ListTableModel extends AbstractTableModel implements Observer
     {
         updateData();
 
+        // TODO: Fix Threading error when update is called
         // Ohne warten gibt es beim Darstellen der Tabelle
         // ab und an ArrayIndex Fehler
+        /*
         try {
             SwingUtilities.invokeAndWait(() -> {fireTableStructureChanged();});
         } catch (InterruptedException | InvocationTargetException e) {
             throw new RuntimeException(e);
         }
+         */
+        fireTableStructureChanged();
     }
 
     private void updateData()
