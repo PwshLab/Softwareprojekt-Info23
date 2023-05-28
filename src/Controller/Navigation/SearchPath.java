@@ -81,12 +81,16 @@ public class SearchPath extends JPanel implements ActionListener
             } catch (IndexOutOfBoundsException exception)
             {
                 displayPath(new List<>());
+                model.clearLastPath();
                 return;
             }
             List<Integer> path =  model.getPath(l1, l2);
             displayPath(path);
         }
         else
+        {
             displayPath(new List<>());
+            model.clearLastPath();
+        }
     }
 }

@@ -169,6 +169,12 @@ public class Model extends Observable
         return lastPath;
     }
 
+    public void clearLastPath()
+    {
+        lastPath = new List<>();
+        notifyObservers();
+    }
+
     private void recalculateEdges(Locality locality)
     {
         List<Pair<Locality, Double>> edges = generateEdges(locality);
