@@ -1,7 +1,6 @@
 package src.Controller.Component;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 
 public abstract class DataField<T> extends JPanel

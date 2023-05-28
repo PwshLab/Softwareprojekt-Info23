@@ -1,10 +1,11 @@
 package src.View.Screen.ListView;
 
 import src.Model.Model;
+
+import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.TableRowSorter;
-import javax.swing.*;
 import java.awt.*;
 
 public class ListView extends JPanel implements DocumentListener

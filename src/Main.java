@@ -1,11 +1,8 @@
 package src;
 
 import src.Controller.Controller;
-import src.Model.Data.CoordSystem.Vector2;
-import src.Model.Data.LinkedList.List;
 import src.Model.Data.Locality.Locality;
 import src.Model.Data.Locality.LocalityType;
-import src.Model.Data.Value.Pair;
 import src.Model.Model;
 import src.View.View;
 
