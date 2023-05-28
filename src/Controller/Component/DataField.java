@@ -5,6 +5,8 @@ import java.awt.*;
 
 public abstract class DataField<T> extends JPanel
 {
+    private final JPanel panel;
+
     // TODO : Fix JLabel and TextField misalignment
     public DataField(String fieldLabel)
     {
@@ -13,7 +15,7 @@ public abstract class DataField<T> extends JPanel
         setLayout(new BorderLayout());
         setMaximumSize(new Dimension(600, 19));
 
-        JPanel panel = new JPanel();
+        panel = new JPanel();
         panel.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
         JLabel label = new JLabel(fieldLabel);
         panel.add(label);
@@ -22,12 +24,12 @@ public abstract class DataField<T> extends JPanel
 
     private void setError()
     {
-        setBackground(Color.RED);
+        panel.setBackground(Color.RED);
     }
 
     private void clearError()
     {
-        setBackground(Color.WHITE);
+        panel.setBackground(new JPanel().getBackground());
     }
 
     public boolean hasError()
