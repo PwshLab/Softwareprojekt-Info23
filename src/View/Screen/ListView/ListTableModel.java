@@ -7,7 +7,6 @@ import src.Model.Observer.Observer;
 
 import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
-import java.lang.reflect.InvocationTargetException;
 
 public class ListTableModel extends AbstractTableModel implements Observer
 {
@@ -53,6 +52,7 @@ public class ListTableModel extends AbstractTableModel implements Observer
         // TODO: Fix Threading error when update is called
         // Ohne warten gibt es beim Darstellen der Tabelle
         // ab und an ArrayIndex Fehler
+
         /*
         try {
             SwingUtilities.invokeAndWait(() -> {fireTableStructureChanged();});
@@ -60,7 +60,8 @@ public class ListTableModel extends AbstractTableModel implements Observer
             throw new RuntimeException(e);
         }
          */
-        fireTableStructureChanged();
+        SwingUtilities.invokeLater(this::fireTableStructureChanged);
+        //fireTableStructureChanged();
     }
 
     private void updateData()
@@ -80,7 +81,7 @@ public class ListTableModel extends AbstractTableModel implements Observer
     }
 
     @Override
-    public Class getColumnClass(int column)
+    public Class<?> getColumnClass(int column)
     {
         return column == 0 ? Integer.class : String.class;
     }
