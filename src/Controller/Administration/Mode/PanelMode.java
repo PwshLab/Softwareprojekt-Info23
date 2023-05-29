@@ -21,23 +21,20 @@ public abstract class PanelMode extends JPanel implements ActionListener
         setVisible(true);
 
         setBackground(Color.WHITE);
-        setPreferredSize(new Dimension(600, 600));
-
-        GroupLayout layout = new GroupLayout(this);
-        setLayout(layout);
-        layout.setAutoCreateGaps(true);
-        layout.setAutoCreateContainerGaps(true);
-        GroupLayout.SequentialGroup vertical = layout.createSequentialGroup();
-        layout.setVerticalGroup(vertical);
+        setMaximumSize(new Dimension(550, 550));
+        setLayout(new BorderLayout());
 
         JPanel formPanel = new JPanel();
         formPanel.setBackground(Color.WHITE);
-        //add(formPanel);
-        vertical.addComponent(formPanel);
+        add(formPanel, BorderLayout.CENTER);
+
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setBackground(Color.WHITE);
         JButton submitButton = new JButton(buttonLabel);
         submitButton.addActionListener(this);
-        //add(submitButton);
-        vertical.addComponent(submitButton);
+        submitButton.setMaximumSize(new Dimension(100, 50));
+        buttonPanel.add(submitButton);
+        add(buttonPanel, BorderLayout.SOUTH);
 
         initializeForm(formPanel);
     }
