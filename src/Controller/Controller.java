@@ -63,12 +63,24 @@ public class Controller
     private void initializeAdministrationWindow()
     {
         administrationWindow = new JPanel();
+        administrationWindow.setPreferredSize(new Dimension(1200, 650));
+        administrationWindow.setLayout(new BoxLayout(administrationWindow, BoxLayout.Y_AXIS));
+        administrationWindow.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        administrationWindow.add(view.getAdministrationView());
+    }
+
+    private void setAdministrationWindow()
+    {
+        mainFrame.setContentPane(administrationWindow);
+        mainFrame.pack();
     }
 
     private void initialize()
     {
         initializeMainWindow();
         initializeNavigationWindow();
+        initializeAdministrationWindow();
         setWindowNavigation();
+        setAdministrationWindow();
     }
 }

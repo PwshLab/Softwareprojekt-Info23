@@ -48,8 +48,8 @@ public class Administration extends JPanel
         panelLeft.add(listView);
 
         panelRight.add(new PanelTitle("Bearbeitung"));
-        //mapView = new MapView(model);
-        //panelRight.add(mapView);
+        MapView mapView = new MapView(model);
+        panelRight.add(mapView);
 
         setVisible(true);
     }
