@@ -1,6 +1,6 @@
 package src.Controller.Administration;
 
-import src.Controller.Administration.Mode.SelectMode;
+import src.Controller.Administration.Mode.*;
 import src.Model.Model;
 
 import javax.swing.*;
@@ -43,22 +43,26 @@ public class EditingPanel extends JPanel
 
     private void initializeAdd()
     {
-
+        editorPanels[1] = new JPanel();
+        editorPanels[1].add(new AddMode(this));
     }
 
     private void initializeModify()
     {
-
+        editorPanels[2] = new JPanel();
+        editorPanels[2].add(new ModifyMode(this));
     }
 
     private void initializeDelete()
     {
-
+        editorPanels[3] = new JPanel();
+        editorPanels[3].add(new DeleteMode(this));
     }
 
     private void initializeConfirm()
     {
-
+        editorPanels[4] = new JPanel();
+        editorPanels[4].add(new ConfirmMode(this));
     }
 
     public void setEditingMode(EditingMode newEditingMode)
@@ -66,6 +70,7 @@ public class EditingPanel extends JPanel
         remove(editorPanels[editingModeToPanelIndex(currentEditingMode)]);
         currentEditingMode = newEditingMode;
         add(editorPanels[editingModeToPanelIndex(currentEditingMode)]);
+        repaint();
     }
 
     private static int editingModeToPanelIndex(EditingMode editingMode)
