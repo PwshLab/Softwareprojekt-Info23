@@ -23,6 +23,7 @@ public class SelectMode extends PanelMode
         formPanel.setLayout(new BorderLayout());
         formPanel.setBorder(BorderFactory.createEmptyBorder(50, 50, 50, 50));
         modeSelectField = new ModeField("Bearbeitungsmodus:");
+        formPanel.add(modeSelectField);
     }
 
     @Override
