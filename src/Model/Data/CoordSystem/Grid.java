@@ -45,16 +45,16 @@ public final class Grid
          */
         index = 0;
         double newMinimum = Double.MAX_VALUE;
-        for (int i = 0; i < indices.length; i++)
+        while (index < indices.length)
         {
             for (int j = 0; j < distances.length; j++)
             {
-                if (minimum == distances[j])
+                if (minimum == distances[j]) // Speichern des Index des kleinsten Abstandes
                 {
                     indices[index] = j;
                     index++;
                 }
-                else if (minimum < distances[j])
+                else if (minimum < distances[j]) // Auswählen des nächst größeren Abstandes
                 {
                     newMinimum = Math.min(newMinimum, distances[j]);
                 }
