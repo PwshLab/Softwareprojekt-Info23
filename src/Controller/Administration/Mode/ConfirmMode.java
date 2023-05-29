@@ -9,7 +9,7 @@ public class ConfirmMode extends PanelMode
 {
     public ConfirmMode(EditingPanel editingPanel)
     {
-        super(editingPanel);
+        super(editingPanel, "Bestätigen");
         associatedMode = EditingMode.CONFIRM;
     }
 

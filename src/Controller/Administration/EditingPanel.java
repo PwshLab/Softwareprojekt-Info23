@@ -1,5 +1,6 @@
 package src.Controller.Administration;
 
+import src.Controller.Administration.Mode.SelectMode;
 import src.Model.Model;
 
 import javax.swing.*;
@@ -14,7 +15,7 @@ public class EditingPanel extends JPanel
     private Runnable confirmAction;
     private JPanel[] editorPanels;
 
-    private EditingPanel(Model model)
+    public EditingPanel(Model model)
     {
         this.model = model;
 
@@ -24,6 +25,7 @@ public class EditingPanel extends JPanel
     private void initialize()
     {
         editorPanels = new JPanel[EditingMode.values().length];
+        initializeModeSelect();
     }
 
     private void initializeModeSelect()
@@ -31,6 +33,7 @@ public class EditingPanel extends JPanel
         editorPanels[0] = new JPanel();
         editorPanels[0].setMaximumSize(new Dimension(300, 300));
         editorPanels[0].setLayout(new GridLayout());
+        editorPanels[0].add(new SelectMode(this));
     }
 
     private void initializeAdd()
@@ -58,7 +61,7 @@ public class EditingPanel extends JPanel
         currentEditingMode = newEditingMode;
     }
 
-    private int editingModeToPanelIndex(EditingMode editingMode)
+    private static int editingModeToPanelIndex(EditingMode editingMode)
     {
         int index = 0;
         for (EditingMode mode: EditingMode.values())

@@ -3,9 +3,9 @@ package src.Controller.Component;
 import javax.swing.*;
 import java.awt.*;
 
-public abstract class SelectDataField<T> extends DataField<T>
+public abstract class SelectDataField<T, U> extends DataField<T>
 {
-    protected JComboBox<T> comboBox;
+    protected JComboBox<U> comboBox;
 
     public SelectDataField(String fieldLabel)
     {

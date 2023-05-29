@@ -9,7 +9,7 @@ public class ModifyMode extends PanelMode
 {
     public ModifyMode(EditingPanel editingPanel)
     {
-        super(editingPanel);
+        super(editingPanel, "Bearbeiten");
         associatedMode = EditingMode.MODIFY;
     }
 

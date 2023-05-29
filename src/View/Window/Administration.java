@@ -1,5 +1,6 @@
 package src.View.Window;
 
+import src.Controller.Administration.EditingPanel;
 import src.Model.Model;
 import src.View.Screen.ListView.ListView;
 import src.View.Screen.MapView;
@@ -48,8 +49,9 @@ public class Administration extends JPanel
         panelLeft.add(listView);
 
         panelRight.add(new PanelTitle("Bearbeitung"));
-        MapView mapView = new MapView(model);
-        panelRight.add(mapView);
+        //MapView mapView = new MapView(model);
+        EditingPanel editingPanel = new EditingPanel(model);
+        panelRight.add(editingPanel);
 
         setVisible(true);
     }

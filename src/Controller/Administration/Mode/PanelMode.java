@@ -13,7 +13,7 @@ public abstract class PanelMode extends JPanel implements ActionListener
     protected final EditingPanel editingPanel;
     protected EditingMode associatedMode;
 
-    public PanelMode(EditingPanel editingPanel)
+    public PanelMode(EditingPanel editingPanel, String buttonLabel)
     {
         this.editingPanel = editingPanel;
 
@@ -22,7 +22,7 @@ public abstract class PanelMode extends JPanel implements ActionListener
         JPanel formPanel = new JPanel();
         formPanel.setBackground(Color.WHITE);
         add(formPanel);
-        JButton submitButton = new JButton();
+        JButton submitButton = new JButton(buttonLabel);
         submitButton.addActionListener(this);
         add(submitButton);
 

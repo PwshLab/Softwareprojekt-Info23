@@ -2,7 +2,7 @@ package src.Controller.Component;
 
 import src.Model.Data.Locality.LocalityType;
 
-public class TypeField extends SelectDataField<LocalityType>
+public class TypeField extends SelectDataField<LocalityType, LocalityType>
 {
     public TypeField(String fieldLabel)
     {

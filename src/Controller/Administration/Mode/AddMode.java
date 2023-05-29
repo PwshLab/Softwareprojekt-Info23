@@ -9,7 +9,7 @@ public class AddMode extends PanelMode
 {
     public AddMode(EditingPanel editingPanel)
     {
-        super(editingPanel);
+        super(editingPanel, "Hinzufügen");
         associatedMode = EditingMode.ADD;
     }
 
