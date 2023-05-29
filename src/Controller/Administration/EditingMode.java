@@ -2,7 +2,7 @@ package src.Controller.Administration;
 
 public enum EditingMode
 {
-    MODESELECT,
+    SELECT,
     ADD,
     MODIFY,
     DELETE,

@@ -1,12 +1,16 @@
 package src.Controller.Administration.Mode;
 
+import src.Controller.Administration.EditingMode;
+import src.Controller.Administration.EditingPanel;
+
 import javax.swing.*;
 
 public class SelectMode extends PanelMode
 {
-    public SelectMode()
+    public SelectMode(EditingPanel editingPanel)
     {
-        super();
+        super(editingPanel);
+        associatedMode = EditingMode.SELECT;
     }
 
     @Override

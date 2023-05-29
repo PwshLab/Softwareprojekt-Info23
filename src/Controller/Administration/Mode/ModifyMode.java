@@ -1,12 +1,16 @@
 package src.Controller.Administration.Mode;
 
+import src.Controller.Administration.EditingMode;
+import src.Controller.Administration.EditingPanel;
+
 import javax.swing.*;
 
 public class ModifyMode extends PanelMode
 {
-    public ModifyMode()
+    public ModifyMode(EditingPanel editingPanel)
     {
-        super();
+        super(editingPanel);
+        associatedMode = EditingMode.MODIFY;
     }
 
     @Override
