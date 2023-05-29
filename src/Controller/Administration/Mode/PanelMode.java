@@ -17,8 +17,11 @@ public abstract class PanelMode extends JPanel implements ActionListener
     {
         this.editingPanel = editingPanel;
 
+        setOpaque(true);
+        setVisible(true);
+
         setBackground(Color.WHITE);
-        setPreferredSize(new Dimension());
+        setPreferredSize(new Dimension(600, 600));
         JPanel formPanel = new JPanel();
         formPanel.setBackground(Color.WHITE);
         add(formPanel);

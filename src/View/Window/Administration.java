@@ -49,7 +49,6 @@ public class Administration extends JPanel
         panelLeft.add(listView);
 
         panelRight.add(new PanelTitle("Bearbeitung"));
-        //MapView mapView = new MapView(model);
         EditingPanel editingPanel = new EditingPanel(model);
         panelRight.add(editingPanel);
 

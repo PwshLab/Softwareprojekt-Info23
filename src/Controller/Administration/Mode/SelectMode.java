@@ -3,7 +3,6 @@ package src.Controller.Administration.Mode;
 import src.Controller.Administration.EditingMode;
 import src.Controller.Administration.EditingPanel;
 import src.Controller.Component.ModeField;
-import src.Controller.Component.SelectDataField;
 
 import javax.swing.*;
 import java.awt.*;
@@ -30,5 +29,6 @@ public class SelectMode extends PanelMode
     protected void handleSubmit()
     {
         editingPanel.setEditingMode(modeSelectField.readData());
+        System.out.println("Set editing mode to: " + modeSelectField.readData());
     }
 }

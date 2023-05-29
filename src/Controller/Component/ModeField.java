@@ -25,7 +25,7 @@ public class ModeField extends SelectDataField<EditingMode, String>
     @Override
     protected EditingMode parseData()
     {
-        return EditingMode.values()[comboBox.getSelectedIndex()];
+        return EditingMode.values()[comboBox.getSelectedIndex() + 1];
     }
 
 }

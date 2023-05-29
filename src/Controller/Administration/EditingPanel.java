@@ -26,13 +26,18 @@ public class EditingPanel extends JPanel
     {
         editorPanels = new JPanel[EditingMode.values().length];
         initializeModeSelect();
+        initializeAdd();
+        initializeModify();
+        initializeDelete();
+        initializeConfirm();
+        setEditingMode(EditingMode.SELECT);
     }
 
     private void initializeModeSelect()
     {
         editorPanels[0] = new JPanel();
-        editorPanels[0].setMaximumSize(new Dimension(300, 300));
-        editorPanels[0].setLayout(new GridLayout());
+        //editorPanels[0].setMaximumSize(new Dimension(300, 300));
+        //editorPanels[0].setLayout(new GridLayout());
         editorPanels[0].add(new SelectMode(this));
     }
 
@@ -58,7 +63,9 @@ public class EditingPanel extends JPanel
 
     public void setEditingMode(EditingMode newEditingMode)
     {
+        remove(editorPanels[editingModeToPanelIndex(currentEditingMode)]);
         currentEditingMode = newEditingMode;
+        add(editorPanels[editingModeToPanelIndex(currentEditingMode)]);
     }
 
     private static int editingModeToPanelIndex(EditingMode editingMode)
