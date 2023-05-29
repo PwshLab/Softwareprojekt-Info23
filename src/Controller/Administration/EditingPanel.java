@@ -4,6 +4,7 @@ import src.Model.Model;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Arrays;
 
 public class EditingPanel extends JPanel
 {
@@ -50,5 +51,21 @@ public class EditingPanel extends JPanel
     private void initializeConfirm()
     {
 
+    }
+
+    public void setEditingMode(EditingMode newEditingMode)
+    {
+        currentEditingMode = newEditingMode;
+    }
+
+    private int editingModeToPanelIndex(EditingMode editingMode)
+    {
+        int index = 0;
+        for (EditingMode mode: EditingMode.values())
+            if (mode.equals(editingMode))
+                return index;
+            else
+                index++;
+        return 0;
     }
 }
