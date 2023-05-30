@@ -1,6 +1,7 @@
 package src.Controller.Administration;
 
 import src.Controller.Administration.Mode.*;
+import src.Model.Data.Locality.Locality;
 import src.Model.Model;
 
 import javax.swing.*;
@@ -38,6 +39,7 @@ public class EditingPanel extends JPanel
         remove(editorPanels[editingModeToPanelIndex(currentEditingMode)]);
         currentEditingMode = newEditingMode;
         add(editorPanels[editingModeToPanelIndex(currentEditingMode)]);
+        revalidate();
         repaint();
     }
 
@@ -50,5 +52,10 @@ public class EditingPanel extends JPanel
             else
                 index++;
         return 0;
+    }
+
+    public void addLocality(Locality locality)
+    {
+        model.addElement(locality);
     }
 }
