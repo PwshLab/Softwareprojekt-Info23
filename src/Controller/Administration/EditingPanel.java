@@ -12,8 +12,7 @@ public class EditingPanel extends JPanel
 {
     private final Model model;
     private EditingMode currentEditingMode;
-    private String confirmMessage;
-    private Runnable confirmAction;
+    private ConfirmAction confirmAction;
     private JPanel[] editorPanels;
 
     public EditingPanel(Model model)
@@ -79,8 +78,9 @@ public class EditingPanel extends JPanel
         return model.getElements().get(localityIndex);
     }
 
-    public void setConfirmAction(Runnable confirmAction)
+    public void setConfirmAction(ConfirmAction confirmAction)
     {
         ((ConfirmMode) editorPanels[4]).setConfirmAction(confirmAction);
+        setEditingMode(EditingMode.CONFIRM);
     }
 }
