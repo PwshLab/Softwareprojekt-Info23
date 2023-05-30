@@ -72,6 +72,16 @@ public class Graph<T>
     }
 
     /**
+     * Methode zum Ersetzten eines Objektes im Graphen
+     * @param index Index des zu ersetzenden Objektes
+     * @param object Objekt des Typen T
+     */
+    public void set(int index, T object)
+    {
+        nodes.get(index).setData(object);
+    }
+
+    /**
      * Methode zum Hinzufügen eines Kantenwertes im Graphen
      * @param i1 Index des ersten Objektes
      * @param i2 Index des zweiten Objektes
