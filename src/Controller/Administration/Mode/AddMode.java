@@ -36,6 +36,4 @@ public class AddMode extends PanelMode
             editingPanel.setEditingMode(EditingMode.SELECT);
         }
     }
-
-
 }
