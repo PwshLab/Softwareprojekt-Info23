@@ -25,44 +25,12 @@ public class EditingPanel extends JPanel
     private void initialize()
     {
         editorPanels = new JPanel[EditingMode.values().length];
-        initializeModeSelect();
-        initializeAdd();
-        initializeModify();
-        initializeDelete();
-        initializeConfirm();
+        editorPanels[0] = new SelectMode(this);
+        editorPanels[1] = new AddMode(this);
+        editorPanels[2] = new ModifyMode(this);
+        editorPanels[3] = new DeleteMode(this);
+        editorPanels[4] = new ConfirmMode(this);
         setEditingMode(EditingMode.SELECT);
-    }
-
-    private void initializeModeSelect()
-    {
-        editorPanels[0] = new JPanel();
-        //editorPanels[0].setMaximumSize(new Dimension(300, 300));
-        //editorPanels[0].setLayout(new GridLayout());
-        editorPanels[0].add(new SelectMode(this));
-    }
-
-    private void initializeAdd()
-    {
-        editorPanels[1] = new JPanel();
-        editorPanels[1].add(new AddMode(this));
-    }
-
-    private void initializeModify()
-    {
-        editorPanels[2] = new JPanel();
-        editorPanels[2].add(new ModifyMode(this));
-    }
-
-    private void initializeDelete()
-    {
-        editorPanels[3] = new JPanel();
-        editorPanels[3].add(new DeleteMode(this));
-    }
-
-    private void initializeConfirm()
-    {
-        editorPanels[4] = new JPanel();
-        editorPanels[4].add(new ConfirmMode(this));
     }
 
     public void setEditingMode(EditingMode newEditingMode)
