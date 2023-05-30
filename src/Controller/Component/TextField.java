@@ -2,6 +2,7 @@ package src.Controller.Component;
 
 public class TextField extends TextDataField<String>
 {
+    // TODO: Add ability to check for errors via regex filter
     public TextField(String fieldLabel)
     {
         super(fieldLabel);
