@@ -25,4 +25,10 @@ public class WholeNumberField extends TextDataField<Integer>
     {
         return Integer.parseInt(textField.getText());
     }
+
+    @Override
+    public void writeData(Integer newData)
+    {
+        textField.setText(newData.toString());
+    }
 }

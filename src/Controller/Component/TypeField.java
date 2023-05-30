@@ -25,4 +25,10 @@ public class TypeField extends SelectDataField<LocalityType, LocalityType>
         return comboBox.getItemAt(comboBox.getSelectedIndex());
     }
 
+    @Override
+    public void writeData(LocalityType newData)
+    {
+        comboBox.setSelectedItem(newData);
+    }
+
 }

@@ -41,7 +41,7 @@ public class EditingPanel extends JPanel
         repaint();
     }
 
-    private static int editingModeToPanelIndex(EditingMode editingMode)
+    public static int editingModeToPanelIndex(EditingMode editingMode)
     {
         int index = 0;
         for (EditingMode mode: EditingMode.values())

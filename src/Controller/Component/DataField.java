@@ -56,4 +56,6 @@ public abstract class DataField<T> extends JPanel
         else
             return parseData();
     }
+
+    public abstract void writeData(T newData);
 }

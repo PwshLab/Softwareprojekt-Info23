@@ -1,6 +1,7 @@
 package src.Controller.Component;
 
 import src.Controller.Administration.EditingMode;
+import src.Controller.Administration.EditingPanel;
 
 public class ModeField extends SelectDataField<EditingMode, String>
 {
@@ -26,6 +27,15 @@ public class ModeField extends SelectDataField<EditingMode, String>
     protected EditingMode parseData()
     {
         return EditingMode.values()[comboBox.getSelectedIndex() + 1];
+    }
+
+    @Override
+    public void writeData(EditingMode newData)
+    {
+        int newIndex = EditingPanel.editingModeToPanelIndex(newData);
+        newIndex = Math.min(newIndex, EditingMode.values().length);
+        newIndex = Math.max(newIndex, 0);
+        comboBox.setSelectedIndex(newIndex);
     }
 
 }

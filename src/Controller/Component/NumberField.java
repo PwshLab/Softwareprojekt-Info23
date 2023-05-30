@@ -25,4 +25,10 @@ public class NumberField extends TextDataField<Double>
     {
         return Double.parseDouble(textField.getText());
     }
+
+    @Override
+    public void writeData(Double newData)
+    {
+        textField.setText(newData.toString());
+    }
 }

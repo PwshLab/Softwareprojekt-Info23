@@ -18,4 +18,10 @@ public class TextField extends TextDataField<String>
     {
         return textField.getText();
     }
+
+    @Override
+    public void writeData(String newData)
+    {
+        textField.setText(newData);
+    }
 }

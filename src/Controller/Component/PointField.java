@@ -30,4 +30,11 @@ public class PointField extends DataField<Vector2>
     {
         return new Vector2(field1.parseData(), field2.parseData());
     }
+
+    @Override
+    public void writeData(Vector2 newData)
+    {
+        field1.writeData(newData.getX(1));
+        field2.writeData(newData.getX(2));
+    }
 }
