@@ -26,6 +26,7 @@ public class AddMode extends PanelMode
         formPanel.add(localityForm, BorderLayout.CENTER);
     }
 
+    // TODO: Add confirmation panel integration
     @Override
     protected void handleSubmit()
     {
