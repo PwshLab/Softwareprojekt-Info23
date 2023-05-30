@@ -32,8 +32,12 @@ public class AddMode extends PanelMode
     {
         if (!localityForm.hasError())
         {
-            editingPanel.addLocality(localityForm.getData());
-            editingPanel.setEditingMode(EditingMode.SELECT);
+            editingPanel.setConfirmAction(
+                    new ConfirmAction(
+                            "diese Lokalität hinzufügen",
+                            () -> editingPanel.addLocality(localityForm.getData())
+                    )
+            );
         }
     }
 }

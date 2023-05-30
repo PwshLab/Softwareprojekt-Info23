@@ -61,8 +61,12 @@ public class ModifyMode extends PanelMode
         {
             if (!localityForm.hasError())
             {
-                editingPanel.modifyLocality(numberField.readData(), localityForm.getData());
-                editingPanel.setEditingMode(EditingMode.SELECT);
+                editingPanel.setConfirmAction(
+                        new ConfirmAction(
+                                "Lokalität " + numberField.readData() + " überschreiben",
+                                () -> editingPanel.modifyLocality(numberField.readData(), localityForm.getData())
+                        )
+                );
             }
         }
     }
