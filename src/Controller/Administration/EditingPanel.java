@@ -54,8 +54,23 @@ public class EditingPanel extends JPanel
         return 0;
     }
 
+    public int getLocalityCount()
+    {
+        return model.getElementCount();
+    }
+
     public void addLocality(Locality locality)
     {
         model.addElement(locality);
+    }
+
+    public void removeLocality(int localityIndex)
+    {
+        model.removeElement(model.getElements().get(localityIndex));
+    }
+
+    public void modifyLocality(int localityIndex, Locality newLocality)
+    {
+        model.setElement(localityIndex, newLocality);
     }
 }
