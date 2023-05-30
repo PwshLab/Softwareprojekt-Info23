@@ -19,6 +19,7 @@ public class ModifyMode extends PanelMode
 
     }
 
+    // TODO: Add confirmation panel integration
     @Override
     protected void handleSubmit()
     {
