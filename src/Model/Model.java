@@ -114,6 +114,7 @@ public class Model extends Observable
     public void setElement(int index, Locality locality)
     {
         graph.set(index, locality);
+        notifyObservers();
     }
 
     public List<Pair<Integer, Integer>> getEdges()
