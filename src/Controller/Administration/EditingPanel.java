@@ -54,9 +54,9 @@ public class EditingPanel extends JPanel
         return 0;
     }
 
-    public int getLocalityCount()
+    public boolean checkIndexBounds(int index)
     {
-        return model.getElementCount();
+        return index > 0 && index < model.getElementCount();
     }
 
     public void addLocality(Locality locality)
