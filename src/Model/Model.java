@@ -102,7 +102,6 @@ public class Model extends Observable
     {
         graph.add(locality);
         recalculateEdges(locality);
-
         notifyObservers();
     }
 
@@ -110,6 +109,11 @@ public class Model extends Observable
     {
         graph.remove(locality, Object::equals);
         notifyObservers();
+    }
+
+    public void setElement(int index, Locality locality)
+    {
+        graph.set(index, locality);
     }
 
     public List<Pair<Integer, Integer>> getEdges()
