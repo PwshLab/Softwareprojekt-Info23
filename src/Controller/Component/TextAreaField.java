@@ -8,6 +8,8 @@ public class TextAreaField extends TextAreaDataField<String>
     {
         super(fieldLabel);
         textArea.setBorder(BorderFactory.createBevelBorder(1));
+        textArea.setLineWrap(true);
+        textArea.setWrapStyleWord(true);
     }
 
     @Override
