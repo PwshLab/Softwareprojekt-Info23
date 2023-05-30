@@ -73,4 +73,9 @@ public class EditingPanel extends JPanel
     {
         model.setElement(localityIndex, newLocality);
     }
+
+    public Locality getLocality(int localityIndex)
+    {
+        return model.getElements().get(localityIndex);
+    }
 }
