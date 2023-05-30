@@ -78,4 +78,9 @@ public class EditingPanel extends JPanel
     {
         return model.getElements().get(localityIndex);
     }
+
+    public void setConfirmAction(Runnable confirmAction)
+    {
+        ((ConfirmMode) editorPanels[4]).setConfirmAction(confirmAction);
+    }
 }
