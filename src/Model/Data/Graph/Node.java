@@ -2,7 +2,7 @@ package src.Model.Data.Graph;
 
 public class Node<T>
 {
-    private final T data;
+    private T data;
 
     public Node(T data)
     {
@@ -14,4 +14,8 @@ public class Node<T>
         return data;
     }
 
+    public void setData(T data)
+    {
+        this.data = data;
+    }
 }
