@@ -43,15 +43,8 @@ public class ConfirmMode extends PanelMode
         this.confirmAction = confirmAction;
     }
 
-    private class AbortHandler implements ActionListener
+    private record AbortHandler(EditingPanel editingPanel) implements ActionListener
     {
-        private EditingPanel editingPanel;
-
-        public AbortHandler(EditingPanel editingPanel)
-        {
-            this.editingPanel = editingPanel;
-        }
-
         @Override
         public void actionPerformed(ActionEvent e)
         {
