@@ -18,7 +18,7 @@ public class ModifyMode extends PanelMode
 
     public ModifyMode(EditingPanel editingPanel)
     {
-        super(editingPanel, "Absenden", true);
+        super(editingPanel, "Weiter", true);
         associatedMode = EditingMode.MODIFY;
     }
 
@@ -42,6 +42,7 @@ public class ModifyMode extends PanelMode
         contentPanel.remove(numberField);
         localityForm.setData(editingPanel.getLocality(numberField.readData()));
         contentPanel.add(localityForm, BorderLayout.CENTER);
+        setButtonLabel("Absenden");
         revalidate();
         repaint();
     }
@@ -81,5 +82,6 @@ public class ModifyMode extends PanelMode
         contentPanel.add(numberField);
         numberField.resetData();
         localityForm.resetData();
+        setButtonLabel("Weiter");
     }
 }
