@@ -30,7 +30,6 @@ public class SelectMode extends PanelMode
     protected void handleSubmit()
     {
         editingPanel.setEditingMode(modeSelectField.readData());
-        System.out.println("Set editing mode to: " + modeSelectField.readData());
     }
 
     @Override
