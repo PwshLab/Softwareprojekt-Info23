@@ -23,7 +23,7 @@ public class TextField extends TextDataField<String>
         else
         {
             Matcher matcher = validationPattern.matcher(textField.getText());
-            return matcher.matches();
+            return !matcher.matches();
         }
     }
 
@@ -45,9 +45,8 @@ public class TextField extends TextDataField<String>
         checkPattern = true;
     }
 
-    // TODO: Add proper regex pattern
     public static Pattern getTextOnlyPattern()
     {
-        return Pattern.compile("");
+        return Pattern.compile("^[a-zA-Z ]*$");
     }
 }
