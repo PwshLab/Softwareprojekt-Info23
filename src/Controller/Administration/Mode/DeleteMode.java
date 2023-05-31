@@ -33,14 +33,21 @@ public class DeleteMode extends PanelMode
         if (!numberField.hasError())
             if (editingPanel.checkIndexBounds(numberField.readData()))
             {
+                int localityIndex = numberField.readData();
                 editingPanel.setConfirmAction(
                         new ConfirmAction(
                                 "Lokalität " + numberField.readData() + " entfernen",
-                                () -> editingPanel.removeLocality(numberField.readData())
+                                () -> editingPanel.removeLocality(localityIndex)
                         )
                 );
             }
             else
                 numberField.notifyError();
+    }
+
+    @Override
+    public void resetPanel()
+    {
+        numberField.resetData();
     }
 }

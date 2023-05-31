@@ -32,4 +32,10 @@ public class SelectMode extends PanelMode
         editingPanel.setEditingMode(modeSelectField.readData());
         System.out.println("Set editing mode to: " + modeSelectField.readData());
     }
+
+    @Override
+    public void resetPanel()
+    {
+        modeSelectField.resetData();
+    }
 }

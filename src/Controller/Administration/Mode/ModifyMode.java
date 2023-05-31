@@ -4,6 +4,7 @@ import src.Controller.Administration.EditingMode;
 import src.Controller.Administration.EditingPanel;
 import src.Controller.Administration.LocalityForm;
 import src.Controller.Component.WholeNumberField;
+import src.Model.Data.Locality.Locality;
 
 import javax.swing.*;
 import java.awt.*;
@@ -60,13 +61,25 @@ public class ModifyMode extends PanelMode
         {
             if (!localityForm.hasError())
             {
+                int localityIndex = numberField.readData();
+                Locality locality = localityForm.getData();
                 editingPanel.setConfirmAction(
                         new ConfirmAction(
-                                "Lokalität " + numberField.readData() + " überschreiben",
-                                () -> editingPanel.modifyLocality(numberField.readData(), localityForm.getData())
+                                "Lokalität " + localityIndex + " überschreiben",
+                                () -> editingPanel.modifyLocality(localityIndex, locality)
                         )
                 );
             }
         }
+    }
+
+    @Override
+    public void resetPanel()
+    {
+        panelStatusEditing = false;
+        contentPanel.remove(localityForm);
+        contentPanel.add(numberField);
+        numberField.resetData();
+        localityForm.resetData();
     }
 }

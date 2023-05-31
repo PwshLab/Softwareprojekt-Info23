@@ -3,6 +3,7 @@ package src.Controller.Administration.Mode;
 import src.Controller.Administration.EditingMode;
 import src.Controller.Administration.EditingPanel;
 import src.Controller.Administration.LocalityForm;
+import src.Model.Data.Locality.Locality;
 
 import javax.swing.*;
 import java.awt.*;
@@ -31,12 +32,19 @@ public class AddMode extends PanelMode
     {
         if (!localityForm.hasError())
         {
+            Locality locality = localityForm.getData();
             editingPanel.setConfirmAction(
                     new ConfirmAction(
                             "diese Lokalität hinzufügen",
-                            () -> editingPanel.addLocality(localityForm.getData())
+                            () -> editingPanel.addLocality(locality)
                     )
             );
         }
+    }
+
+    @Override
+    public void resetPanel()
+    {
+        localityForm.resetData();
     }
 }
