@@ -37,17 +37,6 @@ public class ConfirmMode extends PanelMode
         confirmDisplay.setFont(displayFont);
         confirmPanel.add(confirmDisplay);
         formPanel.add(confirmPanel);
-
-        /*
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.setBackground(Color.WHITE);
-        JButton submitButton = new JButton("Abbrechen");
-        submitButton.addActionListener(new AbortHandler(editingPanel));
-        submitButton.setMaximumSize(new Dimension(100, 50));
-        buttonPanel.add(submitButton);
-        formPanel.add(buttonPanel, BorderLayout.SOUTH);
-
-         */
     }
 
     @Override
@@ -55,6 +44,11 @@ public class ConfirmMode extends PanelMode
     {
         confirmAction.run();
         editingPanel.setEditingMode(EditingMode.SELECT);
+    }
+
+    @Override
+    public void resetPanel()
+    {
     }
 
     private String formatConfirmMessage(ConfirmAction confirmAction)
