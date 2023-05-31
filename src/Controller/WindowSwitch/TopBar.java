@@ -44,6 +44,9 @@ public class TopBar extends JPanel implements ActionListener
         if (!isNavigation)
             controller.setWindowNavigation();
         else
+        {
             loginPrompt = new LoginPrompt(controller);
+            System.out.println("Attempted Login Prompt");
+        }
     }
 }
