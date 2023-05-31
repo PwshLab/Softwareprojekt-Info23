@@ -13,7 +13,7 @@ public abstract class PanelMode extends JPanel implements ActionListener
     protected final EditingPanel editingPanel;
     protected EditingMode associatedMode;
 
-    public PanelMode(EditingPanel editingPanel, String buttonLabel)
+    public PanelMode(EditingPanel editingPanel, String buttonLabel, boolean canAbort)
     {
         this.editingPanel = editingPanel;
 
@@ -34,6 +34,13 @@ public abstract class PanelMode extends JPanel implements ActionListener
         submitButton.addActionListener(this);
         submitButton.setMaximumSize(new Dimension(100, 50));
         buttonPanel.add(submitButton);
+        if (canAbort)
+        {
+            JButton abortButton = new JButton("Abbrechen");
+            abortButton.addActionListener(new AbortHandler(editingPanel));
+            abortButton.setMaximumSize(new Dimension(100, 50));
+            buttonPanel.add(abortButton);
+        }
         add(buttonPanel, BorderLayout.SOUTH);
 
         initializeForm(formPanel);
@@ -51,5 +58,14 @@ public abstract class PanelMode extends JPanel implements ActionListener
     public void actionPerformed(ActionEvent e)
     {
         handleSubmit();
+    }
+
+    private record AbortHandler(EditingPanel editingPanel) implements ActionListener
+    {
+        @Override
+        public void actionPerformed(ActionEvent e)
+        {
+            editingPanel.setEditingMode(EditingMode.SELECT);
+        }
     }
 }

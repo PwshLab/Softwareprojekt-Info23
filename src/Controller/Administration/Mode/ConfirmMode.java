@@ -17,7 +17,7 @@ public class ConfirmMode extends PanelMode
 
     public ConfirmMode(EditingPanel editingPanel)
     {
-        super(editingPanel, "Bestätigen");
+        super(editingPanel, "Bestätigen", true);
         associatedMode = EditingMode.CONFIRM;
     }
 
@@ -38,6 +38,7 @@ public class ConfirmMode extends PanelMode
         confirmPanel.add(confirmDisplay);
         formPanel.add(confirmPanel);
 
+        /*
         JPanel buttonPanel = new JPanel();
         buttonPanel.setBackground(Color.WHITE);
         JButton submitButton = new JButton("Abbrechen");
@@ -45,6 +46,8 @@ public class ConfirmMode extends PanelMode
         submitButton.setMaximumSize(new Dimension(100, 50));
         buttonPanel.add(submitButton);
         formPanel.add(buttonPanel, BorderLayout.SOUTH);
+
+         */
     }
 
     @Override
@@ -65,14 +68,5 @@ public class ConfirmMode extends PanelMode
         confirmDisplay.setText(formatConfirmMessage(confirmAction));
         revalidate();
         repaint();
-    }
-
-    private record AbortHandler(EditingPanel editingPanel) implements ActionListener
-    {
-        @Override
-        public void actionPerformed(ActionEvent e)
-        {
-            editingPanel.setEditingMode(EditingMode.SELECT);
-        }
     }
 }

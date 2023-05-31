@@ -13,7 +13,7 @@ public class SelectMode extends PanelMode
 
     public SelectMode(EditingPanel editingPanel)
     {
-        super(editingPanel, "Weiter");
+        super(editingPanel, "Weiter", false);
         associatedMode = EditingMode.SELECT;
     }
 

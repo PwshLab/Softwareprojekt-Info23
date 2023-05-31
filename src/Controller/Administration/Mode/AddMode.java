@@ -13,7 +13,7 @@ public class AddMode extends PanelMode
 
     public AddMode(EditingPanel editingPanel)
     {
-        super(editingPanel, "Absenden");
+        super(editingPanel, "Absenden", true);
         associatedMode = EditingMode.ADD;
     }
 

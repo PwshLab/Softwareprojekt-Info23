@@ -17,7 +17,7 @@ public class ModifyMode extends PanelMode
 
     public ModifyMode(EditingPanel editingPanel)
     {
-        super(editingPanel, "Absenden");
+        super(editingPanel, "Absenden", true);
         associatedMode = EditingMode.MODIFY;
     }
 

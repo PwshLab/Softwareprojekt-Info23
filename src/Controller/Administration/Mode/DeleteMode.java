@@ -13,7 +13,7 @@ public class DeleteMode extends PanelMode
 
     public DeleteMode(EditingPanel editingPanel)
     {
-        super(editingPanel, "Entfernen");
+        super(editingPanel, "Entfernen", true);
         associatedMode = EditingMode.DELETE;
     }
 
