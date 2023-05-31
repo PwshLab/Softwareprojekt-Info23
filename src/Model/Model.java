@@ -42,15 +42,15 @@ public class Model extends Observable
 
     public List<Locality> getElements()
     {
+        return graph.getElements();
+    }
+
+    public List<Locality> getElementsFiltered()
+    {
         if (!filterByDistance)
             return graph.getElements();
         else
             return graph.getElements().filter((Locality l) -> l.getPosition().distance(filterPosition) <= filterDistance);
-    }
-
-    public List<Locality> getElementsUnfiltered()
-    {
-        return graph.getElements();
     }
 
     public int getElementCount()
