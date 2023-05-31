@@ -55,7 +55,7 @@ public class EditingPanel extends JPanel
 
     public boolean checkIndexBounds(int index)
     {
-        return index >= 0 && index < model.getElementCount();
+        return model.checkIndexBounds(index);
     }
 
     public boolean checkPositionBounds(Vector2 position)

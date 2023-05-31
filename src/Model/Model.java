@@ -216,4 +216,9 @@ public class Model extends Observable
         filterByDistance = false;
         notifyObservers();
     }
+
+    public boolean checkIndexBounds(int index)
+    {
+        return index >= 0 && index < getElementCount();
+    }
 }
