@@ -14,7 +14,7 @@ public class SearchPath extends JPanel implements ActionListener
 {
     private final Model model;
     private final WholeNumberField field1, field2;
-    private final TextArea textArea;
+    private final JTextArea textArea;
 
     public SearchPath(Model model)
     {
@@ -39,8 +39,9 @@ public class SearchPath extends JPanel implements ActionListener
         upperCenter.add(field2);
         add(centerPanel, BorderLayout.CENTER);
 
-        textArea = new TextArea();
+        textArea = new JTextArea();
         textArea.setEditable(false);
+
 
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new BorderLayout());
