@@ -27,4 +27,10 @@ public abstract class TextDataField<T> extends DataField<T>
     {
         textField.addActionListener(actionListener);
     }
+
+    @Override
+    public void resetData()
+    {
+        textField.setText("");
+    }
 }

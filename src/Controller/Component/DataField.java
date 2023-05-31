@@ -60,6 +60,7 @@ public abstract class DataField<T> extends JPanel
     }
 
     public abstract void writeData(T newData);
+    public abstract void resetData();
 
     public void notifyError()
     {

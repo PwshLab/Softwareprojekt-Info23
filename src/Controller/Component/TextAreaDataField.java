@@ -18,4 +18,10 @@ public abstract class TextAreaDataField<T> extends DataField<T>
         panel.setLayout(new GridLayout());
         add(panel);
     }
+
+    @Override
+    public void resetData()
+    {
+        textArea.setText("");
+    }
 }

@@ -15,4 +15,9 @@ public abstract class SelectDataField<T, U> extends DataField<T>
         comboBox.setEditable(false);
         add(comboBox, BorderLayout.CENTER);
     }
+
+    @Override
+    public void resetData()
+    {
+    }
 }

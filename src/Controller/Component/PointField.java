@@ -37,4 +37,11 @@ public class PointField extends DataField<Vector2>
         field1.writeData(newData.getX(1));
         field2.writeData(newData.getX(2));
     }
+
+    @Override
+    public void resetData()
+    {
+        field1.resetData();
+        field2.resetData();
+    }
 }

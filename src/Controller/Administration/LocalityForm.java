@@ -77,4 +77,12 @@ public class LocalityForm extends JPanel
         descriptionField.writeData(locality.getDescription());
         positionField.writeData(locality.getPosition());
     }
+
+    public void resetData()
+    {
+        nameField.resetData();
+        typeField.resetData();
+        descriptionField.resetData();
+        positionField.resetData();
+    }
 }
