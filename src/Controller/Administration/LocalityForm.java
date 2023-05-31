@@ -26,7 +26,7 @@ public class LocalityForm extends JPanel
         setVisible(true);
         setLayout(new GridLayout(4, 1));
 
-        nameField = new TextField("Name");
+        nameField = new TextField("Name", false);
         nameField.setValidationPattern(TextField.getTextOnlyPattern());
         typeField = new TypeField("Art der Lokalität");
         descriptionField = new TextAreaField("Beschreibung");

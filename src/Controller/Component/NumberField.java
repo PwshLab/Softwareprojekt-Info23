@@ -4,7 +4,7 @@ public class NumberField extends TextDataField<Double>
 {
     public NumberField(String fieldLabel)
     {
-        super(fieldLabel);
+        super(fieldLabel, false);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package src.Controller.Component;
 
+import javax.swing.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -8,9 +9,9 @@ public class TextField extends TextDataField<String>
     private Pattern validationPattern;
     private boolean checkPattern;
 
-    public TextField(String fieldLabel)
+    public TextField(String fieldLabel, boolean isPasswordField)
     {
-        super(fieldLabel);
+        super(fieldLabel, isPasswordField);
         checkPattern = false;
     }
 

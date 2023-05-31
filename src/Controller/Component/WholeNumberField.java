@@ -4,7 +4,7 @@ public class WholeNumberField extends TextDataField<Integer>
 {
     public WholeNumberField(String fieldLabel)
     {
-        super(fieldLabel);
+        super(fieldLabel, false);
     }
 
     @Override
