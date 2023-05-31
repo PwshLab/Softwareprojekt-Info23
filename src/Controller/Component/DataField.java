@@ -19,6 +19,7 @@ public abstract class DataField<T> extends JPanel
         panel = new JPanel();
         panel.setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
         JLabel label = new JLabel(fieldLabel);
+        //label.setHorizontalAlignment(SwingConstants.LEFT);
         panel.add(label);
         add(panel, BorderLayout.WEST);
     }
