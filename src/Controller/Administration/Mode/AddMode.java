@@ -22,7 +22,7 @@ public class AddMode extends PanelMode
     {
         formPanel.setLayout(new BorderLayout());
         formPanel.setBorder(BorderFactory.createEmptyBorder(50, 50, 50, 50));
-        localityForm = new LocalityForm();
+        localityForm = new LocalityForm(editingPanel);
         formPanel.add(localityForm, BorderLayout.CENTER);
     }
 

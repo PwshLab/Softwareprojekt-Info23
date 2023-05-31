@@ -38,7 +38,7 @@ public class ModifyMode extends PanelMode
     {
         panelStatusEditing = true;
         contentPanel.remove(numberField);
-        localityForm = new LocalityForm();
+        localityForm = new LocalityForm(editingPanel);
         localityForm.setData(editingPanel.getLocality(numberField.readData()));
         contentPanel.add(localityForm, BorderLayout.CENTER);
         revalidate();

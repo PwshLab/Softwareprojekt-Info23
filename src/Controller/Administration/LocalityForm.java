@@ -4,6 +4,7 @@ import src.Controller.Component.PointField;
 import src.Controller.Component.TextAreaField;
 import src.Controller.Component.TextField;
 import src.Controller.Component.TypeField;
+import src.Model.Data.CoordSystem.Vector2;
 import src.Model.Data.Locality.Locality;
 
 import javax.swing.*;
@@ -11,19 +12,23 @@ import java.awt.*;
 
 public class LocalityForm extends JPanel
 {
+    private final EditingPanel editingPanel;
     private TextField nameField;
     private TypeField typeField;
     private TextAreaField descriptionField;
     private PointField positionField;
 
-    public LocalityForm()
+    public LocalityForm(EditingPanel editingPanel)
     {
+        this.editingPanel = editingPanel;
+
         setPreferredSize(new Dimension(400, 350));
         setOpaque(true);
         setVisible(true);
         setLayout(new GridLayout(4, 1));
 
         nameField = new TextField("Name");
+        nameField.setValidationPattern(TextField.getTextOnlyPattern());
         typeField = new TypeField("Art der Lokalität");
         descriptionField = new TextAreaField("Beschreibung");
         positionField = new PointField("Position");
@@ -43,7 +48,12 @@ public class LocalityForm extends JPanel
 
     public boolean hasError()
     {
-        return nameField.hasError() || typeField.hasError() || descriptionField.hasError() || positionField.hasError();
+        boolean isValidInput = nameField.hasError() || typeField.hasError() || descriptionField.hasError() || positionField.hasError();
+        boolean positionOutOfBounds = false;
+        if (isValidInput)
+            positionOutOfBounds =
+
+        return isValidInput || positionOutOfBounds;
     }
 
     public Locality getData()
