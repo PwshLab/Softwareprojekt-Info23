@@ -33,8 +33,12 @@ public class TopBar extends JPanel implements ActionListener
             button = new JButton("Abmelden");
         button.addActionListener(this);
         add(button, BorderLayout.EAST);
-        JLabel title = new JLabel("Search a Bar Software");
-        title.setFont(title.getFont().deriveFont(16f));
+        JLabel title;
+        if (isNavigation)
+            title = new JLabel("Search a Bar : Suche");
+        else
+            title = new JLabel("Search a Bar : Administration");
+        title.setFont(title.getFont().deriveFont(18f));
         title.setHorizontalAlignment(SwingConstants.CENTER);
         add(title, BorderLayout.CENTER);
     }
