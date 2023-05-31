@@ -47,12 +47,14 @@ public class LocalityForm extends JPanel
 
     public boolean hasError()
     {
-        boolean isValidInput = nameField.hasError() || typeField.hasError() || descriptionField.hasError() || positionField.hasError();
+        boolean invalidInput = nameField.hasError() || typeField.hasError() || descriptionField.hasError() || positionField.hasError();
         boolean positionOutOfBounds = false;
-        if (isValidInput)
+        if (!invalidInput)
             positionOutOfBounds = !editingPanel.checkPositionBounds(positionField.readData());
+        if (positionOutOfBounds)
+            positionField.notifyError();
 
-        return isValidInput || positionOutOfBounds;
+        return invalidInput || positionOutOfBounds;
     }
 
     public Locality getData()
