@@ -44,6 +44,7 @@ public class TextField extends TextDataField<String>
         checkPattern = true;
     }
 
+    // TODO: Add proper regex pattern
     public static Pattern getTextOnlyPattern()
     {
         return Pattern.compile("");
