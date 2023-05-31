@@ -1,6 +1,7 @@
 package src.Controller.Administration;
 
 import src.Controller.Administration.Mode.*;
+import src.Model.Data.CoordSystem.Vector2;
 import src.Model.Data.Locality.Locality;
 import src.Model.Model;
 
@@ -55,6 +56,13 @@ public class EditingPanel extends JPanel
     public boolean checkIndexBounds(int index)
     {
         return index >= 0 && index < model.getElementCount();
+    }
+
+    public boolean checkPositionBounds(Vector2 position)
+    {
+        double x1 = Math.abs(position.getX(1));
+        double x2 = Math.abs(position.getX(2);
+        return x1 <= model.getWorldBound() && x2 <= model.getWorldBound();
     }
 
     public void addLocality(Locality locality)
