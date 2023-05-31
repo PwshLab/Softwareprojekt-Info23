@@ -12,7 +12,6 @@ public class EditingPanel extends JPanel
 {
     private final Model model;
     private EditingMode currentEditingMode;
-    private ConfirmAction confirmAction;
     private JPanel[] editorPanels;
 
     public EditingPanel(Model model)
