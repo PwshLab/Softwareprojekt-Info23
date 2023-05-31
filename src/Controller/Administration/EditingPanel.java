@@ -11,7 +11,7 @@ public class EditingPanel extends JPanel
 {
     private final Model model;
     private EditingMode currentEditingMode;
-    private JPanel[] editorPanels;
+    private PanelMode[] editorPanels;
 
     public EditingPanel(Model model)
     {
@@ -22,7 +22,7 @@ public class EditingPanel extends JPanel
 
     private void initialize()
     {
-        editorPanels = new JPanel[EditingMode.values().length];
+        editorPanels = new PanelMode[EditingMode.values().length];
         editorPanels[0] = new SelectMode(this);
         editorPanels[1] = new AddMode(this);
         editorPanels[2] = new ModifyMode(this);
@@ -36,6 +36,7 @@ public class EditingPanel extends JPanel
         remove(editorPanels[editingModeToPanelIndex(currentEditingMode)]);
         currentEditingMode = newEditingMode;
         add(editorPanels[editingModeToPanelIndex(currentEditingMode)]);
+        editorPanels[editingModeToPanelIndex(currentEditingMode)].resetPanel();
         revalidate();
         repaint();
     }
