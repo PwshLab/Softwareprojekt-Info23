@@ -124,7 +124,7 @@ public class MapView extends JPanel implements Observer
     @Override
     public void update()
     {
-        localities = model.getElementsUnfiltered();
+        localities = model.getElements();
         edges = model.getEdges();
         lastPath = model.getLastPath().toArray(Integer.class);
         repaint();

@@ -76,7 +76,7 @@ public class SearchPath extends JPanel implements ActionListener
         {
             if (!fields[i].hasError())
                 if (model.checkIndexBounds(fields[i].readData()))
-                    localities[i] = model.getElementsUnfiltered().get(fields[i].readData());
+                    localities[i] = model.getElements().get(fields[i].readData());
                 else
                     fields[i].notifyError();
         }

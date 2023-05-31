@@ -67,11 +67,12 @@ public class ListTableModel extends AbstractTableModel implements Observer
     private void updateData()
     {
         List<Locality> localities = model.getElements();
-        data = new Object[localities.count()][columnNames.length];
+        List<Locality> localitiesFiltered = model.getElementsFiltered();
+        data = new Object[localitiesFiltered.count()][columnNames.length];
         int index = 0;
-        for (Locality l: localities)
+        for (Locality l: localitiesFiltered)
         {
-            data[index][0] = index;
+            data[index][0] = localities.indexOf(l, Object::equals);
             data[index][1] = l.getName();
             data[index][2] = l.getDescription();
             data[index][3] = l.getType().toString();
