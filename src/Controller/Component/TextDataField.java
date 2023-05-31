@@ -2,6 +2,7 @@ package src.Controller.Component;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public abstract class TextDataField<T> extends DataField<T>
 {
@@ -20,5 +21,10 @@ public abstract class TextDataField<T> extends DataField<T>
         panel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 0));
         panel.setLayout(new GridLayout());
         add(panel);
+    }
+
+    public void addActionListener(ActionListener actionListener)
+    {
+        textField.addActionListener(actionListener);
     }
 }
