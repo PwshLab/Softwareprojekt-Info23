@@ -69,28 +69,24 @@ public class SearchPath extends JPanel implements ActionListener
     @Override
     public void actionPerformed(ActionEvent event)
     {
-        if (!(field1.hasError() || field2.hasError()))
+        WholeNumberField[] fields = {field1, field2};
+        Locality[] localities = new Locality[fields.length];
+        for (int i = 0; i< fields.length; i++)
         {
-            int startIndex = field1.readData();
-            int endIndex = field2.readData();
-            Locality l1, l2;
-            try
-            {
-                l1 = model.getElements().get(startIndex);
-                l2 = model.getElements().get(endIndex);
-            } catch (IndexOutOfBoundsException exception)
-            {
-                displayPath(new List<>());
-                model.clearLastPath();
-                return;
-            }
-            List<Integer> path =  model.getPath(l1, l2);
-            displayPath(path);
+            if (!fields[i].hasError())
+                if (model.checkIndexBounds(fields[i].readData()))
+                    localities[i] = model.getElements().get(fields[i].readData());
+                else
+                    fields[i].notifyError();
         }
-        else
+
+        if (localities[0] == null || localities[1] == null)
         {
             displayPath(new List<>());
             model.clearLastPath();
         }
+
+        List<Integer> path =  model.getPath(localities[0], localities[1]);
+        displayPath(path);
     }
 }
