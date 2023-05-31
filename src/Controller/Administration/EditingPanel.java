@@ -61,7 +61,7 @@ public class EditingPanel extends JPanel
     public boolean checkPositionBounds(Vector2 position)
     {
         double x1 = Math.abs(position.getX(1));
-        double x2 = Math.abs(position.getX(2);
+        double x2 = Math.abs(position.getX(2));
         return x1 <= model.getWorldBound() && x2 <= model.getWorldBound();
     }
 
