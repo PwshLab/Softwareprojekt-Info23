@@ -11,6 +11,7 @@ public class TopBar extends JPanel implements ActionListener
 {
     private final Controller controller;
     private final boolean isNavigation;
+    private LoginPrompt loginPrompt;
 
     public TopBar(Controller controller, boolean isNavigation)
     {
@@ -43,8 +44,6 @@ public class TopBar extends JPanel implements ActionListener
         if (!isNavigation)
             controller.setWindowNavigation();
         else
-        {
-
-        }
+            loginPrompt = new LoginPrompt(controller);
     }
 }
