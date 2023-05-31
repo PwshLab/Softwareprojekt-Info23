@@ -4,12 +4,12 @@ import javax.swing.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RegexMultiFilter<M, I> extends RowFilter<M, I>
+public class RegexMultiRowFilter<M, I> extends RowFilter<M, I>
 {
     private final Matcher matcher;
     private final int[] columns;
 
-    public RegexMultiFilter(String regexString, int[] columns)
+    public RegexMultiRowFilter(String regexString, int[] columns)
     {
         this.matcher = Pattern.compile(regexString).matcher("");
         this.columns = columns;

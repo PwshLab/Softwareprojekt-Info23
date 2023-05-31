@@ -7,7 +7,6 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
-import java.util.regex.Pattern;
 
 public class ListView extends JPanel implements DocumentListener
 {
@@ -80,7 +79,7 @@ public class ListView extends JPanel implements DocumentListener
         StringBuilder regexString = new StringBuilder("(?i)");
         for (String word: searchString.split(" "))
             regexString.append("(?=.*").append(word).append(")");
-        rowSorter.setRowFilter(new RegexMultiFilter<>(regexString.toString(), searchIndices));
+        rowSorter.setRowFilter(new RegexMultiRowFilter<>(regexString.toString(), searchIndices));
     }
 
     private void handleDocumentEvent(DocumentEvent e)
