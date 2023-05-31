@@ -21,7 +21,6 @@ public class Administration extends JPanel
         initializeAdministrationGUI();
     }
 
-    // TODO: Finish implementing admin panel
     // TODO: Add login prompt to admin panel
     // TODO: Add ability to switch between panels
     public void initializeAdministrationGUI()

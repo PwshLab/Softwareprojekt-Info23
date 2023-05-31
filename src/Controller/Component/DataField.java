@@ -8,6 +8,7 @@ public abstract class DataField<T> extends JPanel
     private final JPanel panel;
 
     // TODO : Fix JLabel and TextField misalignment
+    // Possibly left align jLabel
     public DataField(String fieldLabel)
     {
         setOpaque(true);
