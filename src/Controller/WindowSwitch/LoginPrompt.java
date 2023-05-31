@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowListener;
 
 public class LoginPrompt implements ActionListener
 {
@@ -22,11 +23,13 @@ public class LoginPrompt implements ActionListener
         this.controller = controller;
 
         JFrame loginFrame = new JFrame("Anmeldung");
-        loginFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         loginFrame.setResizable(false);
         loginFrame.setVisible(true);
         loginPanel = new JPanel();
         loginFrame.setContentPane(loginPanel);
+
+        // TODO: Add custom window listener that only closes login window
+        //loginFrame.addWindowListener();
 
         initialize();
 
