@@ -13,7 +13,7 @@ public class AddMode extends PanelMode
 
     public AddMode(EditingPanel editingPanel)
     {
-        super(editingPanel, "Hinzufügen");
+        super(editingPanel, "Absenden");
         associatedMode = EditingMode.ADD;
     }
 
@@ -26,7 +26,6 @@ public class AddMode extends PanelMode
         formPanel.add(localityForm, BorderLayout.CENTER);
     }
 
-    // TODO: Add confirmation panel integration
     @Override
     protected void handleSubmit()
     {

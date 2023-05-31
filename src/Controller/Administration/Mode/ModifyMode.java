@@ -17,7 +17,7 @@ public class ModifyMode extends PanelMode
 
     public ModifyMode(EditingPanel editingPanel)
     {
-        super(editingPanel, "Bearbeiten");
+        super(editingPanel, "Absenden");
         associatedMode = EditingMode.MODIFY;
     }
 
@@ -45,7 +45,6 @@ public class ModifyMode extends PanelMode
         repaint();
     }
 
-    // TODO: Add confirmation panel integration
     @Override
     protected void handleSubmit()
     {
