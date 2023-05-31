@@ -26,8 +26,6 @@ public class Controller
         initialize();
     }
 
-    // TODO: Add login prompt to admin panel
-    // TODO: Add ability to switch between panels
     // TODO: Add database connection for data persistence
     // TODO: Add ability to generate example data
     // TODO: Make Data handling class
