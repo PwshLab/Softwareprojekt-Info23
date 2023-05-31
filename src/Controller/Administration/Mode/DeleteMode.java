@@ -27,7 +27,6 @@ public class DeleteMode extends PanelMode
         formPanel.add(numberField);
     }
 
-    // TODO: Add confirmation panel integration
     @Override
     protected void handleSubmit()
     {
