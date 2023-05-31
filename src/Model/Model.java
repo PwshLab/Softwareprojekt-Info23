@@ -135,6 +135,7 @@ public class Model extends Observable
         return graph.getEdge(l1, l2, Object::equals);
     }
 
+    // TODO: Fix generated points not always being fully connected
     private List<Pair<Locality, Double>> generateEdges(Locality locality)
     {
         Locality[] localities = graph.getElements().toArray(Locality.class);
