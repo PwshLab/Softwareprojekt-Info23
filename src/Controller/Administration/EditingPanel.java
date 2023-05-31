@@ -6,8 +6,6 @@ import src.Model.Data.Locality.Locality;
 import src.Model.Model;
 
 import javax.swing.*;
-import java.awt.*;
-import java.util.Arrays;
 
 public class EditingPanel extends JPanel
 {

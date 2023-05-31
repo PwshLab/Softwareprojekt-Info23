@@ -3,7 +3,6 @@ package src.View.Window;
 import src.Controller.Administration.EditingPanel;
 import src.Model.Model;
 import src.View.Screen.ListView.ListView;
-import src.View.Screen.MapView;
 import src.View.Screen.PanelTitle;
 
 import javax.swing.*;
