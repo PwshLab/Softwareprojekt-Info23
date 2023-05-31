@@ -80,7 +80,7 @@ public class Controller
         initializeMainWindow();
         initializeNavigationWindow();
         initializeAdministrationWindow();
-        //setWindowNavigation();
-        setAdministrationWindow();
+        setWindowNavigation();
+        //setAdministrationWindow();
     }
 }
