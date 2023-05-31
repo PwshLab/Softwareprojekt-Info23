@@ -37,8 +37,8 @@ public class Controller
         mainFrame = new JFrame("Search a Bar");
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainFrame.setResizable(false);
-        mainFrame.pack();
         mainFrame.setVisible(true);
+        mainFrame.pack();
     }
 
     private void initializeNavigationWindow()
