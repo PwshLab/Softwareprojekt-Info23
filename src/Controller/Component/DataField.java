@@ -7,7 +7,7 @@ public abstract class DataField<T> extends JPanel
 {
     private final JPanel panel;
 
-    // TODO : Fix JLabel and TextField misalignment
+    // TODO : Fix JLabel and TextField misalignment (medium priority)
     // Possibly left align jLabel
     public DataField(String fieldLabel)
     {
