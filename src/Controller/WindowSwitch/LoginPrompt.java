@@ -21,8 +21,6 @@ public class LoginPrompt implements ActionListener
     {
         this.controller = controller;
 
-        System.out.println("New Login window instantiated");
-
         JFrame loginFrame = new JFrame("Anmeldung");
         loginFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         loginFrame.setResizable(false);
