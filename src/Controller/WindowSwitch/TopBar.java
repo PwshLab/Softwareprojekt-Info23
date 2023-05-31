@@ -40,6 +40,11 @@ public class TopBar extends JPanel implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e)
     {
+        if (!isNavigation)
+            controller.setWindowNavigation();
+        else
+        {
 
+        }
     }
 }
