@@ -19,5 +19,6 @@ public abstract class SelectDataField<T, U> extends DataField<T>
     @Override
     public void resetData()
     {
+        comboBox.setSelectedIndex(0);
     }
 }
