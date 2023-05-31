@@ -59,6 +59,7 @@ public class Controller
 
     public void setWindowNavigation()
     {
+        model.resetFilterByDistance();
         mainFrame.setContentPane(navigationWindow);
         mainFrame.pack();
     }
@@ -75,6 +76,7 @@ public class Controller
 
     public void setAdministrationWindow()
     {
+        model.resetFilterByDistance();
         mainFrame.setContentPane(administrationWindow);
         mainFrame.pack();
     }
