@@ -33,13 +33,13 @@ public class ModifyMode extends PanelMode
         numberField.setPreferredSize(new Dimension(150, 25));
         contentPanel.add(numberField);
         panelStatusEditing = false;
+        localityForm = new LocalityForm(editingPanel);
     }
 
     private void switchPanelStatus()
     {
         panelStatusEditing = true;
         contentPanel.remove(numberField);
-        localityForm = new LocalityForm(editingPanel);
         localityForm.setData(editingPanel.getLocality(numberField.readData()));
         contentPanel.add(localityForm, BorderLayout.CENTER);
         revalidate();
