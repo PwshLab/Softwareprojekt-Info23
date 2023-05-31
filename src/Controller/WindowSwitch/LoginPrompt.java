@@ -30,6 +30,7 @@ public class LoginPrompt implements ActionListener
 
         // TODO: Add custom window listener that only closes login window
         //loginFrame.addWindowListener();
+        // TODO: Make frame appear in the middle of current window
 
         initialize();
 
@@ -39,12 +40,16 @@ public class LoginPrompt implements ActionListener
     private void initialize()
     {
         loginPanel.setLayout(new BorderLayout());
-        loginPanel.setPreferredSize(new Dimension(200, 150));
+        //loginPanel.setPreferredSize(new Dimension(200, 150));
+        loginPanel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         loginField = new TextField("Passwort", true);
         loginPanel.add(loginField, BorderLayout.CENTER);
+        JPanel buttonPanel = new JPanel();
         JButton button = new JButton("Anmelden");
+        buttonPanel.add(button);
+        buttonPanel.setBorder(BorderFactory.createEmptyBorder(0, 30, 0, 30));
         button.addActionListener(this);
-        loginPanel.add(button, BorderLayout.SOUTH);
+        loginPanel.add(buttonPanel, BorderLayout.SOUTH);
     }
 
     @Override
