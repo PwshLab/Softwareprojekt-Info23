@@ -2,6 +2,7 @@ package src.Controller;
 
 import src.Controller.Navigation.SearchFilter;
 import src.Controller.Navigation.SearchPath;
+import src.Controller.WindowSwitch.TopBar;
 import src.Model.Model;
 import src.View.View;
 
@@ -43,6 +44,7 @@ public class Controller
     private void initializeNavigationWindow()
     {
         navigationWindow = new JPanel();
+        navigationWindow.add(new TopBar(this, true));
         navigationWindow.setPreferredSize(new Dimension(1200, 750));
         navigationWindow.setLayout(new BoxLayout(navigationWindow, BoxLayout.Y_AXIS));
         navigationWindow.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
@@ -64,6 +66,7 @@ public class Controller
     private void initializeAdministrationWindow()
     {
         administrationWindow = new JPanel();
+        administrationWindow.add(new TopBar(this, false));
         administrationWindow.setPreferredSize(new Dimension(1200, 650));
         administrationWindow.setLayout(new BoxLayout(administrationWindow, BoxLayout.Y_AXIS));
         administrationWindow.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
