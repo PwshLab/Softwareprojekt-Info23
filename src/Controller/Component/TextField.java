@@ -8,7 +8,6 @@ public class TextField extends TextDataField<String>
     private Pattern validationPattern;
     private boolean checkPattern;
 
-    // TODO: Add ability to check for errors via regex filter
     public TextField(String fieldLabel)
     {
         super(fieldLabel);
