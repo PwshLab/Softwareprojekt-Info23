@@ -57,7 +57,7 @@ public class Controller
         navigationWindow.add(bottomUI);
     }
 
-    private void setWindowNavigation()
+    public void setWindowNavigation()
     {
         mainFrame.setContentPane(navigationWindow);
         mainFrame.pack();
@@ -73,7 +73,7 @@ public class Controller
         administrationWindow.add(view.getAdministrationView());
     }
 
-    private void setAdministrationWindow()
+    public void setAdministrationWindow()
     {
         mainFrame.setContentPane(administrationWindow);
         mainFrame.pack();
