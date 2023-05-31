@@ -4,7 +4,6 @@ import src.Controller.Component.PointField;
 import src.Controller.Component.TextAreaField;
 import src.Controller.Component.TextField;
 import src.Controller.Component.TypeField;
-import src.Model.Data.CoordSystem.Vector2;
 import src.Model.Data.Locality.Locality;
 
 import javax.swing.*;
@@ -13,10 +12,10 @@ import java.awt.*;
 public class LocalityForm extends JPanel
 {
     private final EditingPanel editingPanel;
-    private TextField nameField;
-    private TypeField typeField;
-    private TextAreaField descriptionField;
-    private PointField positionField;
+    private final TextField nameField;
+    private final TypeField typeField;
+    private final TextAreaField descriptionField;
+    private final PointField positionField;
 
     public LocalityForm(EditingPanel editingPanel)
     {
@@ -51,7 +50,7 @@ public class LocalityForm extends JPanel
         boolean isValidInput = nameField.hasError() || typeField.hasError() || descriptionField.hasError() || positionField.hasError();
         boolean positionOutOfBounds = false;
         if (isValidInput)
-            positionOutOfBounds =
+            positionOutOfBounds = !editingPanel.checkPositionBounds(positionField.readData());
 
         return isValidInput || positionOutOfBounds;
     }
