@@ -84,6 +84,7 @@ public class SearchPath extends JPanel implements ActionListener
         {
             displayPath(new List<>());
             model.clearLastPath();
+            return;
         }
 
         List<Integer> path =  model.getPath(localities[0], localities[1]);
