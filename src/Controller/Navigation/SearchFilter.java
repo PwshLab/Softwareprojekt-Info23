@@ -2,6 +2,7 @@ package src.Controller.Navigation;
 
 import src.Controller.Component.NumberField;
 import src.Controller.Component.PointField;
+import src.Controller.Component.WholeNumberField;
 import src.Model.Model;
 
 import javax.swing.*;
@@ -12,8 +13,8 @@ import java.awt.event.ActionListener;
 public class SearchFilter extends JPanel implements ActionListener
 {
     private final Model model;
-    private final PointField pointField;
-    private final NumberField numberField;
+    private final WholeNumberField indexField;
+    private final NumberField distanceField;
 
     public SearchFilter(Model model)
     {
@@ -32,10 +33,10 @@ public class SearchFilter extends JPanel implements ActionListener
         centerPanel.setLayout(new GridLayout(2, 1));
         centerPanel.add(upperCenter);
         upperCenter.setLayout(new BoxLayout(upperCenter, BoxLayout.X_AXIS));
-        pointField = new PointField("Position");
-        upperCenter.add(pointField);
-        numberField = new NumberField("Entfernung");
-        upperCenter.add(numberField);
+        indexField = new WholeNumberField("Lokalität");
+        upperCenter.add(indexField);
+        distanceField = new NumberField("Entfernung");
+        upperCenter.add(distanceField);
         add(centerPanel, BorderLayout.CENTER);
 
         JPanel buttonPanel = new JPanel();
@@ -50,13 +51,17 @@ public class SearchFilter extends JPanel implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e)
     {
-        if (pointField.hasError() || numberField.hasError())
+        if (indexField.hasError() || distanceField.hasError())
         {
             model.resetFilterByDistance();
         }
         else
         {
-            model.setFilterByDistance(pointField.readData(), numberField.readData());
+            int index = indexField.readData();
+            if (model.checkIndexBounds(index))
+                model.setFilterByDistance(model.getElements().get(index).getPosition(), distanceField.readData());
+            else
+                indexField.notifyError();
         }
     }
 }
