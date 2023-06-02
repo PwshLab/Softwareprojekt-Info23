@@ -6,6 +6,9 @@ import src.Model.Model;
 
 import java.util.Iterator;
 
+/**
+ * Klasse zum Bereitstellen von Beispieldaten
+ */
 public class DataProvider implements Iterable<Locality>
 {
     // TODO: Enter example data
@@ -20,11 +23,20 @@ public class DataProvider implements Iterable<Locality>
         this.model = model;
     }
 
+    /**
+     * Methode zum Ausgeben der maximalen Daten Anzahl
+     * @return Zahlenwert des Typs Integer
+     */
     public int getMaxData()
     {
         return maxData;
     }
 
+    /**
+     * Methode zum Ausgeben einer beispiel Lokalität
+     * @param n Index der Lokalität
+     * @return Eine Lokalität
+     */
     public Locality getLocality(int n)
     {
         return new Locality(
@@ -35,6 +47,10 @@ public class DataProvider implements Iterable<Locality>
         );
     }
 
+    /**
+     * Methode zum Ausgeben eines Iterators für die Beispieldaten
+     * @return Iterator für dieses Objekt
+     */
     @Override
     public Iterator<Locality> iterator()
     {

@@ -4,6 +4,9 @@ import src.Model.Data.Locality.Locality;
 
 import java.util.Iterator;
 
+/**
+ * Iterator für ein Objekt des Typs DataProvider
+ */
 public class ProviderIterator implements Iterator<Locality>
 {
     private final DataProvider provider;
