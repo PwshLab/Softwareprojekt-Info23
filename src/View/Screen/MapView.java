@@ -13,6 +13,9 @@ import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 
+/**
+ * Panel für die Kartenansicht
+ */
 public class MapView extends JPanel implements Observer
 {
     private final Model model;
@@ -32,6 +35,9 @@ public class MapView extends JPanel implements Observer
         initialize();
     }
 
+    /**
+     * Methode zum Initialisieren der Kartenansicht
+     */
     private void initialize()
     {
         setOpaque(true);
@@ -41,6 +47,11 @@ public class MapView extends JPanel implements Observer
         setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
     }
 
+    /**
+     * Überschriebene Methode aus der JPanel Klasse,
+     * um eigene 2D Darstellungen zu zeichnen
+     * @param g the <code>Graphics</code> object to protect
+     */
     @Override
     protected void paintComponent(Graphics g)
     {
@@ -48,9 +59,11 @@ public class MapView extends JPanel implements Observer
         Graphics2D g2 = (Graphics2D) g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
+        // Berechnung der Koordinatenskalierung
         double averageSize = (double) (getBounds().width + getBounds().height) / 2;
         double displayFactor = averageSize / (model.getWorldBound() * 2) * 0.875;
 
+        // Übertragen der Weltkoordinaten auf die Zeichenebene
         Vector2 center = new Vector2((double) getBounds().width / 2, (double) getBounds().height / 2);
         Point2D.Double[] points = new Point2D.Double[localities.count()];
         int index = 0;
@@ -61,6 +74,7 @@ public class MapView extends JPanel implements Observer
             index++;
         }
 
+        // Einzeichnen der Kanten im Graphen
         g2.setColor(Color.BLACK);
         for (Pair<Integer, Integer> edge: edges)
         {
@@ -71,6 +85,7 @@ public class MapView extends JPanel implements Observer
             g2.draw(edgeLine);
         }
 
+        // Einzeichnen des kürzesten Weges (falls vorhanden)
         g2.setColor(Color.BLUE);
         g2.setStroke(new BasicStroke(2));
         if (lastPath.length >= 2)
@@ -87,6 +102,7 @@ public class MapView extends JPanel implements Observer
             }
         }
 
+        // Einzeichnen der gefilterten Distanzsuche
         if (model.isFilterByDistance())
         {
             Vector2 filterPos = model.getFilterPosition().multiply(displayFactor).add(center);
@@ -104,6 +120,7 @@ public class MapView extends JPanel implements Observer
             g2.fill(filtCircle);
         }
 
+        // Einzeichnen der Lokalitäten mit Index
         Font font = g2.getFont();
         g2.setFont(new Font(font.getName(), font.getStyle(), 18));
         for (int i = 0; i < points.length; i++)
@@ -121,6 +138,9 @@ public class MapView extends JPanel implements Observer
         }
     }
 
+    /**
+     * Methode zum Aktualisieren der Kartenansicht
+     */
     @Override
     public void update()
     {

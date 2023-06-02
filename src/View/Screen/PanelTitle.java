@@ -3,6 +3,9 @@ package src.View.Screen;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Panel für den Titel einer Ansicht
+ */
 public class PanelTitle extends JPanel
 {
     public PanelTitle(String titleString)
