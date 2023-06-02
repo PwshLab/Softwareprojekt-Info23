@@ -9,6 +9,9 @@ import src.Model.Data.Locality.Locality;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Formular für eine Lokalität
+ */
 public class LocalityForm extends JPanel
 {
     private final EditingPanel editingPanel;
@@ -45,6 +48,10 @@ public class LocalityForm extends JPanel
         }
     }
 
+    /**
+     * Methode zum Ausgeben, ob das Formular fehler enthält
+     * @return
+     */
     public boolean hasError()
     {
         boolean invalidInput = nameField.hasError() || typeField.hasError() || descriptionField.hasError() || positionField.hasError();
@@ -57,6 +64,10 @@ public class LocalityForm extends JPanel
         return invalidInput || positionOutOfBounds;
     }
 
+    /**
+     * Methode zum Ausgeben des Inhalts des Formulars
+     * @return Eine Lokalität nach dem Inhalt des Formulars
+     */
     public Locality getData()
     {
         if (hasError())
@@ -70,6 +81,10 @@ public class LocalityForm extends JPanel
             );
     }
 
+    /**
+     * Methode zum Setzen der Daten im Formular
+     * @param locality Eine Lokalität
+     */
     public void setData(Locality locality)
     {
         nameField.writeData(locality.getName());
@@ -78,6 +93,9 @@ public class LocalityForm extends JPanel
         positionField.writeData(locality.getPosition());
     }
 
+    /**
+     * Methode zum Zurücksetzen des Formulars
+     */
     public void resetData()
     {
         nameField.resetData();
