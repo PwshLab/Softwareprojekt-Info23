@@ -7,6 +7,11 @@ import src.Controller.Component.WholeNumberField;
 import javax.swing.*;
 import java.awt.*;
 
+
+/**
+ * Bearbeitungsmodus des Administrations-Panels,
+ * um Lokalitäten zu entfernen
+ */
 public class DeleteMode extends PanelMode
 {
     private WholeNumberField numberField;

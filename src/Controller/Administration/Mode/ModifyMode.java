@@ -9,6 +9,10 @@ import src.Model.Data.Locality.Locality;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Bearbeitungsmodus des Administrations-Panels,
+ * um Lokalitäten zu bearbeiten
+ */
 public class ModifyMode extends PanelMode
 {
     private JPanel contentPanel;
@@ -36,6 +40,10 @@ public class ModifyMode extends PanelMode
         localityForm = new LocalityForm(editingPanel);
     }
 
+    /**
+     * Methode, um zwischen dem status für die Auswahl einer Lokalität
+     * und dem eigentlichen bearbeiten zu wechseln
+     */
     private void switchPanelStatus()
     {
         panelStatusEditing = true;

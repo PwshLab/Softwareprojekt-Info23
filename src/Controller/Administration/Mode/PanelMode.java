@@ -8,6 +8,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Abstrakte Klasse für einen Bearbeitungsmodus
+ * des Administrations-Panels
+ */
 public abstract class PanelMode extends JPanel implements ActionListener
 {
     protected final EditingPanel editingPanel;
@@ -47,19 +51,42 @@ public abstract class PanelMode extends JPanel implements ActionListener
         initializeForm(formPanel);
     }
 
+    /**
+     * Methode zum Ausgeben des zugehörigen Enum Wertes aus EditingMode,
+     * der dieses Panel beschreibt
+     * @return Wert des EditingMode Enum
+     */
     public EditingMode getAssociatedMode()
     {
         return associatedMode;
     }
 
+    /**
+     * Methode zum Initialisieren des Grafisch variierenden Teiles
+     * eines Panels
+     * @param formPanel JPanel, auf welchem das UI aufgebaut wird
+     */
     protected abstract void initializeForm(JPanel formPanel);
+
+    /**
+     * Methode, die beim Betätigen des Panels ausgeführt wird.
+     * Die eingegebenen Daten sollen hier an das Bestätigungspanel
+     * weitergegeben werden
+     */
     protected abstract void handleSubmit();
 
+    /**
+     * Methode, um die Beschriftung des Absenden JButtons ändert
+     * @param newLabel
+     */
     protected void setButtonLabel(String newLabel)
     {
         submitButton.setText(newLabel);
     }
 
+    /**
+     * Methode, um das Panel auf seinen Ursprungszustand zurückzusetzen
+     */
     public abstract void resetPanel();
 
     @Override
@@ -68,6 +95,10 @@ public abstract class PanelMode extends JPanel implements ActionListener
         handleSubmit();
     }
 
+    /**
+     * Hilfsklasse, um das Abbrechen der Bearbeitung durchzuführen
+     * @param editingPanel
+     */
     private record AbortHandler(EditingPanel editingPanel) implements ActionListener
     {
         @Override

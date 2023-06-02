@@ -7,6 +7,10 @@ import src.Controller.Component.ModeField;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Bearbeitungsmodus des Administrations-Panels,
+ * um einen Bearbeitungsmodus auszuwählen
+ */
 public class SelectMode extends PanelMode
 {
     private ModeField modeSelectField;

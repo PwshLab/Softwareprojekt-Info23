@@ -8,6 +8,10 @@ import java.awt.*;
 import java.awt.font.TextAttribute;
 import java.util.Collections;
 
+/**
+ * Bearbeitungsmodus des Administrations-Panels,
+ * um die vorhergegangene Bearbeitung zu bestätigen
+ */
 public class ConfirmMode extends PanelMode
 {
     private JTextPane confirmDisplay;
@@ -49,11 +53,20 @@ public class ConfirmMode extends PanelMode
     {
     }
 
+    /**
+     * Methode, um die Anzuzeigende Bestätigungsnachricht zu formatieren
+     * @param confirmAction Eine zu bestätigende Aktion
+     * @return Zugehörige Nachricht als String
+     */
     private String formatConfirmMessage(ConfirmAction confirmAction)
     {
         return "Sind sie sicher, dass sie " + confirmAction.getMessage() + " wollen?";
     }
 
+    /**
+     * Methode, um die Aktion zu setzen, welche nach der Bestätigung ausgeführt wird
+     * @param confirmAction Eine zu bestätigende Aktion
+     */
     public void setConfirmAction(ConfirmAction confirmAction)
     {
         this.confirmAction = confirmAction;

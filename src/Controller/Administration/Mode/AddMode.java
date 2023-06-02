@@ -8,6 +8,10 @@ import src.Model.Data.Locality.Locality;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Bearbeitungsmodus des Administrations-Panels,
+ * um Lokalitäten hinzuzufügen
+ */
 public class AddMode extends PanelMode
 {
     private LocalityForm localityForm;
