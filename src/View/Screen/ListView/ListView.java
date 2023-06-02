@@ -8,6 +8,9 @@ import javax.swing.event.DocumentListener;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
 
+/**
+ * Panel der Lokalitäten-Liste / Tabellenansicht
+ */
 public class ListView extends JPanel implements DocumentListener
 {
     private JTable table;
@@ -19,6 +22,10 @@ public class ListView extends JPanel implements DocumentListener
         initialize(model);
     }
 
+    /**
+     * Methode zum Initialisieren der Listenansicht mit dem gegebenen Model
+     * @param model Objekt des Typs Model
+     */
     private void initialize(Model model)
     {
         setOpaque(true);
@@ -31,6 +38,9 @@ public class ListView extends JPanel implements DocumentListener
         initializeDetailDisplay();
     }
 
+    /**
+     * Methode zum Initialisieren der Tabelle
+     */
     private void initializeTable()
     {
         table = new JTable();
@@ -46,6 +56,10 @@ public class ListView extends JPanel implements DocumentListener
         add(scrollPane);
     }
 
+    /**
+     * Methode zum Initialisieren der Tabellensortierung
+     * @param model Objekt des Typs Model
+     */
     private void initializeSorter(Model model)
     {
         ListTableModel tableModel = new ListTableModel(model);
@@ -55,6 +69,9 @@ public class ListView extends JPanel implements DocumentListener
         table.setRowSorter(rowSorter);
     }
 
+    /**
+     * Methode zum Initialisieren des Suchfeldes
+     */
     private void initializeTextField()
     {
         JPanel textPanel = new JPanel();
@@ -67,12 +84,19 @@ public class ListView extends JPanel implements DocumentListener
         add(textPanel);
     }
 
+    /**
+     * Methode zum Initialisieren der Detailansicht
+     */
     private void initializeDetailDisplay()
     {
         ListDetailDisplay display = new ListDetailDisplay(table);
         add(display);
     }
 
+    /**
+     * Methode zum Festlegen der Sucheingabe
+     * @param searchString Neue Sucheingage als String
+     */
     private void setSearchString(String searchString)
     {
         int[] searchIndices = {0, 1, 2, 3};
@@ -82,6 +106,10 @@ public class ListView extends JPanel implements DocumentListener
         rowSorter.setRowFilter(new RegexMultiRowFilter<>(regexString.toString(), searchIndices));
     }
 
+    /**
+     * Methode zum Aktualisieren der Suche bei Eingabe
+     * @param e DocumentEvent
+     */
     private void handleDocumentEvent(DocumentEvent e)
     {
         String searchText = textField.getText();

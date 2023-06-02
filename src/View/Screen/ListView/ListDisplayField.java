@@ -3,6 +3,9 @@ package src.View.Screen.ListView;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Panel für ein Anzeigefeld der Detailansicht
+ */
 public class ListDisplayField extends JPanel
 {
     private final JTextPane contentField;
@@ -27,6 +30,10 @@ public class ListDisplayField extends JPanel
         add(contentField, BorderLayout.CENTER);
     }
 
+    /**
+     * Methode zum Festlegen des Wertes des Anzeigefeldes
+     * @param content
+     */
     public void setContent(String content)
     {
         contentField.setText(content);

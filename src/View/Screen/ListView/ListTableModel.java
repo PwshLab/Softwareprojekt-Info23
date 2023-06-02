@@ -8,6 +8,9 @@ import src.Model.Observer.Observer;
 import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
 
+/**
+ * Klasse für das Tabellenmodell für die Listenansicht
+ */
 public class ListTableModel extends AbstractTableModel implements Observer
 {
     private final Model model;
@@ -52,18 +55,12 @@ public class ListTableModel extends AbstractTableModel implements Observer
         // TODO: Fix Threading error when update is called (low priority)
         // Ohne warten gibt es beim Darstellen der Tabelle
         // ab und an ArrayIndex Fehler
-
-        /*
-        try {
-            SwingUtilities.invokeAndWait(() -> {fireTableStructureChanged();});
-        } catch (InterruptedException | InvocationTargetException e) {
-            throw new RuntimeException(e);
-        }
-         */
         SwingUtilities.invokeLater(this::fireTableStructureChanged);
-        //fireTableStructureChanged();
     }
 
+    /**
+     * Methode zum Aktualisieren der zur verfügung gestellten Daten
+     */
     private void updateData()
     {
         List<Locality> localities = model.getElements();
