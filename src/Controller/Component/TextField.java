@@ -3,6 +3,9 @@ package src.Controller.Component;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Ein Textdatenfeld mit einer Zeile
+ */
 public class TextField extends TextDataField<String>
 {
     private Pattern validationPattern;

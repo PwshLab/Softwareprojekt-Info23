@@ -3,6 +3,9 @@ package src.Controller.Component;
 import src.Controller.Administration.EditingMode;
 import src.Controller.Administration.EditingPanel;
 
+/**
+ * Auswahldatenfeld für Bearbeitungsmodi
+ */
 public class ModeField extends SelectDataField<EditingMode, String>
 {
     String[] modeLabels = {"", "Hinzufügen", "Bearbeiten", "Entfernen", ""};

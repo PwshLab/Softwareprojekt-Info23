@@ -3,6 +3,10 @@ package src.Controller.Component;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Abstrakte Klasse für ein Datenfeld mit mehreren Zeilen
+ * @param <T> Datentyp des Datenfeldes
+ */
 public abstract class TextAreaDataField<T> extends DataField<T>
 {
     protected JTextArea textArea;

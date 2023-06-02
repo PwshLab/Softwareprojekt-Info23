@@ -2,6 +2,9 @@ package src.Controller.Component;
 
 import javax.swing.*;
 
+/**
+ * Ein Textdatenfeld mit mehreren Zeilen
+ */
 public class TextAreaField extends TextAreaDataField<String>
 {
     public TextAreaField(String fieldLabel)
