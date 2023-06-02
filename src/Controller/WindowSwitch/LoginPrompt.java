@@ -8,6 +8,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Eingabe-Panel für den Administrator Zugang
+ */
 public class LoginPrompt implements ActionListener
 {
     private final Controller controller;
@@ -27,14 +30,15 @@ public class LoginPrompt implements ActionListener
         loginPanel = new JPanel();
         loginFrame.setContentPane(loginPanel);
 
-        // TODO: Make frame appear in the middle of current window
-
         initialize();
 
         loginFrame.pack();
         loginFrame.setLocationRelativeTo(null);
     }
 
+    /**
+     * Methode zum Initialisieren des Login-Panels
+     */
     private void initialize()
     {
         loginPanel.setLayout(new BorderLayout());
