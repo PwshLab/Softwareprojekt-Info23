@@ -10,6 +10,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Eingabe-Panel zum Suchen nach dem kürzesten Weg zwischen
+ * zwei Lokalitäten
+ */
 public class SearchPath extends JPanel implements ActionListener
 {
     private final Model model;
@@ -57,6 +61,10 @@ public class SearchPath extends JPanel implements ActionListener
         displayPath(new List<>());
     }
 
+    /**
+     * Methode zum Ausgeben des gesuchten Pfades in einem Textfeld
+     * @param path Der Pfad als Liste an Indices
+     */
     private void displayPath(List<Integer> path)
     {
         StringBuilder pathString = new StringBuilder("Kürzester Weg: ");

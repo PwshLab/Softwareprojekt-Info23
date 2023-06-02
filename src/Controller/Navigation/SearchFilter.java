@@ -9,6 +9,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Eingabe-Panel um die Suche nach Lokalitäten auf einen bestimmten Radius
+ * um eine andere Lokalität zu begrenzen
+ */
 public class SearchFilter extends JPanel implements ActionListener
 {
     private final Model model;
