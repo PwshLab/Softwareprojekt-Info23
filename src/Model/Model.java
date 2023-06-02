@@ -14,6 +14,10 @@ import src.Model.Sample.DataProvider;
 
 import java.util.Random;
 
+/**
+ * Hauptklasse des Models.
+ * Zuständig für die Verwaltung der Daten
+ */
 public class Model extends Observable
 {
     private static final int interconnectedness = 3;
@@ -42,39 +46,70 @@ public class Model extends Observable
         initializeData();
     }
 
+    /**
+     * Methode zum Ausgeben der gespeicherten Elemente
+     * @return Liste an Lokalitäten
+     */
     public List<Locality> getElements()
     {
         return graph.getElements();
     }
 
+    /**
+     * Methode zum Ausgeben der Elemente, möglicherweise
+     * eingeschränkt durch die Suchbegrenzung über die Entfernung
+     * @return Liste an Lokalitäten
+     */
     public List<Locality> getElementsFiltered()
     {
         if (!filterByDistance)
             return graph.getElements();
         else
-            return graph.getElements().filter((Locality l) -> l.getPosition().distance(filterPosition) <= filterDistance);
+            return getElementsByDistance(filterPosition, filterDistance);
     }
 
+    /**
+     * Methode zum Ausgeben der Anzahl an Elementen
+     * @return Anzahl der Elemente
+     */
     public int getElementCount()
     {
         return graph.getElements().count();
     }
 
+    /**
+     * Methode zum Ausgeben, ob die Elemente durch Entfernung gefiltert werden
+     * @return Boolean Wert, ob die Elemente gefiltert werden
+     */
     public boolean isFilterByDistance()
     {
         return filterByDistance;
     }
 
+    /**
+     * Methode zum Ausgeben der Position, von welcher der
+     * Entfernungsfilter Ausgeht
+     * @return Position als Vektor2
+     */
     public Vector2 getFilterPosition()
     {
         return filterPosition;
     }
 
+    /**
+     * Methode zum Ausgeben der Filterentfernung
+     * @return Entfernung als Double
+     */
     public double getFilterDistance()
     {
         return filterDistance;
     }
 
+    /**
+     * Methode zum Ausgeben der Elemente mit einer bestimmten sortierung
+     * @param order Integer Wert, welcher die Sortierung festlegt
+     * @return Liste an Lokalitäten
+     */
     public List<Locality> getElements(int order)
     {
         // 1: Sortierung nach der Nummerierung
@@ -94,12 +129,22 @@ public class Model extends Observable
             return elements;
     }
 
+    /**
+     * Methode zum Ausgeben der Elemente, gefiltert nach der Entfernung
+     * @param position Position, von der die Entfernung Ausgeht
+     * @param distance Maximale Distanz zu der festgelegten Position
+     * @return Liste an Lokalitäten
+     */
     public List<Locality> getElementsByDistance(Vector2 position, double distance)
     {
         List<Locality> elements = getElements();
         return elements.filter((Locality l) -> l.getPosition().distance(position) <= distance);
     }
 
+    /**
+     * Methode zum Hinzufügen eines Elementes
+     * @param locality Hinzuzufügende Lokalität
+     */
     public void addElement(Locality locality)
     {
         graph.add(locality);
@@ -107,18 +152,31 @@ public class Model extends Observable
         notifyObservers();
     }
 
+    /**
+     * Methode zum Entfernen einer Lokalität
+     * @param locality Zu entfernende Lokalität
+     */
     public void removeElement(Locality locality)
     {
         graph.remove(locality, Object::equals);
         notifyObservers();
     }
 
+    /**
+     * Methode zum Überschreiben einer Lokalität
+     * @param index Index einer Lokalität
+     * @param locality Neue Lokalität
+     */
     public void setElement(int index, Locality locality)
     {
         graph.set(index, locality);
         notifyObservers();
     }
 
+    /**
+     * Methode zum Ausgeben der Kanten im Graphen
+     * @return Kanten im Graphen in einer Liste
+     */
     public List<Pair<Integer, Integer>> getEdges()
     {
         double[][] matrix = graph.getWeights();
@@ -132,12 +190,24 @@ public class Model extends Observable
         return edges;
     }
 
+    /**
+     * Methode zum Ausgeben eines Kantenwertes im Graphen
+     * @param l1 Erste Lokalität
+     * @param l2 Zweite Lokalität
+     * @return Kantenwert als Double
+     */
     public double getEdge(Locality l1, Locality l2)
     {
         return graph.getEdge(l1, l2, Object::equals);
     }
 
     // TODO: Fix generated points not always being fully connected
+
+    /**
+     * Methode zum Generieren der Kanten einer Lokalität
+     * @param locality Eine gegebene Lokalität
+     * @return Liste an Kanten
+     */
     private List<Pair<Locality, Double>> generateEdges(Locality locality)
     {
         Locality[] localities = graph.getElements().toArray(Locality.class);
@@ -162,6 +232,12 @@ public class Model extends Observable
         return edges;
     }
 
+    /**
+     * Methode zum Bestimmen des kürzesten Weges zwischen zwei Lokalitäten
+     * @param loc1 Erste Lokalität
+     * @param loc2 Zweite Lokalität
+     * @return Weg zwischen den Lokalitäten als Liste von Indices
+     */
     public List<Integer> getPath(Locality loc1, Locality loc2)
     {
         int index = graph.indexOf(loc1, Object::equals);
@@ -172,6 +248,10 @@ public class Model extends Observable
         return lastPath;
     }
 
+    /**
+     * Methode zum Ausgeben des zuletzt bestimmten kürzesten Weges
+     * @return Weg zwischen den Lokalitäten als Liste von Indices
+     */
     public List<Integer> getLastPath()
     {
         return lastPath;
@@ -183,6 +263,10 @@ public class Model extends Observable
         notifyObservers();
     }
 
+    /**
+     * Methode zum neuberechnen der Kanten einer Lokalität im Graph
+     * @param locality Eine gegebene Lokalität
+     */
     private void recalculateEdges(Locality locality)
     {
         List<Pair<Locality, Double>> edges = generateEdges(locality);
@@ -190,6 +274,11 @@ public class Model extends Observable
         graph.setEdges(locality, edges, Object::equals);
     }
 
+    /**
+     * Methode zum Generieren einer neuen Postion einer Lokalität,
+     * unter berücksichtigung des Mindestabstandes und der Weltgröße
+     * @return Mögliche Position der Lokalität als Vektor2
+     */
     public Vector2 generatePosition()
     {
         Vector2 position = null;
@@ -201,11 +290,20 @@ public class Model extends Observable
         return position;
     }
 
+    /**
+     * Methode zum Ausgeben der festgelegten Weltgröße
+     * @return Weltgröße als Integer Wert
+     */
     public int getWorldBound()
     {
         return worldBound;
     }
 
+    /**
+     * Methode zum Festlegen des Distanzfilters für die beschränkte Ausgabe
+     * @param newFilterPosition Neue Filterposition
+     * @param newFilterDistance Neue Filterdistanz
+     */
     public void setFilterByDistance(Vector2 newFilterPosition, double newFilterDistance)
     {
         filterByDistance = true;
@@ -214,17 +312,28 @@ public class Model extends Observable
         notifyObservers();
     }
 
+    /**
+     * Methode zum Zurücksetzen des Distanzfilters
+     */
     public void resetFilterByDistance()
     {
         filterByDistance = false;
         notifyObservers();
     }
 
+    /**
+     * Methoden zum Überprüfen, ob einem Index eine Lokalität zugeordnet ist
+     * @param index Ein gegebener Index
+     * @return Boolean Wert, ob der Index gültig ist
+     */
     public boolean checkIndexBounds(int index)
     {
         return index >= 0 && index < getElementCount();
     }
 
+    /**
+     * Methode zum Eingeben von Beispieldaten in den Graphen
+     */
     private void initializeData()
     {
         for (Locality l: new DataProvider(this))
