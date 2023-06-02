@@ -7,6 +7,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * Panel für die Überschrift des Fensters.
+ * Enthält zusätzlich den Anmeldebutton für die Administration
+ */
 public class TopBar extends JPanel implements ActionListener
 {
     private final Controller controller;
@@ -21,6 +25,11 @@ public class TopBar extends JPanel implements ActionListener
         initialize();
     }
 
+    /**
+     * Methode zum Initialisieren der Überschrift.
+     * Der enthaltene Text ist abhängig von der Anmeldung
+     * des Administrators
+     */
     private void initialize()
     {
         setLayout(new BorderLayout());
