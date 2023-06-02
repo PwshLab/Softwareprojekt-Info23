@@ -4,6 +4,10 @@ import src.Model.Model;
 import src.View.Window.Administration;
 import src.View.Window.Navigation;
 
+/**
+ * Hautpklasse der View.
+ * Zuständig für die Grafische darstellung der Daten
+ */
 public class View
 {
     private final Model model;
@@ -17,11 +21,19 @@ public class View
         administration = new Administration(model);
     }
 
+    /**
+     * Methode zum Ausgeben der Navigationsansicht
+     * @return Objekt der Navigationsansicht
+     */
     public Navigation getNavigationView()
     {
         return navigation;
     }
 
+    /**
+     * Methode zum Ausgeben der Administrationsansicht
+     * @return Objekt der Administrationsansicht
+     */
     public Administration getAdministrationView()
     {
         return administration;

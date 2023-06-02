@@ -8,7 +8,9 @@ import src.View.Screen.PanelTitle;
 import javax.swing.*;
 import java.awt.*;
 
-
+/**
+ * Panel für die Navigationsansicht
+ */
 public class Navigation extends JPanel
 {
     private final Model model;
@@ -22,6 +24,9 @@ public class Navigation extends JPanel
         initializeNavigationGUI();
     }
 
+    /**
+     * Methode zur Initialisierung der Navigationsansicht
+     */
     public void initializeNavigationGUI()
     {
         JPanel mainPanel = new JPanel();
@@ -53,11 +58,19 @@ public class Navigation extends JPanel
         setVisible(true);
     }
 
+    /**
+     * Methode zum Ausgeben der Listenansicht
+     * @return Objekt der Listenansicht
+     */
     public ListView getListView()
     {
         return listView;
     }
 
+    /**
+     * Methode zum Ausgeben der Kartenansicht
+     * @return Objekt der Kartenansicht
+     */
     public MapView getMapView()
     {
         return mapView;

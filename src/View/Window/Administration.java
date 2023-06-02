@@ -8,6 +8,9 @@ import src.View.Screen.PanelTitle;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Panel der Administrationsansicht
+ */
 public class Administration extends JPanel
 {
     private final Model model;
@@ -20,6 +23,9 @@ public class Administration extends JPanel
         initializeAdministrationGUI();
     }
 
+    /**
+     * Methode zum Initialisieren der Administrationsansicht
+     */
     public void initializeAdministrationGUI()
     {
         JPanel mainPanel = new JPanel();
@@ -51,6 +57,10 @@ public class Administration extends JPanel
         setVisible(true);
     }
 
+    /**
+     * Methode zum Ausgeben der Listenansicht
+     * @return Objekt der Listenansicht
+     */
     public ListView getListView()
     {
         return listView;
