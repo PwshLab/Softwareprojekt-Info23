@@ -10,6 +10,7 @@ import src.Model.Data.Locality.Locality;
 import src.Model.Data.Locality.LocalityOrder;
 import src.Model.Data.Value.Pair;
 import src.Model.Observer.Observable;
+import src.Model.Sample.DataProvider;
 
 import java.util.Random;
 
@@ -38,6 +39,7 @@ public class Model extends Observable
         filterPosition = Vector2.zero;
         filterDistance = 0;
 
+        initializeData();
     }
 
     public List<Locality> getElements()
@@ -221,5 +223,11 @@ public class Model extends Observable
     public boolean checkIndexBounds(int index)
     {
         return index >= 0 && index < getElementCount();
+    }
+
+    private void initializeData()
+    {
+        for (Locality l: new DataProvider(this))
+            addElement(l);
     }
 }
