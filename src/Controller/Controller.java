@@ -26,10 +26,6 @@ public class Controller
         initialize();
     }
 
-    // TODO: Add database connection for data persistence
-    // TODO: Add ability to generate example data
-    // TODO: Make Data handling class
-
     private void initializeMainWindow()
     {
         mainFrame = new JFrame("Search a Bar");
