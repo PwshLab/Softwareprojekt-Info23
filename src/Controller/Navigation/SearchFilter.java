@@ -1,7 +1,6 @@
 package src.Controller.Navigation;
 
 import src.Controller.Component.NumberField;
-import src.Controller.Component.PointField;
 import src.Controller.Component.WholeNumberField;
 import src.Model.Model;
 
