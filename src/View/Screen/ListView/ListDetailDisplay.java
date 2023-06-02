@@ -6,6 +6,9 @@ import javax.swing.event.ListSelectionListener;
 import javax.swing.table.TableModel;
 import java.awt.*;
 
+/**
+ * Panel für die Detailansicht der Lokalitäten-Liste
+ */
 public class ListDetailDisplay extends JPanel implements ListSelectionListener
 {
     private final JTable table;
@@ -25,18 +28,22 @@ public class ListDetailDisplay extends JPanel implements ListSelectionListener
         initialize();
     }
 
+    /**
+     * Methode zum Initialisieren der Detailansicht
+     */
     private void initialize()
     {
         setOpaque(true);
         setVisible(true);
         setLayout(new GridLayout());
-        //setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
-        //setLayout(new FlowLayout());
         setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
 
         initializeDisplayFields();
     }
 
+    /**
+     * Methode zum Initialisieren der Anzeigefelder
+     */
     private void initializeDisplayFields()
     {
         JPanel valuePanel = new JPanel();
@@ -56,6 +63,9 @@ public class ListDetailDisplay extends JPanel implements ListSelectionListener
         add(descriptionPanel);
     }
 
+    /**
+     * Methode zum Abfragen der Spaltenklassen
+     */
     private void getColumnClasses()
     {
         if (columnClasses != null)
@@ -66,6 +76,10 @@ public class ListDetailDisplay extends JPanel implements ListSelectionListener
             columnClasses[i] = tableModel.getColumnClass(i);
     }
 
+    /**
+     * Methode zum Anzeigen der Daten eines Eintrags
+     * @param index Index eines Eintrags
+     */
     private void displayData(int index)
     {
         getColumnClasses();
