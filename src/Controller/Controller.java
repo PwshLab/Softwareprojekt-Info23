@@ -9,6 +9,10 @@ import src.View.View;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Hauptklasse des Controllers.
+ * Ist zuständig für die Benutzereingaben des Programms
+ */
 public class Controller
 {
     private final Model model;
@@ -26,6 +30,9 @@ public class Controller
         initialize();
     }
 
+    /**
+     * Methode zum Initialisieren des Programmfensters
+     */
     private void initializeMainWindow()
     {
         mainFrame = new JFrame("Search a Bar");
@@ -35,6 +42,9 @@ public class Controller
         mainFrame.pack();
     }
 
+    /**
+     * Methode zum Initialisieren des Navigationsfensters
+     */
     private void initializeNavigationWindow()
     {
         navigationWindow = new JPanel();
@@ -51,6 +61,9 @@ public class Controller
         navigationWindow.add(bottomUI);
     }
 
+    /**
+     * Methode zum Setzen des Programmfensters auf die Navigation
+     */
     public void setWindowNavigation()
     {
         model.resetFilterByDistance();
@@ -58,6 +71,9 @@ public class Controller
         mainFrame.pack();
     }
 
+    /**
+     * Methode zum Initialisieren des Administrationsfensters
+     */
     private void initializeAdministrationWindow()
     {
         administrationWindow = new JPanel();
@@ -68,6 +84,9 @@ public class Controller
         administrationWindow.add(view.getAdministrationView());
     }
 
+    /**
+     * Methode zum Setzen des Programmfensters auf die Administration
+     */
     public void setAdministrationWindow()
     {
         model.resetFilterByDistance();
@@ -75,6 +94,9 @@ public class Controller
         mainFrame.pack();
     }
 
+    /**
+     * Methode zum allgemeinen Initialisieren des Programmfensters
+     */
     private void initialize()
     {
         initializeMainWindow();
