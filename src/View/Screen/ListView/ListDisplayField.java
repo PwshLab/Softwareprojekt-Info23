@@ -1,6 +1,7 @@
 package src.View.Screen.ListView;
 
 import javax.swing.*;
+import javax.swing.text.DefaultCaret;
 import java.awt.*;
 
 /**
@@ -9,6 +10,7 @@ import java.awt.*;
 public class ListDisplayField extends JPanel
 {
     private final JTextPane contentField;
+    private final JScrollPane scrollPane;
 
     public ListDisplayField(String fieldLabel)
     {
@@ -27,7 +29,11 @@ public class ListDisplayField extends JPanel
         contentField.setText(" ");
         contentField.setEditable(false);
         contentField.setBorder(BorderFactory.createBevelBorder(0));
-        add(contentField, BorderLayout.CENTER);
+        DefaultCaret caret = new DefaultCaret();
+        caret.setUpdatePolicy(DefaultCaret.NEVER_UPDATE);
+        contentField.setCaret(caret);
+        scrollPane = new JScrollPane(contentField);
+        add(scrollPane, BorderLayout.CENTER);
     }
 
     /**
@@ -36,6 +42,9 @@ public class ListDisplayField extends JPanel
      */
     public void setContent(String content)
     {
-        contentField.setText(content);
+        SwingUtilities.invokeLater(() -> {
+            contentField.setText(content);
+            scrollPane.getVerticalScrollBar().setValue(0);
+        });
     }
 }
