@@ -71,7 +71,7 @@ public class Dijkstra<T>
     /**
      * Methode zum Aktualisieren der Entfernung eines Knotens
      * @param node Knoten zu dem die Entfernung aktualisiert werden soll
-     * @param prevNode Vorgaengerknoten
+     * @param prevNode Vorgängerknoten
      */
     private void updateDistance(int node, int prevNode)
     {
@@ -84,7 +84,7 @@ public class Dijkstra<T>
     }
 
     /**
-     * Methode zum Suchen der kuerzesten Pfade im Graphen
+     * Methode zum Suchen der kürzesten Pfade im Graphen
      * @param startNode Anfangsknoten
      */
     public void findShortestPaths(int startNode)
@@ -108,7 +108,7 @@ public class Dijkstra<T>
     }
 
     /**
-     * Methode zum Ausgeben des kuerzesten Pfades im Graphen
+     * Methode zum Ausgeben des kürzesten Pfades im Graphen
      * @param node Zielknoten des Pfades
      * @return Besuchte Knoten des Pfades
      */
@@ -126,9 +126,9 @@ public class Dijkstra<T>
     }
 
     /**
-     * Methode zum Ausgeben der Laenge des kuerzesten Pfades im Graphem
+     * Methode zum Ausgeben der Länge des kürzesten Pfades im Graphem
      * @param node Zielknoten des Pfades
-     * @return Laenge des Pfades
+     * @return Länge des Pfades
      */
     public double getPathLength(int node)
     {

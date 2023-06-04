@@ -1,7 +1,7 @@
 package src.Model.Data.Locality;
 
 /**
- * Klasse zum Verwalten der Methoden zum Sortieren der Lokalitaeten
+ * Klasse zum Verwalten der Methoden zum Sortieren der Lokalitäten
  */
 public final class LocalityOrder
 {
@@ -10,9 +10,9 @@ public final class LocalityOrder
     }
 
     /**
-     * Methode zum Sortieren der Lokalitaeten nach dem Namen
-     * @param a Erste Lokalitaet
-     * @param b Zweite Lokalitaet
+     * Methode zum Sortieren der Lokalitäten nach dem Namen
+     * @param a Erste Lokalität
+     * @param b Zweite Lokalität
      * @return Integer Zahlenwert des Vergleiches
      */
     public static int ByName(Locality a, Locality b)
@@ -21,9 +21,9 @@ public final class LocalityOrder
     }
 
     /**
-     * Methode zum Sortieren der Lokalitaeten nach dem Typen
-     * @param a Erste Lokalitaet
-     * @param b Zweite Lokalitaet
+     * Methode zum Sortieren der Lokalitäten nach dem Typen
+     * @param a Erste Lokalität
+     * @param b Zweite Lokalität
      * @return Integer Zahlenwert des Vergleiches
      */
     public static int ByType(Locality a, Locality b)

@@ -10,7 +10,7 @@ import java.awt.*;
 
 /**
  * Bearbeitungsmodus des Administrations-Panels,
- * um Lokalitaeten hinzuzufuegen
+ * um Lokalitäten hinzuzufügen
  */
 public class AddMode extends PanelMode
 {
@@ -39,7 +39,7 @@ public class AddMode extends PanelMode
             Locality locality = localityForm.getData();
             editingPanel.setConfirmAction(
                     new ConfirmAction(
-                            "diese Lokalitaet hinzufuegen",
+                            "diese Lokalität hinzufügen",
                             () -> editingPanel.addLocality(locality)
                     )
             );

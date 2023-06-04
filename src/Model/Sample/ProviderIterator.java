@@ -5,7 +5,7 @@ import src.Model.Data.Locality.Locality;
 import java.util.Iterator;
 
 /**
- * Iterator fuer ein Objekt des Typs DataProvider
+ * Iterator für ein Objekt des Typs DataProvider
  */
 public class ProviderIterator implements Iterator<Locality>
 {
