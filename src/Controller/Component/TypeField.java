@@ -3,7 +3,7 @@ package src.Controller.Component;
 import src.Model.Data.Locality.LocalityType;
 
 /**
- * Datenfeld für die Arten von Lokalitäten
+ * Datenfeld fuer die Arten von Lokalitaeten
  */
 public class TypeField extends SelectDataField<LocalityType, LocalityType>
 {

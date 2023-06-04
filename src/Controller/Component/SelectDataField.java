@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Abstrakte Klasse für ein Auswahldatenfeld
+ * Abstrakte Klasse fuer ein Auswahldatenfeld
  * @param <T> Grundlegender Datentyp des Datenfeldes
  * @param <U> Anzuzeigender Datentyp bei der Auswahl
  */

@@ -11,8 +11,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Eingabe-Panel zum Suchen nach dem kürzesten Weg zwischen
- * zwei Lokalitäten
+ * Eingabe-Panel zum Suchen nach dem kuerzesten Weg zwischen
+ * zwei Lokalitaeten
  */
 public class SearchPath extends JPanel implements ActionListener
 {
@@ -29,7 +29,7 @@ public class SearchPath extends JPanel implements ActionListener
         setLayout(new BorderLayout());
         setBackground(Color.WHITE);
 
-        JLabel label = new JLabel("Kürzesten Weg Suchen");
+        JLabel label = new JLabel("Kuerzesten Weg Suchen");
         add(label, BorderLayout.NORTH);
 
         JPanel centerPanel = new JPanel();
@@ -67,7 +67,7 @@ public class SearchPath extends JPanel implements ActionListener
      */
     private void displayPath(List<Integer> path)
     {
-        StringBuilder pathString = new StringBuilder("Kürzester Weg: ");
+        StringBuilder pathString = new StringBuilder("Kuerzester Weg: ");
         for (Integer i: path)
             pathString.append(i).append(", ");
         if (pathString.lastIndexOf(",") >= 0)

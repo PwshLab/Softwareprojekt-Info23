@@ -3,7 +3,7 @@ package src.Model.Data.Locality;
 import src.Model.Data.CoordSystem.Vector2;
 
 /**
- * Klasse einer Lokalität
+ * Klasse einer Lokalitaet
  */
 public class Locality
 {

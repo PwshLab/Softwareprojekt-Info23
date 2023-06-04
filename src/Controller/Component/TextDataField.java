@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 /**
- * Abstrakte Klasse für ein einzeiliges Datenfeld
+ * Abstrakte Klasse fuer ein einzeiliges Datenfeld
  * @param <T> Datentyp des Datenfeldes
  */
 public abstract class TextDataField<T> extends DataField<T>
