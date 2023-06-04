@@ -10,7 +10,7 @@ import java.awt.*;
 
 /**
  * Bearbeitungsmodus des Administrations-Panels,
- * um Lokalitäten zu entfernen
+ * um Lokalitaeten zu entfernen
  */
 public class DeleteMode extends PanelMode
 {
@@ -31,7 +31,7 @@ public class DeleteMode extends PanelMode
     {
         formPanel.setLayout(new BorderLayout());
         formPanel.setBorder(BorderFactory.createEmptyBorder(50, 50, 50, 50));
-        numberField = new WholeNumberField("Index der Lokalität");
+        numberField = new WholeNumberField("Index der Lokalitaet");
         numberField.setPreferredSize(new Dimension(150, 25));
         formPanel.add(numberField);
     }
@@ -45,7 +45,7 @@ public class DeleteMode extends PanelMode
                 int localityIndex = numberField.readData();
                 editingPanel.setConfirmAction(
                         new ConfirmAction(
-                                "Lokalität " + numberField.readData() + " entfernen",
+                                "Lokalitaet " + numberField.readData() + " entfernen",
                                 () -> editingPanel.removeLocality(localityIndex)
                         )
                 );

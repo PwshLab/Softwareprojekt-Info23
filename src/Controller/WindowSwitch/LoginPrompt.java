@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Eingabe-Panel für den Administrator Zugang
+ * Eingabe-Panel fuer den Administrator Zugang
  */
 public class LoginPrompt implements ActionListener
 {

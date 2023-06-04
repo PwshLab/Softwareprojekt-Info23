@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Abstrakte Klasse für einen Bearbeitungsmodus
+ * Abstrakte Klasse fuer einen Bearbeitungsmodus
  * des Administrations-Panels
  */
 public abstract class PanelMode extends JPanel implements ActionListener
@@ -58,7 +58,7 @@ public abstract class PanelMode extends JPanel implements ActionListener
     }
 
     /**
-     * Methode zum Ausgeben des zugehörigen Enum Wertes aus EditingMode,
+     * Methode zum Ausgeben des zugehoerigen Enum Wertes aus EditingMode,
      * der dieses Panel beschreibt
      * @return Wert des EditingMode Enum
      */
@@ -75,14 +75,14 @@ public abstract class PanelMode extends JPanel implements ActionListener
     protected abstract void initializeForm(JPanel formPanel);
 
     /**
-     * Methode, die beim Betätigen des Panels ausgeführt wird.
-     * Die eingegebenen Daten sollen hier an das Bestätigungspanel
+     * Methode, die beim Betaetigen des Panels ausgefuehrt wird.
+     * Die eingegebenen Daten sollen hier an das Bestaetigungspanel
      * weitergegeben werden
      */
     protected abstract void handleSubmit();
 
     /**
-     * Methode, um die Beschriftung des Absenden JButtons ändert
+     * Methode, um die Beschriftung des Absenden JButtons aendert
      * @param newLabel Neue Beschriftung des Buttons
      */
     protected void setButtonLabel(String newLabel)
@@ -91,7 +91,7 @@ public abstract class PanelMode extends JPanel implements ActionListener
     }
 
     /**
-     * Methode, um das Panel auf seinen Ursprungszustand zurückzusetzen
+     * Methode, um das Panel auf seinen Ursprungszustand zurueckzusetzen
      */
     public abstract void resetPanel();
 
@@ -102,11 +102,17 @@ public abstract class PanelMode extends JPanel implements ActionListener
     }
 
     /**
-     * Hilfsklasse, um das Abbrechen der Bearbeitung durchzuführen
-     * @param editingPanel
+     * Hilfsklasse, um das Abbrechen der Bearbeitung durchzufuehren
      */
-    private record AbortHandler(EditingPanel editingPanel) implements ActionListener
+    private static class AbortHandler implements ActionListener
     {
+        private final EditingPanel editingPanel;
+
+        public AbortHandler(EditingPanel editingPanel)
+        {
+            this.editingPanel = editingPanel;
+        }
+
         @Override
         public void actionPerformed(ActionEvent e)
         {

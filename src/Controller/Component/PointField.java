@@ -5,7 +5,7 @@ import src.Model.Data.CoordSystem.Vector2;
 import java.awt.*;
 
 /**
- * Datenfeld für einen Vektor2
+ * Datenfeld fuer einen Vektor2
  */
 public class PointField extends DataField<Vector2>
 {

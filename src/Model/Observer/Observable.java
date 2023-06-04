@@ -3,7 +3,7 @@ package src.Model.Observer;
 import src.Model.Data.LinkedList.List;
 
 /**
- * Überklasse für ein Beobachtbares Objekt
+ * Ueberklasse fuer ein Beobachtbares Objekt
  */
 public class Observable
 {
@@ -29,7 +29,7 @@ public class Observable
     }
 
     /**
-     * Methode zum Hinzufügen eines Beobachters
+     * Methode zum Hinzufuegen eines Beobachters
      * @param observer Ein Objekt, welches das Observer Interface implementiert
      */
     public void addObserver(Observer observer)

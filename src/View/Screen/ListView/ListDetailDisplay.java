@@ -7,7 +7,7 @@ import javax.swing.table.TableModel;
 import java.awt.*;
 
 /**
- * Panel für die Detailansicht der Lokalitäten-Liste
+ * Panel fuer die Detailansicht der Lokalitaeten-Liste
  */
 public class ListDetailDisplay extends JPanel implements ListSelectionListener
 {

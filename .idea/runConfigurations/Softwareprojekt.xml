@@ -1,5 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Softwareprojekt" type="Application" factoryName="Application">
+    <option name="ALTERNATIVE_JRE_PATH" value="graalvm-ce-11" />
     <option name="MAIN_CLASS_NAME" value="src.Main" />
     <module name="Softwareprojekt-Info23" />
     <method v="2">

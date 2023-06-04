@@ -4,7 +4,7 @@ import src.Model.Data.LinkedList.List;
 
 /**
  * Hilfsklasse Grid.
- * Eine statische Klasse für berechnungen im Welt Koordinatensystem.
+ * Eine statische Klasse fuer berechnungen im Welt Koordinatensystem.
  */
 public final class Grid
 {
@@ -14,11 +14,11 @@ public final class Grid
     }
 
     /**
-     * Methode zum Berechnen der N nächsten Punkte zu einem Ausgangspunkt
+     * Methode zum Berechnen der N naechsten Punkte zu einem Ausgangspunkt
      * @param startPoint Position des Ausgangspunktes
      * @param otherPoints Liste der anderen Punkte
      * @param number Die Zahl N
-     * @return Indices der N nächsten Punkte
+     * @return Indices der N naechsten Punkte
      */
     public static int[] getNNearest(Vector2 startPoint, List<Vector2> otherPoints, int number)
     {
@@ -58,7 +58,7 @@ public final class Grid
                     indices[index] = j;
                     index++;
                 }
-                else if (minimum < distances[j]) // Auswählen des nächst größeren Abstandes
+                else if (minimum < distances[j]) // Auswaehlen des naechst groeßeren Abstandes
                 {
                     newMinimum = Math.min(newMinimum, distances[j]);
                 }

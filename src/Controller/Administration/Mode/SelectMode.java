@@ -9,7 +9,7 @@ import java.awt.*;
 
 /**
  * Bearbeitungsmodus des Administrations-Panels,
- * um einen Bearbeitungsmodus auszuwählen
+ * um einen Bearbeitungsmodus auszuwaehlen
  */
 public class SelectMode extends PanelMode
 {

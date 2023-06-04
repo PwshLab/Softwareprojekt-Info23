@@ -10,7 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Formular für eine Lokalität
+ * Formular fuer eine Lokalitaet
  */
 public class LocalityForm extends JPanel
 {
@@ -35,7 +35,7 @@ public class LocalityForm extends JPanel
 
         nameField = new TextField("Name", false);
         nameField.setValidationPattern(TextField.getTextOnlyPattern());
-        typeField = new TypeField("Art der Lokalität");
+        typeField = new TypeField("Art der Lokalitaet");
         descriptionField = new TextAreaField("Beschreibung");
         positionField = new PointField("Position");
         for (JPanel panel: new JPanel[]{nameField, typeField, descriptionField, positionField})
@@ -53,8 +53,8 @@ public class LocalityForm extends JPanel
     }
 
     /**
-     * Methode zum Ausgeben, ob das Formular fehler enthält
-     * @return Boolean, ob das Formular fehler enthält
+     * Methode zum Ausgeben, ob das Formular fehler enthaelt
+     * @return Boolean, ob das Formular fehler enthaelt
      */
     public boolean hasError()
     {
@@ -70,7 +70,7 @@ public class LocalityForm extends JPanel
 
     /**
      * Methode zum Ausgeben des Inhalts des Formulars
-     * @return Eine Lokalität nach dem Inhalt des Formulars
+     * @return Eine Lokalitaet nach dem Inhalt des Formulars
      */
     public Locality getData()
     {
@@ -87,7 +87,7 @@ public class LocalityForm extends JPanel
 
     /**
      * Methode zum Setzen der Daten im Formular
-     * @param locality Eine Lokalität
+     * @param locality Eine Lokalitaet
      */
     public void setData(Locality locality)
     {
@@ -98,7 +98,7 @@ public class LocalityForm extends JPanel
     }
 
     /**
-     * Methode zum Zurücksetzen des Formulars
+     * Methode zum Zuruecksetzen des Formulars
      */
     public void resetData()
     {

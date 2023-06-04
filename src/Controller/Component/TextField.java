@@ -47,7 +47,7 @@ public class TextField extends TextDataField<String>
     }
 
     /**
-     * Methode zum Festlegen eines Regex Ausdrucks zur fehlerüberprüfung
+     * Methode zum Festlegen eines Regex Ausdrucks zur fehlerueberpruefung
      * @param newPattern Neuer Regelausdruck
      */
     public void setValidationPattern(Pattern newPattern)
@@ -57,7 +57,7 @@ public class TextField extends TextDataField<String>
     }
 
     /**
-     * Methode zum Erstellen eines Regex für nur Textauswahl
+     * Methode zum Erstellen eines Regex fuer nur Textauswahl
      * @return Neuer Regex
      */
     public static Pattern getTextOnlyPattern()
