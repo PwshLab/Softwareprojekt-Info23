@@ -86,6 +86,8 @@ public class DataProvider implements Iterable<Locality>
             LocalityType.CLUB,
             LocalityType.CLUB,
             LocalityType.CLUB,
+            LocalityType.CLUB,
+            LocalityType.CLUB,
             LocalityType.HOTEL,
             LocalityType.HOTEL,
             LocalityType.HOTEL,
