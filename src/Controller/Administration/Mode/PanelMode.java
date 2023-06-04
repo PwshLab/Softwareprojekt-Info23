@@ -18,6 +18,12 @@ public abstract class PanelMode extends JPanel implements ActionListener
     protected EditingMode associatedMode;
     private final JButton submitButton;
 
+    /**
+     * Standardkonstruktor eines PanelModes
+     * @param editingPanel Referenz zum EditingPanel
+     * @param buttonLabel Beschriftung des Absenden JButtons
+     * @param canAbort Boolean, ob der Mode abgebrochen werden kann
+     */
     public PanelMode(EditingPanel editingPanel, String buttonLabel, boolean canAbort)
     {
         this.editingPanel = editingPanel;
@@ -77,7 +83,7 @@ public abstract class PanelMode extends JPanel implements ActionListener
 
     /**
      * Methode, um die Beschriftung des Absenden JButtons ändert
-     * @param newLabel
+     * @param newLabel Neue Beschriftung des Buttons
      */
     protected void setButtonLabel(String newLabel)
     {

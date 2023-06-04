@@ -11,6 +11,11 @@ public class TextField extends TextDataField<String>
     private Pattern validationPattern;
     private boolean checkPattern;
 
+    /**
+     * Standardkonstruktor des TextFields
+     * @param fieldLabel Beschriftung des Datenfeldes
+     * @param isPasswordField Boolean, ob es sich um ein Passwortfeld handelt
+     */
     public TextField(String fieldLabel, boolean isPasswordField)
     {
         super(fieldLabel, isPasswordField);
@@ -41,12 +46,20 @@ public class TextField extends TextDataField<String>
         textField.setText(newData);
     }
 
+    /**
+     * Methode zum Festlegen eines Regex Ausdrucks zur fehlerüberprüfung
+     * @param newPattern Neuer Regelausdruck
+     */
     public void setValidationPattern(Pattern newPattern)
     {
         validationPattern = newPattern;
         checkPattern = true;
     }
 
+    /**
+     * Methode zum Erstellen eines Regex für nur Textauswahl
+     * @return Neuer Regex
+     */
     public static Pattern getTextOnlyPattern()
     {
         return Pattern.compile("^[a-zA-Z ]*$");

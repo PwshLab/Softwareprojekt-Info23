@@ -17,6 +17,11 @@ public class TopBar extends JPanel implements ActionListener
     private final boolean isNavigation;
     private LoginPrompt loginPrompt;
 
+    /**
+     * Standardkonstruktor der TopBar
+     * @param controller Referenz zum Controller
+     * @param isNavigation Boolean, ob es im Navigation hinzugefügt wird
+     */
     public TopBar(Controller controller, boolean isNavigation)
     {
         this.controller = controller;

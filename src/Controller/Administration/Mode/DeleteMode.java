@@ -16,6 +16,10 @@ public class DeleteMode extends PanelMode
 {
     private WholeNumberField numberField;
 
+    /**
+     * Standardkonstruktor des DeleteModes
+     * @param editingPanel Referenz zum EditingPanel
+     */
     public DeleteMode(EditingPanel editingPanel)
     {
         super(editingPanel, "Entfernen", true);

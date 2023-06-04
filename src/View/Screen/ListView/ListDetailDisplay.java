@@ -16,6 +16,10 @@ public class ListDetailDisplay extends JPanel implements ListSelectionListener
     private final ListDisplayField[] displayFields;
     private Class<?>[] columnClasses;
 
+    /**
+     * Standardkonstruktor des ListDetailDisplays
+     * @param table Referenz zur Tabelle der Listen Ansicht
+     */
     public ListDetailDisplay(JTable table)
     {
         this.table = table;

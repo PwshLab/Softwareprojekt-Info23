@@ -7,6 +7,9 @@ public class Vector3
 {
     protected final double x1, x2, x3;
 
+    /**
+     * Standard Nullvektor
+     */
     public static Vector3 zero = new Vector3(0, 0, 0);
 
     /**
@@ -53,7 +56,7 @@ public class Vector3
 
     /**
      * Methode zum Skalieren eines Vektors
-     * @param n Skalarfaktor
+     * @param n Skalar faktor
      * @return Resultierender Vektor
      */
     public Vector3 multiply(double n)

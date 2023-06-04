@@ -20,6 +20,10 @@ public class LoginPrompt implements ActionListener
 
     private static final String loginPassword = "Passwort1234";
 
+    /**
+     * Standardkonstruktor des LoginPrompt
+     * @param controller Referenz zum Controller
+     */
     public LoginPrompt(Controller controller)
     {
         this.controller = controller;

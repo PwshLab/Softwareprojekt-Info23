@@ -5,6 +5,10 @@ package src.Controller.Component;
  */
 public class NumberField extends TextDataField<Double>
 {
+    /**
+     * Standardkonstruktor des NumberFields
+     * @param fieldLabel Beschriftung des Datenfeldes
+     */
     public NumberField(String fieldLabel)
     {
         super(fieldLabel, false);

@@ -13,6 +13,11 @@ public abstract class DataField<T> extends JPanel
 
     // TODO : Fix JLabel and TextField misalignment (medium priority)
     // Possibly left align jLabel
+
+    /**
+     * Standardkonstruktor eines DataFields
+     * @param fieldLabel Datenfeld beschriftung
+     */
     public DataField(String fieldLabel)
     {
         setOpaque(true);

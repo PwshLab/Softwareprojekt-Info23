@@ -12,6 +12,10 @@ public class ListDisplayField extends JPanel
     private final JTextPane contentField;
     private final JScrollPane scrollPane;
 
+    /**
+     * Standardkonstruktor des ListDisplayFields
+     * @param fieldLabel Beschreitung des Anzeigefeldes
+     */
     public ListDisplayField(String fieldLabel)
     {
         setOpaque(true);
@@ -38,7 +42,7 @@ public class ListDisplayField extends JPanel
 
     /**
      * Methode zum Festlegen des Wertes des Anzeigefeldes
-     * @param content
+     * @param content Neuer Wert des Anzeigefeldes
      */
     public void setContent(String content)
     {

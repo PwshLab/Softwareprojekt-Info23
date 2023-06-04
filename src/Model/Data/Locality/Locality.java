@@ -12,6 +12,13 @@ public class Locality
     private String description;
     private Vector2 position;
 
+    /**
+     * Standardkonstruktor einer Lokalität
+     * @param name Name der Lokalität
+     * @param type Art der Lokalität
+     * @param description Beschreibung der Lokalität
+     * @param position Position der Lokalität
+     */
     public Locality(String name, LocalityType type, String description, Vector2 position)
     {
         this.name = name;

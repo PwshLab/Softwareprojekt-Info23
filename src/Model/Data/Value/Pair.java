@@ -10,6 +10,11 @@ public class Pair<T, U>
     private final T value1;
     private final U value2;
 
+    /**
+     * Standardkonstruktor des Pairs
+     * @param value1 Erster Wert
+     * @param value2 Zweiter Wert
+     */
     public Pair(T value1, U value2)
     {
         this.value1 = value1;

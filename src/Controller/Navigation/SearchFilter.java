@@ -19,6 +19,10 @@ public class SearchFilter extends JPanel implements ActionListener
     private final WholeNumberField indexField;
     private final NumberField distanceField;
 
+    /**
+     * Standardkonstruktor des SearchFilters
+     * @param model Referenz zum Model
+     */
     public SearchFilter(Model model)
     {
         this.model = model;

@@ -33,6 +33,9 @@ public class Model extends Observable
     private Vector2 filterPosition;
     private double filterDistance;
 
+    /**
+     * Standardkonstruktor des Models
+     */
     public Model()
     {
         rnd = new Random();
@@ -257,6 +260,9 @@ public class Model extends Observable
         return lastPath;
     }
 
+    /**
+     * Methode zum Zurücksetzen des zuletzt bestimmten kürzesten Weges
+     */
     public void clearLastPath()
     {
         lastPath = new List<>();

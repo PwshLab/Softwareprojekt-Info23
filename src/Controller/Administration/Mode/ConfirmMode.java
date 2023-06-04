@@ -17,6 +17,10 @@ public class ConfirmMode extends PanelMode
     private JTextPane confirmDisplay;
     private ConfirmAction confirmAction;
 
+    /**
+     * Standardkonstruktor des ConfirmModes
+     * @param editingPanel Referenz zum EditingPanel
+     */
     public ConfirmMode(EditingPanel editingPanel)
     {
         super(editingPanel, "Bestätigen", true);

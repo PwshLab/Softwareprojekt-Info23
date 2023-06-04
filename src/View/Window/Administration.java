@@ -16,6 +16,10 @@ public class Administration extends JPanel
     private final Model model;
     private ListView listView;
 
+    /**
+     * Standardkonstruktor der Administration
+     * @param model Referenz zum Model
+     */
     public Administration(Model model)
     {
         this.model = model;

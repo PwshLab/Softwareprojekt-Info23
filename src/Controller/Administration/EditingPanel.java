@@ -16,6 +16,10 @@ public class EditingPanel extends JPanel
     private EditingMode currentEditingMode;
     private PanelMode[] editorPanels;
 
+    /**
+     * Standardkonstruktor des EditingPanels
+     * @param model Referenz zum Model
+     */
     public EditingPanel(Model model)
     {
         this.model = model;

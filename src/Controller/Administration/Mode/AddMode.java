@@ -16,6 +16,10 @@ public class AddMode extends PanelMode
 {
     private LocalityForm localityForm;
 
+    /**
+     * Standardkonstruktor des AddModes
+     * @param editingPanel Referenz zum EditingPanel
+     */
     public AddMode(EditingPanel editingPanel)
     {
         super(editingPanel, "Absenden", true);

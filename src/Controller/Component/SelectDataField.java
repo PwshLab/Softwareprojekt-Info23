@@ -10,8 +10,12 @@ import java.awt.*;
  */
 public abstract class SelectDataField<T, U> extends DataField<T>
 {
-    protected JComboBox<U> comboBox;
+    protected final JComboBox<U> comboBox;
 
+    /**
+     * Standardkonstruktor des SelectDataFields
+     * @param fieldLabel Beschriftung des Datenfeldes
+     */
     public SelectDataField(String fieldLabel)
     {
         super(fieldLabel);

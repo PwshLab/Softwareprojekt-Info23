@@ -17,6 +17,10 @@ public class ListView extends JPanel implements DocumentListener
     private TableRowSorter<ListTableModel> rowSorter;
     private JTextField textField;
 
+    /**
+     * Standardkonstruktor der ListView
+     * @param model Referenz zum Model
+     */
     public ListView(Model model)
     {
         initialize(model);

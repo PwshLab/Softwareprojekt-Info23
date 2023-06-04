@@ -11,6 +11,10 @@ public class PointField extends DataField<Vector2>
 {
     private final NumberField field1, field2;
 
+    /**
+     * Standardkonstruktor des PointFields
+     * @param fieldLabel Beschriftung des Datenfeldes
+     */
     public PointField(String fieldLabel)
     {
         super(fieldLabel);

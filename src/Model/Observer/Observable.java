@@ -9,6 +9,9 @@ public class Observable
 {
     private final List<Observer> observers;
 
+    /**
+     * Standardkonstruktor eines Observable Objektes
+     */
     public Observable()
     {
         observers = new List<>();

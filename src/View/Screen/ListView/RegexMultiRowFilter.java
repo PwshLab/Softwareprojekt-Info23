@@ -14,6 +14,11 @@ public class RegexMultiRowFilter<M, I> extends RowFilter<M, I>
     private final Matcher matcher;
     private final int[] columns;
 
+    /**
+     * Standardkonstruktor des RegexMultiRowFilters
+     * @param regexString Ein Regex Ausdruck als String
+     * @param columns Ein Array mit den Indices der Spalten, welche durchsucht werden sollen
+     */
     public RegexMultiRowFilter(String regexString, int[] columns)
     {
         this.matcher = Pattern.compile(regexString).matcher("");

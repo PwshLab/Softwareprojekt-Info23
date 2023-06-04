@@ -7,6 +7,10 @@ import src.Model.Data.Locality.LocalityType;
  */
 public class TypeField extends SelectDataField<LocalityType, LocalityType>
 {
+    /**
+     * Standardkonstruktor des TypeFields
+     * @param fieldLabel Beschriftung des Datenfeldes
+     */
     public TypeField(String fieldLabel)
     {
         super(fieldLabel);

@@ -7,6 +7,10 @@ import javax.swing.*;
  */
 public class TextAreaField extends TextAreaDataField<String>
 {
+    /**
+     * Standardkonstruktor des TextAreaFields
+     * @param fieldLabel Beschriftung des Datenfeldes
+     */
     public TextAreaField(String fieldLabel)
     {
         super(fieldLabel);

@@ -2,6 +2,10 @@ package src.Model.Data.CoordSystem;
 
 import src.Model.Data.LinkedList.List;
 
+/**
+ * Hilfsklasse Grid.
+ * Eine statische Klasse für berechnungen im Welt Koordinatensystem.
+ */
 public final class Grid
 {
 

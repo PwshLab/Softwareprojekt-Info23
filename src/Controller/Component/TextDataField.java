@@ -10,8 +10,13 @@ import java.awt.event.ActionListener;
  */
 public abstract class TextDataField<T> extends DataField<T>
 {
-    protected JTextField textField;
+    protected final JTextField textField;
 
+    /**
+     * Standardkonstruktor des TextDataFields
+     * @param fieldLabel Beschriftung des Datenfeldes
+     * @param isPasswordField Boolean, ob es sich um ein Passwortfeld handelt
+     */
     public TextDataField(String fieldLabel, boolean isPasswordField)
     {
         super(fieldLabel);
@@ -27,6 +32,10 @@ public abstract class TextDataField<T> extends DataField<T>
         add(panel);
     }
 
+    /**
+     * Methode zum Hinzufügen eines Action Listeners
+     * @param actionListener Ein Objekt, das ActionListener implementiert
+     */
     public void addActionListener(ActionListener actionListener)
     {
         textField.addActionListener(actionListener);

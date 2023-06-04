@@ -8,8 +8,12 @@ import src.Controller.Administration.EditingPanel;
  */
 public class ModeField extends SelectDataField<EditingMode, String>
 {
-    String[] modeLabels = {"", "Hinzufügen", "Bearbeiten", "Entfernen", ""};
+    private static final String[] modeLabels = {"", "Hinzufügen", "Bearbeiten", "Entfernen", ""};
 
+    /**
+     * Standardkonstruktor des ModeFields
+     * @param fieldLabel Beschriftung des Datenfeldes
+     */
     public ModeField(String fieldLabel)
     {
         super(fieldLabel);

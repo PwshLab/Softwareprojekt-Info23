@@ -9,6 +9,11 @@ public class ConfirmAction
     private final String confirmMessage;
     private final Runnable actionOnConfirm;
 
+    /**
+     * Standardkonstruktor der ConfirmAction
+     * @param confirmMessage Nachricht der Aktion
+     * @param actionOnConfirm Auszuführende Funktion
+     */
     public ConfirmAction(String confirmMessage, Runnable actionOnConfirm)
     {
         this.confirmMessage = confirmMessage;

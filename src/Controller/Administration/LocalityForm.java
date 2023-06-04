@@ -20,6 +20,10 @@ public class LocalityForm extends JPanel
     private final TextAreaField descriptionField;
     private final PointField positionField;
 
+    /**
+     * Standardkonstruktor des LocalityForm
+     * @param editingPanel Referenz zum EditingPanel
+     */
     public LocalityForm(EditingPanel editingPanel)
     {
         this.editingPanel = editingPanel;
@@ -50,7 +54,7 @@ public class LocalityForm extends JPanel
 
     /**
      * Methode zum Ausgeben, ob das Formular fehler enthält
-     * @return
+     * @return Boolean, ob das Formular fehler enthält
      */
     public boolean hasError()
     {

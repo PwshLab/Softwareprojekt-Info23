@@ -5,7 +5,10 @@ package src.Model.Data.CoordSystem;
  */
 public class Vector2 extends Vector3
 {
-    public static Vector2 zero = new Vector2(0, 0);
+    /**
+     * Standard Nullvektor
+     */
+    public static final Vector2 zero = new Vector2(0, 0);
 
     /**
      * Standartkonstruktor des Vektors
@@ -48,7 +51,7 @@ public class Vector2 extends Vector3
 
     /**
      * Methode zum Skalieren eines Vektors
-     * @param n Skalarfaktor
+     * @param n Skalar faktor
      * @return Resultierender Vektor
      */
     public Vector2 multiply(double n)

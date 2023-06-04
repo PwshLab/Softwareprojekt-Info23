@@ -5,7 +5,7 @@ import src.View.Window.Administration;
 import src.View.Window.Navigation;
 
 /**
- * Hautpklasse der View.
+ * Hauptklasse der View.
  * Zuständig für die Grafische darstellung der Daten
  */
 public class View
@@ -14,6 +14,10 @@ public class View
     private final Navigation navigation;
     private final Administration administration;
 
+    /**
+     * Standardkonstruktor der View
+     * @param model Referenz zum Model
+     */
     public View(Model model)
     {
         this.model = model;

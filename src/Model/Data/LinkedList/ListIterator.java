@@ -2,11 +2,21 @@ package src.Model.Data.LinkedList;
 
 import java.util.Iterator;
 
-// Source: https://www.geeksforgeeks.org/java-implementing-iterator-and-iterable-interface/
+/**
+ * Iterator der verknüpften Liste.
+ * Diese Klasse wurde aus einer bestehenden Implementierung eines
+ * solchen Iterators abgewandelt.
+ * Original Quellcode: <a href="https://www.geeksforgeeks.org/java-implementing-iterator-and-iterable-interface/">Java | Implementing Iterator and Iterable Interface</a>
+ * @param <T> Beliebiger Datentyp T
+ */
 public class ListIterator<T> implements Iterator<T>
 {
-    Node<T> current;
+    private Node<T> current;
 
+    /**
+     * Standardkonstruktor des ListIterators
+     * @param list Referenz zur jeweiligen Liste
+     */
     public ListIterator(List<T> list)
     {
         current = list.first();

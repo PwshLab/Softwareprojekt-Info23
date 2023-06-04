@@ -9,8 +9,12 @@ import java.awt.*;
  */
 public abstract class TextAreaDataField<T> extends DataField<T>
 {
-    protected JTextArea textArea;
+    protected final JTextArea textArea;
 
+    /**
+     * Standardkonstruktor des TextAreaDataField
+     * @param fieldLabel Beschriftung des Datenfeldes
+     */
     public TextAreaDataField(String fieldLabel)
     {
         super(fieldLabel);

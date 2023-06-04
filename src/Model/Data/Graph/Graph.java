@@ -54,6 +54,8 @@ public class Graph<T>
     /**
      * Methode zum Entfernen eines Objektes aus dem Graphen
      * @param object Objekt des Typen T
+     * @param equality Benutzer spezifizierte Funktion zum Überprüfen
+     *                 der Gleichheit zweier Objekte
      */
     public void remove(T object, BiPredicate<T, T> equality)
     {

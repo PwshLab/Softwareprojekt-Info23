@@ -5,6 +5,10 @@ package src.Controller.Component;
  */
 public class WholeNumberField extends TextDataField<Integer>
 {
+    /**
+     * Standardkonstruktor des WholeNumberFields
+     * @param fieldLabel Beschriftung des Datenfeldes
+     */
     public WholeNumberField(String fieldLabel)
     {
         super(fieldLabel, false);

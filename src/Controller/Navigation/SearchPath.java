@@ -20,6 +20,10 @@ public class SearchPath extends JPanel implements ActionListener
     private final WholeNumberField field1, field2;
     private final JTextArea textArea;
 
+    /**
+     * Standardkonstruktor des SearchPath
+     * @param model Referenz zum Model
+     */
     public SearchPath(Model model)
     {
         this.model = model;

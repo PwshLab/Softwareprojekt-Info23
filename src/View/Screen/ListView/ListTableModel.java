@@ -17,6 +17,10 @@ public class ListTableModel extends AbstractTableModel implements Observer
     private static final String[] columnNames = {"Index", "Name", "Beschreibung", "Typ", "Position"};
     private Object[][] data;
 
+    /**
+     * Standardkonstruktor des ListTableModels
+     * @param model Referenz zum Model
+     */
     public ListTableModel(Model model)
     {
         this.model = model;

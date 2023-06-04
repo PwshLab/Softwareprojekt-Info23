@@ -12,6 +12,10 @@ public class ProviderIterator implements Iterator<Locality>
     private final DataProvider provider;
     private int currentGenerated;
 
+    /**
+     * Standardkonstruktor des ProviderIterators
+     * @param provider Referenz zum jeweiligen DataProvider
+     */
     public ProviderIterator(DataProvider provider)
     {
         this.provider = provider;

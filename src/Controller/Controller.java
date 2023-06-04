@@ -22,6 +22,11 @@ public class Controller
     private JPanel navigationWindow;
     private JPanel administrationWindow;
 
+    /**
+     * Standardkonstruktor des Controllers
+     * @param model Referenz zum Model
+     * @param view Referenz zur View
+     */
     public Controller(Model model, View view)
     {
         this.model = model;

@@ -161,9 +161,12 @@ public class DataProvider implements Iterable<Locality>
                     "Die zweckmäßig eingerichteten Zimmer mit farbenfrohen Akzenten haben WLAN und einen Flachbildfernseher. Zimmer mit gehobener Ausstattung bieten außerdem Stadtblick. In den Familienzimmern gibt es ein Schlafsofa.\n" +
                     "Es gibt eine zwanglose Lobbybar. Parkplätze sind vorhanden und ein Frühstücksbuffet wird angeboten.\n"
         };
-    private static final int maxData = Math.min(names.length, Math.min(types.length, descriptions.length));
     private final Model model;
 
+    /**
+     * Standardkonstruktor des DataProviders
+     * @param model Referenz zum Model
+     */
     public DataProvider(Model model)
     {
         this.model = model;
@@ -175,7 +178,7 @@ public class DataProvider implements Iterable<Locality>
      */
     public int getMaxData()
     {
-        return maxData;
+        return names.length;
     }
 
     /**

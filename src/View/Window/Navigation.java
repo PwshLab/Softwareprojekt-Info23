@@ -17,6 +17,10 @@ public class Navigation extends JPanel
     private ListView listView;
     private MapView mapView;
 
+    /**
+     * Standardkonstruktor der Navigation
+     * @param model Referenz zum Model
+     */
     public Navigation(Model model)
     {
         this.model = model;

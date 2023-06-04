@@ -20,6 +20,10 @@ public class ModifyMode extends PanelMode
     private LocalityForm localityForm;
     private boolean panelStatusEditing;
 
+    /**
+     * Standardkonstruktor des ModifyModes
+     * @param editingPanel Referenz zum EditingPanel
+     */
     public ModifyMode(EditingPanel editingPanel)
     {
         super(editingPanel, "Weiter", true);

@@ -15,6 +15,10 @@ public class SelectMode extends PanelMode
 {
     private ModeField modeSelectField;
 
+    /**
+     * Standardkonstruktor des SelectModes
+     * @param editingPanel Referenz zum EditingPanel
+     */
     public SelectMode(EditingPanel editingPanel)
     {
         super(editingPanel, "Weiter", false);

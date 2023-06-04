@@ -24,6 +24,10 @@ public class MapView extends JPanel implements Observer
     private Integer[] lastPath;
     private static final double circleSize = 5;
 
+    /**
+     * Standardkonstruktor der MepView
+     * @param model Referenz zum Model
+     */
     public MapView(Model model)
     {
         this.model = model;
@@ -107,17 +111,17 @@ public class MapView extends JPanel implements Observer
         {
             Vector2 filterPos = model.getFilterPosition().multiply(displayFactor).add(center);
             double filterDist = model.getFilterDistance() * displayFactor;
-            Ellipse2D.Double filtCircle = new Ellipse2D.Double(
+            Ellipse2D.Double filterCircle = new Ellipse2D.Double(
                     filterPos.getX(1) - filterDist,
                     filterPos.getX(2) - filterDist,
                     filterDist * 2,
                     filterDist * 2
             );
             g2.setColor(Color.CYAN);
-            g2.draw(filtCircle);
+            g2.draw(filterCircle);
             Color transparentCyan = new Color(Color.CYAN.getRed(), Color.CYAN.getGreen(), Color.CYAN.getBlue(), 25);
             g2.setColor(transparentCyan);
-            g2.fill(filtCircle);
+            g2.fill(filterCircle);
         }
 
         // Einzeichnen der Lokalitäten mit Index
