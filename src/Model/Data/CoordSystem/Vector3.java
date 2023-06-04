@@ -115,16 +115,11 @@ public class Vector3
      */
     public double getX(int n)
     {
-        switch (n)
-        {
-            case 1:
-                return x1;
-            case 2:
-                return x2;
-            case 3:
-                return x3;
-            default:
-                return 0;
-        }
+        return switch (n) {
+            case 1 -> x1;
+            case 2 -> x2;
+            case 3 -> x3;
+            default -> 0;
+        };
     }
 }
