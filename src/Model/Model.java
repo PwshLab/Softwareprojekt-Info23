@@ -115,12 +115,16 @@ public class Model extends Observable
         // 1: Sortierung nach der Nummerierung
         // 2: Sortierung nach dem Namen
         // 3: Sortierung nach dem Typen
-        List<Locality> elements = switch (Math.abs(order))
+        List<Locality> elements;
+        switch (Math.abs(order))
         {
-            case 2 -> new SortedList<>(getElements(), LocalityOrder::ByName);
-            case 3 -> new SortedList<>(getElements(), LocalityOrder::ByType);
-            default -> getElements();
-        };
+            case 2:
+                elements = new SortedList<>(getElements(), LocalityOrder::ByName);
+            case 3:
+                elements = new SortedList<>(getElements(), LocalityOrder::ByType);
+            default:
+                elements = getElements();
+        }
 
         // Negativer Wert: Umgekehrte Sortierung
         if (order < 0)
@@ -284,8 +288,8 @@ public class Model extends Observable
         Vector2 position = null;
         while (position == null || getElementsByDistance(position, minGenDistance).count() > 0)
             position = new Vector2(
-                    rnd.nextInt(-worldBound, worldBound),
-                    rnd.nextInt(-worldBound, worldBound)
+                    rnd.nextInt(worldBound * 2) - worldBound,
+                    rnd.nextInt(worldBound * 2) - worldBound
             );
         return position;
     }

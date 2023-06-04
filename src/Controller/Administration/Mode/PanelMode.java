@@ -97,10 +97,16 @@ public abstract class PanelMode extends JPanel implements ActionListener
 
     /**
      * Hilfsklasse, um das Abbrechen der Bearbeitung durchzuführen
-     * @param editingPanel
      */
-    private record AbortHandler(EditingPanel editingPanel) implements ActionListener
+    private static class AbortHandler implements ActionListener
     {
+        private final EditingPanel editingPanel;
+
+        public AbortHandler(EditingPanel editingPanel)
+        {
+            this.editingPanel = editingPanel;
+        }
+
         @Override
         public void actionPerformed(ActionEvent e)
         {
