@@ -9,7 +9,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Panel für die Navigationsansicht
+ * Panel fuer die Navigationsansicht
  */
 public class Navigation extends JPanel
 {
@@ -47,7 +47,7 @@ public class Navigation extends JPanel
         panelRight.setPreferredSize(new Dimension(600, 600));
         mainPanel.add(panelRight);
 
-        panelLeft.add(new PanelTitle("Lokalitäten"));
+        panelLeft.add(new PanelTitle("Lokalitaeten"));
         listView = new ListView(model);
         panelLeft.add(listView);
 

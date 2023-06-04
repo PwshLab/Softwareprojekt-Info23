@@ -1,7 +1,7 @@
 package src.Controller.Administration;
 
 /**
- * Enum für die verschiedenen verfügbaren Bearbeitungsmodi
+ * Enum fuer die verschiedenen verfuegbaren Bearbeitungsmodi
  */
 public enum EditingMode
 {

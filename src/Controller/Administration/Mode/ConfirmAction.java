@@ -1,7 +1,7 @@
 package src.Controller.Administration.Mode;
 
 /**
- * Eine Aktion, welche vom Bestätigungspanel entweder durchgeführt,
+ * Eine Aktion, welche vom Bestaetigungspanel entweder durchgefuehrt,
  * oder abgelehnt werden kann
  */
 public class ConfirmAction
@@ -16,8 +16,8 @@ public class ConfirmAction
     }
 
     /**
-     * Methode zum Ausgeben der Bestätigungsnachricht
-     * @return Bestätigungsnachricht als String
+     * Methode zum Ausgeben der Bestaetigungsnachricht
+     * @return Bestaetigungsnachricht als String
      */
     public String getMessage()
     {
@@ -25,7 +25,7 @@ public class ConfirmAction
     }
 
     /**
-     * Methode zum Ausführen der Aktion
+     * Methode zum Ausfuehren der Aktion
      */
     public void run()
     {

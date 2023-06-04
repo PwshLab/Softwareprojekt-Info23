@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Regex-Tabellenfilter für mehrere Spalten gleichzeitig
+ * Regex-Tabellenfilter fuer mehrere Spalten gleichzeitig
  * @param <M> Beliebiger Datentyp M
  * @param <I> Beliebiger Datentyp I
  */

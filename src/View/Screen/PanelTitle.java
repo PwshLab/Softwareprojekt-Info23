@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Panel für den Titel einer Ansicht
+ * Panel fuer den Titel einer Ansicht
  */
 public class PanelTitle extends JPanel
 {

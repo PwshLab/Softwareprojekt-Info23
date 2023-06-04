@@ -6,7 +6,7 @@ import src.View.Window.Navigation;
 
 /**
  * Hautpklasse der View.
- * Zuständig für die Grafische darstellung der Daten
+ * Zustaendig fuer die Grafische darstellung der Daten
  */
 public class View
 {

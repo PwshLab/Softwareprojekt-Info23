@@ -5,7 +5,7 @@ import src.Model.Model;
 import src.View.View;
 
 /**
- * Klasse für den Einstiegspunkt des Programms
+ * Klasse fuer den Einstiegspunkt des Programms
  */
 public class Main
 {

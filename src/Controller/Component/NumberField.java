@@ -1,7 +1,7 @@
 package src.Controller.Component;
 
 /**
- * Datenfeld für den Datentyp Double
+ * Datenfeld fuer den Datentyp Double
  */
 public class NumberField extends TextDataField<Double>
 {
