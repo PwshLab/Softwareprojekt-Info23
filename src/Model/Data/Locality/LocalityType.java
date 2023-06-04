@@ -8,5 +8,5 @@ public enum LocalityType
     RESTAURANT,
     BAR,
     CLUB,
-
+    HOTEL
 }
