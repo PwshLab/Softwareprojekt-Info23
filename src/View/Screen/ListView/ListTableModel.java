@@ -56,7 +56,6 @@ public class ListTableModel extends AbstractTableModel implements Observer
     {
         updateData();
 
-        // TODO: Fix Threading error when update is called (low priority)
         // Ohne warten gibt es beim Darstellen der Tabelle
         // ab und an ArrayIndex Fehler
         SwingUtilities.invokeLater(this::fireTableStructureChanged);

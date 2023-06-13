@@ -204,8 +204,6 @@ public class Model extends Observable
         return graph.getEdge(l1, l2, Object::equals);
     }
 
-    // TODO: Fix generated points not always being fully connected
-
     /**
      * Methode zum Generieren der Kanten einer Lokalität
      * @param locality Eine gegebene Lokalität
