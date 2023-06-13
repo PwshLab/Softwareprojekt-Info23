@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Abstrakte Klasse fÃ¼r einen Bearbeitungsmodus
+ * Abstrakte Klasse für einen Bearbeitungsmodus
  * des Administrations-Panels
  */
 public abstract class PanelMode extends JPanel implements ActionListener
@@ -58,7 +58,7 @@ public abstract class PanelMode extends JPanel implements ActionListener
     }
 
     /**
-     * Methode zum Ausgeben des zugehÃ¶rigen Enum Wertes aus EditingMode,
+     * Methode zum Ausgeben des zugehörigen Enum Wertes aus EditingMode,
      * der dieses Panel beschreibt
      * @return Wert des EditingMode Enum
      */
@@ -75,14 +75,14 @@ public abstract class PanelMode extends JPanel implements ActionListener
     protected abstract void initializeForm(JPanel formPanel);
 
     /**
-     * Methode, die beim BetÃ¤tigen des Panels ausgefÃ¼hrt wird.
-     * Die eingegebenen Daten sollen hier an das BestÃ¤tigungspanel
+     * Methode, die beim Betätigen des Panels ausgeführt wird.
+     * Die eingegebenen Daten sollen hier an das Bestätigungspanel
      * weitergegeben werden
      */
     protected abstract void handleSubmit();
 
     /**
-     * Methode, um die Beschriftung des Absenden JButtons Ã¤ndert
+     * Methode, um die Beschriftung des Absenden JButtons ändert
      * @param newLabel Neue Beschriftung des Buttons
      */
     protected void setButtonLabel(String newLabel)
@@ -91,7 +91,7 @@ public abstract class PanelMode extends JPanel implements ActionListener
     }
 
     /**
-     * Methode, um das Panel auf seinen Ursprungszustand zurÃ¼ckzusetzen
+     * Methode, um das Panel auf seinen Ursprungszustand zurückzusetzen
      */
     public abstract void resetPanel();
 
@@ -102,7 +102,7 @@ public abstract class PanelMode extends JPanel implements ActionListener
     }
 
     /**
-     * Hilfsklasse, um das Abbrechen der Bearbeitung durchzufÃ¼hren
+     * Hilfsklasse, um das Abbrechen der Bearbeitung durchzuführen
      * @param editingPanel
      */
     private record AbortHandler(EditingPanel editingPanel) implements ActionListener

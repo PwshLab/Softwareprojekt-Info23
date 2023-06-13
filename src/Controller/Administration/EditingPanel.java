@@ -59,7 +59,7 @@ public class EditingPanel extends JPanel
      * Statische Methode zum Konvertieren eines Wertes des EditingMode Enums
      * zu dem jeweiligen index des Panels
      * @param editingMode Ein Wert des EditingMode Enums
-     * @return Index des zugeh√∂rigen Panels
+     * @return Index des zugehˆrigen Panels
      */
     public static int editingModeToPanelIndex(EditingMode editingMode)
     {
@@ -73,8 +73,8 @@ public class EditingPanel extends JPanel
     }
 
     /**
-     * Methode um den Index einer Lokalit√§t auf validit√§t zu √úberpr√ºfen
-     * @param index Gegebener Index einer Lokalit√§t
+     * Methode um den Index einer Lokalit‰t auf validit‰t zu ‹berpr¸fen
+     * @param index Gegebener Index einer Lokalit‰t
      * @return Boolean Wert, ob dieser existiert
      */
     public boolean checkIndexBounds(int index)
@@ -83,7 +83,7 @@ public class EditingPanel extends JPanel
     }
 
     /**
-     * Methode, um zu √ºberpr√ºfen, ob eine gegebene Position innerhalb
+     * Methode, um zu ¸berpr¸fen, ob eine gegebene Position innerhalb
      * der im Model definierten Weltbegrenzung liegt
      * @param position Gegebene Position als Vektor2
      * @return Boolean, ob sich diese innerhalb der Welt befindet
@@ -96,8 +96,8 @@ public class EditingPanel extends JPanel
     }
 
     /**
-     * Methode zum Hinzuf√ºgen einer Lokalit√§t
-     * @param locality Eine Lokalit√§t
+     * Methode zum Hinzuf¸gen einer Lokalit‰t
+     * @param locality Eine Lokalit‰t
      */
     public void addLocality(Locality locality)
     {
@@ -105,8 +105,8 @@ public class EditingPanel extends JPanel
     }
 
     /**
-     * Methode zum Entfernen einer Lokalit√§t
-     * @param localityIndex Index einer Lokalit√§t
+     * Methode zum Entfernen einer Lokalit‰t
+     * @param localityIndex Index einer Lokalit‰t
      */
     public void removeLocality(int localityIndex)
     {
@@ -114,9 +114,9 @@ public class EditingPanel extends JPanel
     }
 
     /**
-     * Methode zum √úberschreiben einer Lokalit√§t
-     * @param localityIndex Index einer Lokalit√§t
-     * @param newLocality Eine neue Lokalit√§t
+     * Methode zum ‹berschreiben einer Lokalit‰t
+     * @param localityIndex Index einer Lokalit‰t
+     * @param newLocality Eine neue Lokalit‰t
      */
     public void modifyLocality(int localityIndex, Locality newLocality)
     {
@@ -124,9 +124,9 @@ public class EditingPanel extends JPanel
     }
 
     /**
-     * Methode zum Ausgeben einer Lokalit√§t
-     * @param localityIndex Index einer Lokalit√§t
-     * @return Die Lokalit√§t mit dem gegebenen Index
+     * Methode zum Ausgeben einer Lokalit‰t
+     * @param localityIndex Index einer Lokalit‰t
+     * @return Die Lokalit‰t mit dem gegebenen Index
      */
     public Locality getLocality(int localityIndex)
     {
@@ -134,7 +134,7 @@ public class EditingPanel extends JPanel
     }
 
     /**
-     * Methode zum Setzen der zu best√§tigenden Aktion
+     * Methode zum Setzen der zu best‰tigenden Aktion
      * @param confirmAction Eine Aktion
      */
     public void setConfirmAction(ConfirmAction confirmAction)

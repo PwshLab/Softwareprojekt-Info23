@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Abstrakte Klasse fÃ¼r ein generelles Eingabefeld
+ * Abstrakte Klasse für ein generelles Eingabefeld
  * @param <T> Beliebiger Datentyp des Eingabefelds
  */
 public abstract class DataField<T> extends JPanel
@@ -31,7 +31,7 @@ public abstract class DataField<T> extends JPanel
     }
 
     /**
-     * Methode, um festzulegen, dass das Eingabefeld einen Fehler enthÃ¤lt
+     * Methode, um festzulegen, dass das Eingabefeld einen Fehler enthält
      */
     private void setError()
     {
@@ -39,7 +39,7 @@ public abstract class DataField<T> extends JPanel
     }
 
     /**
-     * Methode, um den Fehlerstatus des Eingabefeldes zurÃ¼ckzusetzen
+     * Methode, um den Fehlerstatus des Eingabefeldes zurückzusetzen
      */
     private void clearError()
     {
@@ -47,8 +47,8 @@ public abstract class DataField<T> extends JPanel
     }
 
     /**
-     * Methode zum Ausgeben, ob das Eingabefeld einen Fehler enthÃ¤lt
-     * @return Boolean, ob das Eingabefeld einen Fehler enthÃ¤lt
+     * Methode zum Ausgeben, ob das Eingabefeld einen Fehler enthält
+     * @return Boolean, ob das Eingabefeld einen Fehler enthält
      */
     public boolean hasError()
     {
@@ -65,13 +65,13 @@ public abstract class DataField<T> extends JPanel
     }
 
     /**
-     * Methode zum ÃœberprÃ¼fen, ob das Eingabefeld einen Fehler enthÃ¤lt
-     * @return Boolean, ob das Eingabefeld einen Fehler enthÃ¤lt
+     * Methode zum Überprüfen, ob das Eingabefeld einen Fehler enthält
+     * @return Boolean, ob das Eingabefeld einen Fehler enthält
      */
     protected abstract boolean checkError();
 
     /**
-     * Methode zum ZurÃ¼ckgeben der Daten im Eingabefeld
+     * Methode zum Zurückgeben der Daten im Eingabefeld
      * @return Daten des Eingabefeldes
      */
     protected abstract T parseData();
@@ -95,13 +95,13 @@ public abstract class DataField<T> extends JPanel
     public abstract void writeData(T newData);
 
     /**
-     * Methode zum ZurÃ¼cksetzen der Daten des Eingabefeldes
+     * Methode zum Zurücksetzen der Daten des Eingabefeldes
      */
     public abstract void resetData();
 
     /**
      * Methode, um dem Eingabefeld mitzuteilen, dass
-     * auÃŸerhalb ein fehler mit den zurÃ¼ckgegebenen
+     * außerhalb ein fehler mit den zurückgegebenen
      * Daten festgestellt wurde
      */
     public void notifyError()

@@ -4,11 +4,11 @@ import src.Controller.Administration.EditingMode;
 import src.Controller.Administration.EditingPanel;
 
 /**
- * Auswahldatenfeld fÃ¼r Bearbeitungsmodi
+ * Auswahldatenfeld für Bearbeitungsmodi
  */
 public class ModeField extends SelectDataField<EditingMode, String>
 {
-    private static final String[] modeLabels = {"", "HinzufÃ¼gen", "Bearbeiten", "Entfernen", ""};
+    private static final String[] modeLabels = {"", "Hinzufügen", "Bearbeiten", "Entfernen", ""};
 
     /**
      * Standardkonstruktor des ModeFields

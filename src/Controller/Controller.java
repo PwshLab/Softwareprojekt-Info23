@@ -11,7 +11,7 @@ import java.awt.*;
 
 /**
  * Hauptklasse des Controllers.
- * ZustÃ¤ndig fÃ¼r die Benutzereingaben des Programms
+ * Zuständig für die Benutzereingaben des Programms
  */
 public class Controller
 {

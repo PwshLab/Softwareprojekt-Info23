@@ -12,26 +12,26 @@ import java.util.Iterator;
 public class DataProvider implements Iterable<Locality>
 {
     private static final String[] names = {
-            "GaststÃ¤tte Quetschn",
-            "GaststÃ¤tte Gravenreuther",
+            "Gaststätte Quetschn",
+            "Gaststätte Gravenreuther",
             "Restaurant COMING HOME",
-            "Restaurant OrphÃ©e",
+            "Restaurant Orphée",
             "Pizza & Pasta Restaurant",
             "Restaurant Krauterer am Dom",
             "Restaurant Mesopotamia",
             "Restaurant Rosarium",
             "Dicker Mann",
-            "Restaurant GÃ¤nsbauer",
+            "Restaurant Gänsbauer",
             "Wirtshaus 'Zum Sorgenfrei'",
             "Storstad Restaurant",
-            "PiratenhÃ¶hle",
+            "Piratenhöhle",
             "Heimat Regensburg",
             "Musikbar SAX",
             "Banane",
             "Hinterhaus",
             "Mono Bar",
             "Bar 13",
-            "BÃœRO",
+            "BÜRO",
             "Mood",
             "da Silva - Bar & Lounge",
             "Barock Bar",
@@ -100,68 +100,68 @@ public class DataProvider implements Iterable<Locality>
             LocalityType.HOTEL
     };
     private static final String[] descriptions = {
-            "Rustikale deutsche Gerichte wie Schnitzel in einem gemÃ¼tlichen, traditionellen Lokal mit Holzbalken und Bier. Speisen vor Ort. Essen zum Mitnehmen.",
-            "Traditionelle bayerische Gerichte in einem urigen Wirtshaus mit nostalgischer Einrichtung und Tischen am Gehweg. SitzplÃ¤tze im Freien. Essen zum Mitnehmen. Speisen vor Ort.",
-            "GutbÃ¼rgerliche KÃ¼che in einem gemÃ¼tlichen Restaurant mit einer Bar und einer Gartenterrasse. SitzplÃ¤tze im Freien. Abholung vor dem Laden. Essen zum Mitnehmen. Speisen vor Ort.",
-            "Mediterrane Gerichte und Wein in einem beliebten, traditionellen Bistro mit Bar und Terrasse. SitzplÃ¤tze im Freien. Essen zum Mitnehmen. Speisen vor Ort.",
-            "In der offenen KÃ¼che des Restaurants mit Heiligenbildern und Terrasse werden italienische Gerichte zubereitet. SitzplÃ¤tze im Freien. Lieferdienst. Essen zum Mitnehmen. Speisen vor Ort.",
-            "Bayerisches Restaurant. SitzplÃ¤tze im Freien. Speisen vor Ort.",
-            "UnprÃ¤tentiÃ¶ses Restaurant mit kurdischen und vegetarischen Gerichten wie Kebabs, Falafel und Salaten. SitzplÃ¤tze im Freien. Kontaktlose Lieferung. Lieferdienst. Essen zum Mitnehmen. Speisen vor Ort.",
-            "Bistro mit mediterraner KÃ¼che und groÃŸer AuÃŸenterrasse in einem Park. SitzplÃ¤tze im Freien. Essen zum Mitnehmen. Speisen vor Ort.",
-            "Deftige Ã¶sterreichische Hauptspeisen und Desserts in einem GebÃ¤ude aus dem 14. Jahrhundert. SitzplÃ¤tze im Freien. Essen zum Mitnehmen. Speisen vor Ort.",
-            "Restaurant fÃ¼r Bayerische Tapas. Essen zum Mitnehmen. Speisen vor Ort.",
-            "Traditionelles Bayerisches Restaurant mit Biergarten. SitzplÃ¤tze im Freien. Essen zum Mitnehmen. Speisen vor Ort.",
-            "Edles, minimalistisches Restaurant mit DegustationsmenÃ¼s origineller europÃ¤isch-asiatischer Fusionsgerichte. SitzplÃ¤tze im Freien. Speisen vor Ort.",
-            "Flippige Kellerkneipe mit Piratenmotiven sowie Rock- und Heavy-Metal-Musik in einem mittelalterlichen GebÃ¤ude. SitzplÃ¤tze im Freien. Speisen vor Ort.",
-            "Craft-Bier und Cocktails in einer kleinen Bar mit lockerem Flair und Livemusik von regionalen Bands und KÃ¼nstlern. SitzplÃ¤tze im Freien. Abholung vor dem Laden. Drive-in. Essen zum Mitnehmen. Speisen vor Ort. Live-Veranstaltungen. LGBTQ+-freundlich. Kartenzahlung mÃ¶glich.",
+            "Rustikale deutsche Gerichte wie Schnitzel in einem gemütlichen, traditionellen Lokal mit Holzbalken und Bier. Speisen vor Ort. Essen zum Mitnehmen.",
+            "Traditionelle bayerische Gerichte in einem urigen Wirtshaus mit nostalgischer Einrichtung und Tischen am Gehweg. Sitzplätze im Freien. Essen zum Mitnehmen. Speisen vor Ort.",
+            "Gutbürgerliche Küche in einem gemütlichen Restaurant mit einer Bar und einer Gartenterrasse. Sitzplätze im Freien. Abholung vor dem Laden. Essen zum Mitnehmen. Speisen vor Ort.",
+            "Mediterrane Gerichte und Wein in einem beliebten, traditionellen Bistro mit Bar und Terrasse. Sitzplätze im Freien. Essen zum Mitnehmen. Speisen vor Ort.",
+            "In der offenen Küche des Restaurants mit Heiligenbildern und Terrasse werden italienische Gerichte zubereitet. Sitzplätze im Freien. Lieferdienst. Essen zum Mitnehmen. Speisen vor Ort.",
+            "Bayerisches Restaurant. Sitzplätze im Freien. Speisen vor Ort.",
+            "Unprätentiöses Restaurant mit kurdischen und vegetarischen Gerichten wie Kebabs, Falafel und Salaten. Sitzplätze im Freien. Kontaktlose Lieferung. Lieferdienst. Essen zum Mitnehmen. Speisen vor Ort.",
+            "Bistro mit mediterraner Küche und großer Außenterrasse in einem Park. Sitzplätze im Freien. Essen zum Mitnehmen. Speisen vor Ort.",
+            "Deftige österreichische Hauptspeisen und Desserts in einem Gebäude aus dem 14. Jahrhundert. Sitzplätze im Freien. Essen zum Mitnehmen. Speisen vor Ort.",
+            "Restaurant für Bayerische Tapas. Essen zum Mitnehmen. Speisen vor Ort.",
+            "Traditionelles Bayerisches Restaurant mit Biergarten. Sitzplätze im Freien. Essen zum Mitnehmen. Speisen vor Ort.",
+            "Edles, minimalistisches Restaurant mit Degustationsmenüs origineller europäisch-asiatischer Fusionsgerichte. Sitzplätze im Freien. Speisen vor Ort.",
+            "Flippige Kellerkneipe mit Piratenmotiven sowie Rock- und Heavy-Metal-Musik in einem mittelalterlichen Gebäude. Sitzplätze im Freien. Speisen vor Ort.",
+            "Craft-Bier und Cocktails in einer kleinen Bar mit lockerem Flair und Livemusik von regionalen Bands und Künstlern. Sitzplätze im Freien. Abholung vor dem Laden. Drive-in. Essen zum Mitnehmen. Speisen vor Ort. Live-Veranstaltungen. LGBTQ+-freundlich. Kartenzahlung möglich.",
             "Speisen vor Ort.",
             "Speisen vor Ort.",
-            "Speisen vor Ort. Kartenzahlung mÃ¶glich.",
-            "GemÃ¼tliches Ambiente.",
-            "Im Lokal mit NatursteinwÃ¤nden lÃ¤sst sich bei Drinks und Pizza kickern, Dart spielen und Karaoke singen. Essen zum Mitnehmen. Speisen vor Ort. LGBTQ+-freundlich",
+            "Speisen vor Ort. Kartenzahlung möglich.",
+            "Gemütliches Ambiente.",
+            "Im Lokal mit Natursteinwänden lässt sich bei Drinks und Pizza kickern, Dart spielen und Karaoke singen. Essen zum Mitnehmen. Speisen vor Ort. LGBTQ+-freundlich",
             "Speisen vor Ort.",
-            "SitzplÃ¤tze im Freien. Abholung vor dem Laden. Essen zum Mitnehmen. Speisen vor Ort.",
-            "Mottopartys mit verschiedenen DJs und Cocktailspecials in der Bar mit bunten WÃ¤nden und NeonrÃ¶hren. Abholung vor dem Laden. Speisen vor Ort. Rollstuhlgerechter Eingang.",
-            "Stilvolle Cocktailbar in historischem GewÃ¶lbe und modernem Ambiente mit Kursen und Verkostungen. Speisen vor Ort. Gehobenes Ambiente.",
+            "Sitzplätze im Freien. Abholung vor dem Laden. Essen zum Mitnehmen. Speisen vor Ort.",
+            "Mottopartys mit verschiedenen DJs und Cocktailspecials in der Bar mit bunten Wänden und Neonröhren. Abholung vor dem Laden. Speisen vor Ort. Rollstuhlgerechter Eingang.",
+            "Stilvolle Cocktailbar in historischem Gewölbe und modernem Ambiente mit Kursen und Verkostungen. Speisen vor Ort. Gehobenes Ambiente.",
             "Speisen vor Ort. LGBTQ+-freundlich. Hunde erlaubt.",
-            "Nacht- und Tanzclub mit Studentenpartys, DJs, Spezialveranstaltungen und Live-Auftritten. Speisen vor Ort. GemÃ¼tliches Ambiente.",
+            "Nacht- und Tanzclub mit Studentenpartys, DJs, Spezialveranstaltungen und Live-Auftritten. Speisen vor Ort. Gemütliches Ambiente.",
             "Speisen vor Ort. Live-Veranstaltungen.",
-            "Kleiner, pulsierender Nachtclub mit Cocktails und Bier sowie TanzflÃ¤che und Partymusik vergangener Jahrzehnte. Speisen vor Ort.",
+            "Kleiner, pulsierender Nachtclub mit Cocktails und Bier sowie Tanzfläche und Partymusik vergangener Jahrzehnte. Speisen vor Ort.",
             "Speisen vor Ort.",
-            "Studentenpartys und Tanz zur Musik der letzten 4 Jahrzehnte im heimeligen KellergewÃ¶lbe mit Backsteinmauern. Speisen vor Ort.",
-            "In der etablierten Discothek tanzt man in lockerer AtmosphÃ¤re zu Electro, Techno, Indie und den 80er-Charts. Speisen vor Ort.",
+            "Studentenpartys und Tanz zur Musik der letzten 4 Jahrzehnte im heimeligen Kellergewölbe mit Backsteinmauern. Speisen vor Ort.",
+            "In der etablierten Discothek tanzt man in lockerer Atmosphäre zu Electro, Techno, Indie und den 80er-Charts. Speisen vor Ort.",
             "Speisen vor Ort.",
             "Speisen vor Ort. Live-Veranstaltungen.",
-            "Dieses schicke Hotel mit Originalkunstwerken ist 16 Gehminuten vom Hauptbahnhof Regensburg sowie jeweils 2 km von der Steinernen BrÃ¼cke aus dem 12. Jahrhundert und vom Regensburger Dom entfernt.\n" +
+            "Dieses schicke Hotel mit Originalkunstwerken ist 16 Gehminuten vom Hauptbahnhof Regensburg sowie jeweils 2 km von der Steinernen Brücke aus dem 12. Jahrhundert und vom Regensburger Dom entfernt.\n" +
                     "Die modernen Zimmer mit Wandmalereien zum Thema Architektur bieten WLAN und einen Flachbildfernseher. In Zimmern mit gehobener Ausstattung gibt es ein ausziehbares Sofa.\n" +
-                    "Es gibt eine Bar und FrÃ¼hstÃ¼ck wird angeboten.\n",
-            "Dieses schlichte und preisgÃ¼nstige Hotel im Stadtzentrum liegt 3 Gehminuten vom Bahnhof Regensburg und 1,1 km vom Regensburger Dom entfernt.\n" +
-                    "Die modernen Zimmer sind mit kostenlosem WLAN, einem Flachbildfernseher, einem Schreibtisch und HolzbÃ¶den ausgestattet. Haustiere sind gegen GebÃ¼hr willkommen.\n" +
-                    "Das Hotel bietet ein kostenloses FrÃ¼hstÃ¼cksbuffet, eine durchgehend geÃ¶ffnete gemÃ¼tliche Bar, in der Snacks serviert werden, und einen Innenspielplatz. Ferner stehen ein Business Center und TagungsrÃ¤ume zur VerfÃ¼gung.",
-            "Dieses stilvolle Hotel in einer ehemaligen Manufaktur fÃ¼r Kunsthandwerk liegt direkt an der Donau. Es ist 10 Gehminuten vom Regensburger Dom und 14 Gehminuten vom Historischen Museum Regensburg entfernt.\n" +
-                    "Die modernen Zimmer bieten ein Marmorbad mit Granitboden, einen Flachbildfernseher, WLAN, einen Schreibtisch und eine Minibar sowie teilweise Flussblick. In den Zimmern mit gehobener Ausstattung gibt es MÃ¶glichkeiten zur Kaffee- und Teezubereitung. Die Suiten haben auÃŸerdem ein Wohnzimmer. Eine Klimaanlage ist nicht vorhanden.\n" +
-                    "Das Hotel bietet ein nobles Restaurant mit Terrasse und Flussblick sowie gelegentlichen Dinnershows. Eine helle Lobbybar, Massageanwendungen und eine Sauna sind ebenfalls verfÃ¼gbar.",
-            "Dieses zwanglose Hotel in einem Gewerbegebiet ist jeweils 11 Gehminuten vom Hauptbahnhof Regensburg und vom Einkaufszentrum Regensburg Arcaden entfernt. Zur Alten SteinbrÃ¼cke aus dem 12. Jahrhundert Ã¼ber die Donau sind es 3 km.\n" +
-                    "Die freundlich eingerichteten, gemÃ¼tlichen Zimmer bieten kostenloses WLAN, einen Flachbildfernseher, einen MinikÃ¼hlschrank und eine Sitzecke. Zimmer mit gehobener Ausstattung haben zusÃ¤tzlich eine PantrykÃ¼che.\n" +
-                    "Zum kostenlosen Angebot gehÃ¶ren das FrÃ¼hstÃ¼ck und Zugang zu einem nahe gelegenen Fitnesscenter mit Sport- und Wellnessangeboten. Es gibt auch ein elegantes Fischrestaurant, eine stilvolle Bar und eine Lounge mit Kamin. ParkplÃ¤tze sind verfÃ¼gbar.",
-            "Dieses gemÃ¼tliche Budgethotel liegt 10 Gehminuten von den Restaurants im Stadtzentrum, 12 Gehminuten vom Hauptbahnhof Regensburg und 14 Gehminuten vom Haidplatz entfernt.\n" +
-                    "Die einfachen Zimmer bieten kostenloses WLAN und Flachbildfernseher sowie einen Tee- und Kaffeekocher. Kinder bis einschlieÃŸlich 16 Jahre Ã¼bernachten kostenlos im Zimmer eines Erwachsenen.\n" +
-                    "Ein kontinentales FrÃ¼hstÃ¼cksbuffet wird kostenlos angeboten. AuÃŸerdem gibt es eine rund um die Uhr geÃ¶ffnete Bar. ParkplÃ¤tze stehen gegen GebÃ¼hr zur VerfÃ¼gung.",
-            "Dieses elegante Hotel liegt im Stadtzentrum gegenÃ¼ber dem Regensburger Dom aus dem 13. Jahrhundert. Es ist 10 Gehminuten vom Hauptbahnhof Regensburg und 11 Gehminuten von Schloss St. Emmeram entfernt.\n" +
-                    "Die gemÃ¼tlich-modernen Zimmer sind mit WLAN, Flachbildfernseher, Nespressomaschine, Minibar und Marmorbad ausgestattet. Suiten bieten zusÃ¤tzlich eine Sitzecke, manche auch Ausblick auf den Dom. Zimmerservice ist verfÃ¼gbar und Kinder bis einschlieÃŸlich 12 Jahre Ã¼bernachten kostenlos im Zimmer eines Erwachsenen.\n" +
-                    "Zur Ausstattung gehÃ¶ren ein nobles Restaurant mit bayerischer KÃ¼che und FrÃ¼hstÃ¼cksbuffet (gegen Aufpreis), eine Cocktailbar und ein Biergarten. Es gibt auch ein Business Center.",
-            "Dieses elegante Hotel liegt im Stadtzentrum gegenÃ¼ber dem Regensburger Dom aus dem 13. Jahrhundert. Es ist 10 Gehminuten vom Hauptbahnhof Regensburg und 11 Gehminuten von Schloss St. Emmeram entfernt.\n" +
-                    "Die gemÃ¼tlich-modernen Zimmer sind mit WLAN, Flachbildfernseher, Nespressomaschine, Minibar und Marmorbad ausgestattet. Suiten bieten zusÃ¤tzlich eine Sitzecke, manche auch Ausblick auf den Dom. Zimmerservice ist verfÃ¼gbar und Kinder bis einschlieÃŸlich 12 Jahre Ã¼bernachten kostenlos im Zimmer eines Erwachsenen.\n" +
-                    "Zur Ausstattung gehÃ¶ren ein nobles Restaurant mit bayerischer KÃ¼che und FrÃ¼hstÃ¼cksbuffet (gegen Aufpreis), eine Cocktailbar und ein Biergarten. Es gibt auch ein Business Center.",
-            "Dieses gemÃ¼tliche Altstadthotel befindet sich in einem Patrizierhaus aus dem 12. Jahrhundert und ist 6 Gehminuten vom gotischen Regensburger Dom sowie 10 Gehminuten vom Historischen Museum Regensburg entfernt.\n" +
-                    "Die gemÃ¼tlichen Zimmer sind mit einem Schreibtisch ausgestattet und verfÃ¼gen Ã¼ber einen Flachbildfernseher mit Premium-KabelkanÃ¤len und kostenloses WLAN. Die Suiten bieten zusÃ¤tzlich eine separate Sitzecke mit Sofa oder Sessel und haben teilweise schrÃ¤ge Holzbalkendecken.\n" +
-                    "Das FrÃ¼hstÃ¼ck ist im Preis inbegriffen. Es gibt ein farbenfrohes, modernes CafÃ© mit Bar-Lounge sowie ein Business Center und KonferenzrÃ¤ume. Haustiere sind gegen Aufpreis erlaubt.\n",
-            "Dieses gemÃ¼tliche Hotel mit traditionellem Charme liegt inmitten von Bars und GeschÃ¤ften an einer kopfsteingepflasterten StraÃŸe. Es ist 7 Gehminuten vom gotischen Regensburger Dom aus dem 13. Jahrhundert und 14 Gehminuten vom Bahnhof Regensburg entfernt.\n" +
-                    "Die hellen Zimmer mit MÃ¶beln im historischen Stil bieten einen Flachbildfernseher und teilweise eine Sitzecke. Es gibt 2 elegante Suiten mit Wohnbereich und Holzbalkendecke. Kinder Ã¼bernachten kostenlos im Zimmer eines Erwachsenen.\n" +
-                    "Es gibt eine gemÃ¼tliche, freundlich eingerichtete Bar. Das FrÃ¼hstÃ¼cksbuffet wird gegen Aufpreis angeboten.",
-            "Dieses bodenstÃ¤ndige Budgethotel an einer von BÃ¤umen gesÃ¤umten StraÃŸe ist 1 km vom Regensburger Dom und 2 km von der Steinernen BrÃ¼cke entfernt. Zum Hauptbahnhof Regensburg sind es 12 Gehminuten.\n" +
-                    "Die zweckmÃ¤ÃŸig eingerichteten Zimmer mit farbenfrohen Akzenten haben WLAN und einen Flachbildfernseher. Zimmer mit gehobener Ausstattung bieten auÃŸerdem Stadtblick. In den Familienzimmern gibt es ein Schlafsofa.\n" +
-                    "Es gibt eine zwanglose Lobbybar. ParkplÃ¤tze sind vorhanden und ein FrÃ¼hstÃ¼cksbuffet wird angeboten.\n"
+                    "Es gibt eine Bar und Frühstück wird angeboten.\n",
+            "Dieses schlichte und preisgünstige Hotel im Stadtzentrum liegt 3 Gehminuten vom Bahnhof Regensburg und 1,1 km vom Regensburger Dom entfernt.\n" +
+                    "Die modernen Zimmer sind mit kostenlosem WLAN, einem Flachbildfernseher, einem Schreibtisch und Holzböden ausgestattet. Haustiere sind gegen Gebühr willkommen.\n" +
+                    "Das Hotel bietet ein kostenloses Frühstücksbuffet, eine durchgehend geöffnete gemütliche Bar, in der Snacks serviert werden, und einen Innenspielplatz. Ferner stehen ein Business Center und Tagungsräume zur Verfügung.",
+            "Dieses stilvolle Hotel in einer ehemaligen Manufaktur für Kunsthandwerk liegt direkt an der Donau. Es ist 10 Gehminuten vom Regensburger Dom und 14 Gehminuten vom Historischen Museum Regensburg entfernt.\n" +
+                    "Die modernen Zimmer bieten ein Marmorbad mit Granitboden, einen Flachbildfernseher, WLAN, einen Schreibtisch und eine Minibar sowie teilweise Flussblick. In den Zimmern mit gehobener Ausstattung gibt es Möglichkeiten zur Kaffee- und Teezubereitung. Die Suiten haben außerdem ein Wohnzimmer. Eine Klimaanlage ist nicht vorhanden.\n" +
+                    "Das Hotel bietet ein nobles Restaurant mit Terrasse und Flussblick sowie gelegentlichen Dinnershows. Eine helle Lobbybar, Massageanwendungen und eine Sauna sind ebenfalls verfügbar.",
+            "Dieses zwanglose Hotel in einem Gewerbegebiet ist jeweils 11 Gehminuten vom Hauptbahnhof Regensburg und vom Einkaufszentrum Regensburg Arcaden entfernt. Zur Alten Steinbrücke aus dem 12. Jahrhundert über die Donau sind es 3 km.\n" +
+                    "Die freundlich eingerichteten, gemütlichen Zimmer bieten kostenloses WLAN, einen Flachbildfernseher, einen Minikühlschrank und eine Sitzecke. Zimmer mit gehobener Ausstattung haben zusätzlich eine Pantryküche.\n" +
+                    "Zum kostenlosen Angebot gehören das Frühstück und Zugang zu einem nahe gelegenen Fitnesscenter mit Sport- und Wellnessangeboten. Es gibt auch ein elegantes Fischrestaurant, eine stilvolle Bar und eine Lounge mit Kamin. Parkplätze sind verfügbar.",
+            "Dieses gemütliche Budgethotel liegt 10 Gehminuten von den Restaurants im Stadtzentrum, 12 Gehminuten vom Hauptbahnhof Regensburg und 14 Gehminuten vom Haidplatz entfernt.\n" +
+                    "Die einfachen Zimmer bieten kostenloses WLAN und Flachbildfernseher sowie einen Tee- und Kaffeekocher. Kinder bis einschließlich 16 Jahre übernachten kostenlos im Zimmer eines Erwachsenen.\n" +
+                    "Ein kontinentales Frühstücksbuffet wird kostenlos angeboten. Außerdem gibt es eine rund um die Uhr geöffnete Bar. Parkplätze stehen gegen Gebühr zur Verfügung.",
+            "Dieses elegante Hotel liegt im Stadtzentrum gegenüber dem Regensburger Dom aus dem 13. Jahrhundert. Es ist 10 Gehminuten vom Hauptbahnhof Regensburg und 11 Gehminuten von Schloss St. Emmeram entfernt.\n" +
+                    "Die gemütlich-modernen Zimmer sind mit WLAN, Flachbildfernseher, Nespressomaschine, Minibar und Marmorbad ausgestattet. Suiten bieten zusätzlich eine Sitzecke, manche auch Ausblick auf den Dom. Zimmerservice ist verfügbar und Kinder bis einschließlich 12 Jahre übernachten kostenlos im Zimmer eines Erwachsenen.\n" +
+                    "Zur Ausstattung gehören ein nobles Restaurant mit bayerischer Küche und Frühstücksbuffet (gegen Aufpreis), eine Cocktailbar und ein Biergarten. Es gibt auch ein Business Center.",
+            "Dieses elegante Hotel liegt im Stadtzentrum gegenüber dem Regensburger Dom aus dem 13. Jahrhundert. Es ist 10 Gehminuten vom Hauptbahnhof Regensburg und 11 Gehminuten von Schloss St. Emmeram entfernt.\n" +
+                    "Die gemütlich-modernen Zimmer sind mit WLAN, Flachbildfernseher, Nespressomaschine, Minibar und Marmorbad ausgestattet. Suiten bieten zusätzlich eine Sitzecke, manche auch Ausblick auf den Dom. Zimmerservice ist verfügbar und Kinder bis einschließlich 12 Jahre übernachten kostenlos im Zimmer eines Erwachsenen.\n" +
+                    "Zur Ausstattung gehören ein nobles Restaurant mit bayerischer Küche und Frühstücksbuffet (gegen Aufpreis), eine Cocktailbar und ein Biergarten. Es gibt auch ein Business Center.",
+            "Dieses gemütliche Altstadthotel befindet sich in einem Patrizierhaus aus dem 12. Jahrhundert und ist 6 Gehminuten vom gotischen Regensburger Dom sowie 10 Gehminuten vom Historischen Museum Regensburg entfernt.\n" +
+                    "Die gemütlichen Zimmer sind mit einem Schreibtisch ausgestattet und verfügen über einen Flachbildfernseher mit Premium-Kabelkanälen und kostenloses WLAN. Die Suiten bieten zusätzlich eine separate Sitzecke mit Sofa oder Sessel und haben teilweise schräge Holzbalkendecken.\n" +
+                    "Das Frühstück ist im Preis inbegriffen. Es gibt ein farbenfrohes, modernes Café mit Bar-Lounge sowie ein Business Center und Konferenzräume. Haustiere sind gegen Aufpreis erlaubt.\n",
+            "Dieses gemütliche Hotel mit traditionellem Charme liegt inmitten von Bars und Geschäften an einer kopfsteingepflasterten Straße. Es ist 7 Gehminuten vom gotischen Regensburger Dom aus dem 13. Jahrhundert und 14 Gehminuten vom Bahnhof Regensburg entfernt.\n" +
+                    "Die hellen Zimmer mit Möbeln im historischen Stil bieten einen Flachbildfernseher und teilweise eine Sitzecke. Es gibt 2 elegante Suiten mit Wohnbereich und Holzbalkendecke. Kinder übernachten kostenlos im Zimmer eines Erwachsenen.\n" +
+                    "Es gibt eine gemütliche, freundlich eingerichtete Bar. Das Frühstücksbuffet wird gegen Aufpreis angeboten.",
+            "Dieses bodenständige Budgethotel an einer von Bäumen gesäumten Straße ist 1 km vom Regensburger Dom und 2 km von der Steinernen Brücke entfernt. Zum Hauptbahnhof Regensburg sind es 12 Gehminuten.\n" +
+                    "Die zweckmäßig eingerichteten Zimmer mit farbenfrohen Akzenten haben WLAN und einen Flachbildfernseher. Zimmer mit gehobener Ausstattung bieten außerdem Stadtblick. In den Familienzimmern gibt es ein Schlafsofa.\n" +
+                    "Es gibt eine zwanglose Lobbybar. Parkplätze sind vorhanden und ein Frühstücksbuffet wird angeboten.\n"
         };
     private final Model model;
 
@@ -184,9 +184,9 @@ public class DataProvider implements Iterable<Locality>
     }
 
     /**
-     * Methode zum Ausgeben einer beispiel LokalitÃ¤t
-     * @param n Index der LokalitÃ¤t
-     * @return Eine LokalitÃ¤t
+     * Methode zum Ausgeben einer beispiel Lokalität
+     * @param n Index der Lokalität
+     * @return Eine Lokalität
      */
     public Locality getLocality(int n)
     {
@@ -199,8 +199,8 @@ public class DataProvider implements Iterable<Locality>
     }
 
     /**
-     * Methode zum Ausgeben eines Iterators fÃ¼r die Beispieldaten
-     * @return Iterator fÃ¼r dieses Objekt
+     * Methode zum Ausgeben eines Iterators für die Beispieldaten
+     * @return Iterator für dieses Objekt
      */
     @Override
     public Iterator<Locality> iterator()

@@ -10,7 +10,7 @@ import java.util.Collections;
 
 /**
  * Bearbeitungsmodus des Administrations-Panels,
- * um die vorhergegangene Bearbeitung zu best√§tigen
+ * um die vorhergegangene Bearbeitung zu best‰tigen
  */
 public class ConfirmMode extends PanelMode
 {
@@ -23,7 +23,7 @@ public class ConfirmMode extends PanelMode
      */
     public ConfirmMode(EditingPanel editingPanel)
     {
-        super(editingPanel, "Best√§tigen", true);
+        super(editingPanel, "Best‰tigen", true);
         associatedMode = EditingMode.CONFIRM;
     }
 
@@ -58,9 +58,9 @@ public class ConfirmMode extends PanelMode
     }
 
     /**
-     * Methode, um die Anzuzeigende Best√§tigungsnachricht zu formatieren
-     * @param confirmAction Eine zu best√§tigende Aktion
-     * @return Zugeh√∂rige Nachricht als String
+     * Methode, um die Anzuzeigende Best‰tigungsnachricht zu formatieren
+     * @param confirmAction Eine zu best‰tigende Aktion
+     * @return Zugehˆrige Nachricht als String
      */
     private String formatConfirmMessage(ConfirmAction confirmAction)
     {
@@ -68,8 +68,8 @@ public class ConfirmMode extends PanelMode
     }
 
     /**
-     * Methode, um die Aktion zu setzen, welche nach der Best√§tigung ausgef√ºhrt wird
-     * @param confirmAction Eine zu best√§tigende Aktion
+     * Methode, um die Aktion zu setzen, welche nach der Best‰tigung ausgef¸hrt wird
+     * @param confirmAction Eine zu best‰tigende Aktion
      */
     public void setConfirmAction(ConfirmAction confirmAction)
     {

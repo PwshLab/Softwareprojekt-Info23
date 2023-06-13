@@ -10,7 +10,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Formular f√ºr eine Lokalit√§t
+ * Formular f¸r eine Lokalit‰t
  */
 public class LocalityForm extends JPanel
 {
@@ -35,7 +35,7 @@ public class LocalityForm extends JPanel
 
         nameField = new TextField("Name", false);
         nameField.setValidationPattern(TextField.getTextOnlyPattern());
-        typeField = new TypeField("Art der Lokalit√§t");
+        typeField = new TypeField("Art der Lokalit‰t");
         descriptionField = new TextAreaField("Beschreibung");
         positionField = new PointField("Position");
         for (JPanel panel: new JPanel[]{nameField, typeField, descriptionField, positionField})
@@ -53,8 +53,8 @@ public class LocalityForm extends JPanel
     }
 
     /**
-     * Methode zum Ausgeben, ob das Formular fehler enth√§lt
-     * @return Boolean, ob das Formular fehler enth√§lt
+     * Methode zum Ausgeben, ob das Formular fehler enth‰lt
+     * @return Boolean, ob das Formular fehler enth‰lt
      */
     public boolean hasError()
     {
@@ -70,7 +70,7 @@ public class LocalityForm extends JPanel
 
     /**
      * Methode zum Ausgeben des Inhalts des Formulars
-     * @return Eine Lokalit√§t nach dem Inhalt des Formulars
+     * @return Eine Lokalit‰t nach dem Inhalt des Formulars
      */
     public Locality getData()
     {
@@ -87,7 +87,7 @@ public class LocalityForm extends JPanel
 
     /**
      * Methode zum Setzen der Daten im Formular
-     * @param locality Eine Lokalit√§t
+     * @param locality Eine Lokalit‰t
      */
     public void setData(Locality locality)
     {
@@ -98,7 +98,7 @@ public class LocalityForm extends JPanel
     }
 
     /**
-     * Methode zum Zur√ºcksetzen des Formulars
+     * Methode zum Zur¸cksetzen des Formulars
      */
     public void resetData()
     {

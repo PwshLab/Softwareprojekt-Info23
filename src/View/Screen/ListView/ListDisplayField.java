@@ -5,7 +5,7 @@ import javax.swing.text.DefaultCaret;
 import java.awt.*;
 
 /**
- * Panel fÃ¼r ein Anzeigefeld der Detailansicht
+ * Panel für ein Anzeigefeld der Detailansicht
  */
 public class ListDisplayField extends JPanel
 {

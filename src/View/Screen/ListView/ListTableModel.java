@@ -9,7 +9,7 @@ import javax.swing.*;
 import javax.swing.table.AbstractTableModel;
 
 /**
- * Klasse fÃ¼r das Tabellenmodell fÃ¼r die Listenansicht
+ * Klasse für das Tabellenmodell für die Listenansicht
  */
 public class ListTableModel extends AbstractTableModel implements Observer
 {
@@ -62,7 +62,7 @@ public class ListTableModel extends AbstractTableModel implements Observer
     }
 
     /**
-     * Methode zum Aktualisieren der zur verfÃ¼gung gestellten Daten
+     * Methode zum Aktualisieren der zur verfügung gestellten Daten
      */
     private void updateData()
     {

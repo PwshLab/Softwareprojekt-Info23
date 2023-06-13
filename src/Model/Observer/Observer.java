@@ -1,12 +1,12 @@
 package src.Model.Observer;
 
 /**
- * Interface fÃ¼r einen Beobachter eines Beobachtbaren Objektes
+ * Interface für einen Beobachter eines Beobachtbaren Objektes
  */
 public interface Observer
 {
     /**
-     * Methode, die bei benachrichtigung des Objektes ausgefÃ¼hrt wird
+     * Methode, die bei benachrichtigung des Objektes ausgeführt wird
      */
     void update();
 }

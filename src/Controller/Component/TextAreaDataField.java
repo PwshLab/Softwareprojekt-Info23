@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Abstrakte Klasse fÃ¼r ein Datenfeld mit mehreren Zeilen
+ * Abstrakte Klasse für ein Datenfeld mit mehreren Zeilen
  * @param <T> Datentyp des Datenfeldes
  */
 public abstract class TextAreaDataField<T> extends DataField<T>

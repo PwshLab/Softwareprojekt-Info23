@@ -11,7 +11,7 @@ import java.awt.*;
 
 /**
  * Bearbeitungsmodus des Administrations-Panels,
- * um LokalitÃ¤ten zu bearbeiten
+ * um Lokalitäten zu bearbeiten
  */
 public class ModifyMode extends PanelMode
 {
@@ -37,7 +37,7 @@ public class ModifyMode extends PanelMode
         formPanel.setBorder(BorderFactory.createEmptyBorder(50, 50, 50, 50));
         contentPanel = new JPanel();
         formPanel.add(contentPanel);
-        numberField = new WholeNumberField("Index der LokalitÃ¤t");
+        numberField = new WholeNumberField("Index der Lokalität");
         numberField.setPreferredSize(new Dimension(150, 25));
         contentPanel.add(numberField);
         panelStatusEditing = false;
@@ -45,7 +45,7 @@ public class ModifyMode extends PanelMode
     }
 
     /**
-     * Methode, um zwischen dem status fÃ¼r die Auswahl einer LokalitÃ¤t
+     * Methode, um zwischen dem status für die Auswahl einer Lokalität
      * und dem eigentlichen bearbeiten zu wechseln
      */
     private void switchPanelStatus()
@@ -78,7 +78,7 @@ public class ModifyMode extends PanelMode
                 Locality locality = localityForm.getData();
                 editingPanel.setConfirmAction(
                         new ConfirmAction(
-                                "LokalitÃ¤t " + localityIndex + " Ã¼berschreiben",
+                                "Lokalität " + localityIndex + " überschreiben",
                                 () -> editingPanel.modifyLocality(localityIndex, locality)
                         )
                 );

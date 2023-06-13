@@ -29,7 +29,7 @@ public class Graph<T>
     }
 
     /**
-     * Methode zum EinfÃ¼gen eines Objektes in den Graphen
+     * Methode zum Einfügen eines Objektes in den Graphen
      * @param object Objekt des Typen T
      */
     public void add(T object)
@@ -54,7 +54,7 @@ public class Graph<T>
     /**
      * Methode zum Entfernen eines Objektes aus dem Graphen
      * @param object Objekt des Typen T
-     * @param equality Benutzer spezifizierte Funktion zum ÃœberprÃ¼fen
+     * @param equality Benutzer spezifizierte Funktion zum Überprüfen
      *                 der Gleichheit zweier Objekte
      */
     public void remove(T object, BiPredicate<T, T> equality)
@@ -84,7 +84,7 @@ public class Graph<T>
     }
 
     /**
-     * Methode zum HinzufÃ¼gen eines Kantenwertes im Graphen
+     * Methode zum Hinzufügen eines Kantenwertes im Graphen
      * @param i1 Index des ersten Objektes
      * @param i2 Index des zweiten Objektes
      * @param weight Wert der Kante als Double
@@ -142,7 +142,7 @@ public class Graph<T>
     /**
      * Methode zum Ausgeben des Index eines Objektes
      * @param object Objekt des Typen T
-     * @param equality Benutzer spezifizierte Funktion zum ÃœberprÃ¼fen
+     * @param equality Benutzer spezifizierte Funktion zum Überprüfen
      *                 der Gleichheit zweier Objekte
      * @return Index des Objektes
      */
@@ -152,11 +152,11 @@ public class Graph<T>
     }
 
     /**
-     * Methode zum HinzufÃ¼gen eines Kantenwertes im Graphen
+     * Methode zum Hinzufügen eines Kantenwertes im Graphen
      * @param obj1 Objekt des Typen T
      * @param obj2 Objekt des Typen T
      * @param weight Wert der Kante als Double
-     * @param equality Benutzer spezifizierte Funktion zum ÃœberprÃ¼fen
+     * @param equality Benutzer spezifizierte Funktion zum Überprüfen
      *                 der Gleichheit zweier Objekte
      */
     public void setEdge(T obj1, T obj2, double weight, BiPredicate<T, T> equality)
@@ -169,7 +169,7 @@ public class Graph<T>
      * Methode zum Ausgeben eines Kantenwertes im Graphen
      * @param obj1 Objekt des Typen T
      * @param obj2 Objekt des Typen T
-     * @param equality Benutzer spezifizierte Funktion zum ÃœberprÃ¼fen
+     * @param equality Benutzer spezifizierte Funktion zum Überprüfen
      *                 der Gleichheit zweier Objekte
      * @return Wert der Kante als Double
      */
@@ -182,7 +182,7 @@ public class Graph<T>
     /**
      * Methode zum Entfernen aller Kannten eins bestimmten Knotens
      * @param object Objekt des Typen T
-     * @param equality Benutzer spezifizierte Funktion zum ÃœberprÃ¼fen
+     * @param equality Benutzer spezifizierte Funktion zum Überprüfen
      *                 der Gleichheit zweier Objekte
      */
     public void clearEdges(T object, BiPredicate<T, T> equality)
@@ -201,7 +201,7 @@ public class Graph<T>
      * Methode zum Setzen der Kanten eines Knotens
      * @param object Objekt des Typen T
      * @param edges Liste von Knoten
-     * @param equality Benutzer spezifizierte Funktion zum ÃœberprÃ¼fen
+     * @param equality Benutzer spezifizierte Funktion zum Überprüfen
      *                 der Gleichheit zweier Objekte
      */
     public void setEdges(T object, List<Pair<T, Double>> edges, BiPredicate<T, T> equality)

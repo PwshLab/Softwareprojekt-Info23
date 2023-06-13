@@ -47,7 +47,7 @@ public class TextField extends TextDataField<String>
     }
 
     /**
-     * Methode zum Festlegen eines Regex Ausdrucks zur fehlerÃ¼berprÃ¼fung
+     * Methode zum Festlegen eines Regex Ausdrucks zur fehlerüberprüfung
      * @param newPattern Neuer Regelausdruck
      */
     public void setValidationPattern(Pattern newPattern)
@@ -57,11 +57,11 @@ public class TextField extends TextDataField<String>
     }
 
     /**
-     * Methode zum Erstellen eines Regex fÃ¼r nur Textauswahl
+     * Methode zum Erstellen eines Regex für nur Textauswahl
      * @return Neuer Regex
      */
     public static Pattern getTextOnlyPattern()
     {
-        return Pattern.compile("^[a-zA-ZÃ¤Ã¶Ã¼Ã„Ã–Ãœ '" + '"' + "]*$");
+        return Pattern.compile("^[a-zA-ZäöüÄÖÜ '" + '"' + "]*$");
     }
 }

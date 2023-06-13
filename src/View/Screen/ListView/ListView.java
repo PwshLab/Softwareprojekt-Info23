@@ -9,7 +9,7 @@ import javax.swing.table.TableRowSorter;
 import java.awt.*;
 
 /**
- * Panel der Lokalit√§ten-Liste / Tabellenansicht
+ * Panel der Lokalit‰ten-Liste / Tabellenansicht
  */
 public class ListView extends JPanel implements DocumentListener
 {

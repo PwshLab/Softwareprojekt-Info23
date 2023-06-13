@@ -1,7 +1,7 @@
 package src.Model.Data.Value;
 
 /**
- * Generische Klasse fÃ¼r ein Wertepaar
+ * Generische Klasse für ein Wertepaar
  * @param <T> Datentyp des ersten Wertes
  * @param <U> Datentyp des zweiten Wertes
  */

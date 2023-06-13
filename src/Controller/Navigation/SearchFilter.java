@@ -10,8 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * Eingabe-Panel um die Suche nach Lokalit√§ten auf einen bestimmten Radius
- * um eine andere Lokalit√§t zu begrenzen
+ * Eingabe-Panel um die Suche nach Lokalit‰ten auf einen bestimmten Radius
+ * um eine andere Lokalit‰t zu begrenzen
  */
 public class SearchFilter extends JPanel implements ActionListener
 {
@@ -40,7 +40,7 @@ public class SearchFilter extends JPanel implements ActionListener
         centerPanel.setLayout(new GridLayout(2, 1));
         centerPanel.add(upperCenter);
         upperCenter.setLayout(new BoxLayout(upperCenter, BoxLayout.X_AXIS));
-        indexField = new WholeNumberField("Lokalit√§t");
+        indexField = new WholeNumberField("Lokalit‰t");
         upperCenter.add(indexField);
         distanceField = new NumberField("Entfernung");
         upperCenter.add(distanceField);
