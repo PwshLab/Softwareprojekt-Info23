@@ -62,6 +62,6 @@ public class TextField extends TextDataField<String>
      */
     public static Pattern getTextOnlyPattern()
     {
-        return Pattern.compile("^[a-zA-Z ]*$");
+        return Pattern.compile("^[a-zA-Z '" + '"' + "]*$");
     }
 }

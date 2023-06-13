@@ -22,7 +22,7 @@ public class DataProvider implements Iterable<Locality>
             "Restaurant Rosarium",
             "Dicker Mann",
             "Restaurant Gänsbauer",
-            "Wirtshaus „Zum Sorgenfrei“",
+            "Wirtshaus 'Zum Sorgenfrei'",
             "Storstad Restaurant",
             "Piratenhöhle",
             "Heimat Regensburg",
