@@ -14,7 +14,7 @@ import java.awt.geom.Line2D;
 import java.awt.geom.Point2D;
 
 /**
- * Panel fuer die Kartenansicht
+ * Panel für die Kartenansicht
  */
 public class MapView extends JPanel implements Observer
 {
@@ -52,7 +52,7 @@ public class MapView extends JPanel implements Observer
     }
 
     /**
-     * Ueberschriebene Methode aus der JPanel Klasse,
+     * Überschriebene Methode aus der JPanel Klasse,
      * um eigene 2D Darstellungen zu zeichnen
      * @param g the <code>Graphics</code> object to protect
      */
@@ -67,7 +67,7 @@ public class MapView extends JPanel implements Observer
         double averageSize = (double) (getBounds().width + getBounds().height) / 2;
         double displayFactor = averageSize / (model.getWorldBound() * 2) * 0.875;
 
-        // Uebertragen der Weltkoordinaten auf die Zeichenebene
+        // Übertragen der Weltkoordinaten auf die Zeichenebene
         Vector2 center = new Vector2((double) getBounds().width / 2, (double) getBounds().height / 2);
         Point2D.Double[] points = new Point2D.Double[localities.count()];
         int index = 0;
@@ -89,7 +89,7 @@ public class MapView extends JPanel implements Observer
             g2.draw(edgeLine);
         }
 
-        // Einzeichnen des kuerzesten Weges (falls vorhanden)
+        // Einzeichnen des kürzesten Weges (falls vorhanden)
         g2.setColor(Color.BLUE);
         g2.setStroke(new BasicStroke(2));
         if (lastPath.length >= 2)
@@ -124,7 +124,7 @@ public class MapView extends JPanel implements Observer
             g2.fill(filterCircle);
         }
 
-        // Einzeichnen der Lokalitaeten mit Index
+        // Einzeichnen der Lokalitäten mit Index
         Font font = g2.getFont();
         g2.setFont(new Font(font.getName(), font.getStyle(), 18));
         for (int i = 0; i < points.length; i++)

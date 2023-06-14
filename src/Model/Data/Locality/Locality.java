@@ -3,7 +3,7 @@ package src.Model.Data.Locality;
 import src.Model.Data.CoordSystem.Vector2;
 
 /**
- * Klasse einer Lokalitaet
+ * Klasse einer Lokalität
  */
 public class Locality
 {
@@ -13,11 +13,11 @@ public class Locality
     private Vector2 position;
 
     /**
-     * Standardkonstruktor einer Lokalitaet
-     * @param name Name der Lokalitaet
-     * @param type Art der Lokalitaet
-     * @param description Beschreibung der Lokalitaet
-     * @param position Position der Lokalitaet
+     * Standardkonstruktor einer Lokalität
+     * @param name Name der Lokalität
+     * @param type Art der Lokalität
+     * @param description Beschreibung der Lokalität
+     * @param position Position der Lokalität
      */
     public Locality(String name, LocalityType type, String description, Vector2 position)
     {

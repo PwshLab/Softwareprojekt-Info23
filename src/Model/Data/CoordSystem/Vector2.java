@@ -31,7 +31,7 @@ public class Vector2 extends Vector3
     }
 
     /**
-     * Methode fuer den Gegenvektor eines Vektors
+     * Methode für den Gegenvektor eines Vektors
      * @return Gegenvektor des Vektors
      */
     public Vector2 neg()

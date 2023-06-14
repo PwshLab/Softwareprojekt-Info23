@@ -36,7 +36,7 @@ public class Vector3
     }
 
     /**
-     * Methode fuer den Gegenvektor eines Vektors
+     * Methode für den Gegenvektor eines Vektors
      * @return Gegenvektor des Vektors
      */
     public Vector3 neg()
@@ -75,8 +75,8 @@ public class Vector3
     }
 
     /**
-     * Methode zum Berechnen der Laenge eines Vektors
-     * @return Laenge des Vektors
+     * Methode zum Berechnen der Länge eines Vektors
+     * @return Länge des Vektors
      */
     public double magnitude()
     {
@@ -114,20 +114,15 @@ public class Vector3
     /**
      * Methode zum Ausgeben der N-Ten Koordinate
      * @param n Der Wert N
-     * @return Wert der zugehoerigen Koordinate
+     * @return Wert der zugehörigen Koordinate
      */
     public double getX(int n)
     {
-        switch (n)
-        {
-            case 1:
-                return x1;
-            case 2:
-                return x2;
-            case 3:
-                return x3;
-            default:
-                return 0;
-        }
+        return switch (n) {
+            case 1 -> x1;
+            case 2 -> x2;
+            case 3 -> x3;
+            default -> 0;
+        };
     }
 }

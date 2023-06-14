@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 /**
- * Abstrakte Klasse fuer ein einzeiliges Datenfeld
+ * Abstrakte Klasse für ein einzeiliges Datenfeld
  * @param <T> Datentyp des Datenfeldes
  */
 public abstract class TextDataField<T> extends DataField<T>
@@ -33,7 +33,7 @@ public abstract class TextDataField<T> extends DataField<T>
     }
 
     /**
-     * Methode zum Hinzufuegen eines Action Listeners
+     * Methode zum Hinzufügen eines Action Listeners
      * @param actionListener Ein Objekt, das ActionListener implementiert
      */
     public void addActionListener(ActionListener actionListener)

@@ -6,7 +6,7 @@ import java.util.function.BiPredicate;
 import java.util.function.Predicate;
 
 /**
- * Generische einfach verknuepfte Liste
+ * Generische einfach verknüpfte Liste
  * @param <T> Beliebiger Datentyp T
  */
 public class List<T> implements Iterable<T>
@@ -60,7 +60,7 @@ public class List<T> implements Iterable<T>
     }
 
     /**
-     * Methode zum Hinzufuegen eines Objektes in die Liste
+     * Methode zum Hinzufügen eines Objektes in die Liste
      * @param object Objekt des Typen T
      */
     public void add(T object)
@@ -70,7 +70,7 @@ public class List<T> implements Iterable<T>
     }
 
     /**
-     * Methode zum Einfuegen eines Objektes an einer Position in der Liste
+     * Methode zum Einfügen eines Objektes an einer Position in der Liste
      * @param index Position des Objektes
      * @param object Objekt des Typen T
      */
@@ -83,7 +83,7 @@ public class List<T> implements Iterable<T>
     /**
      * Methode zum Entfernen eines Objektes aus der Liste
      * @param object Objekt des Typen T
-     * @param equality Benutzer spezifizierte Funktion zum Ueberpruefen
+     * @param equality Benutzer spezifizierte Funktion zum Überprüfen
      *                   der Gleichheit zweier Objekte
      */
     public void remove(T object, BiPredicate<T, T> equality)
@@ -93,7 +93,7 @@ public class List<T> implements Iterable<T>
     }
 
     /**
-     * Methode zum Zugreifen auf die Laenge der Liste
+     * Methode zum Zugreifen auf die Länge der Liste
      * @return Anzahl der Elemente in der Liste
      */
     public int count()
@@ -101,7 +101,7 @@ public class List<T> implements Iterable<T>
         /*
          * Bei der Remove Methode ist nicht sicher, ob
          * ein Objekt entfernt wurde, oder nicht. Deshalb werden
-         * die Objekte beim naechsten Aufruf erneut gezaehlt.
+         * die Objekte beim nächsten Aufruf erneut gezählt.
          */
 
         if (changed)
@@ -113,7 +113,7 @@ public class List<T> implements Iterable<T>
     }
 
     /**
-     * Methode zum Ausgeben des Objektes an der uebergebenen Stelle
+     * Methode zum Ausgeben des Objektes an der übergebenen Stelle
      * @param index Index des Objektes
      * @return Objekt des Typen T
      */
@@ -131,7 +131,7 @@ public class List<T> implements Iterable<T>
 
     /**
      * Methode zum Entfernen und Ausgeben des Objektes an
-     * der uebergebenen Stelle
+     * der übergebenen Stelle
      * @param index Index des Objektes
      * @return Objekt des Typen T
      */
@@ -150,7 +150,7 @@ public class List<T> implements Iterable<T>
     }
 
     /**
-     * Methode zum Setzen des Objektes an der uebergebenen Stelle
+     * Methode zum Setzen des Objektes an der übergebenen Stelle
      * @param index Index des eingesetzten Objektes
      * @param object Objekt des Typen T
      */
@@ -169,7 +169,7 @@ public class List<T> implements Iterable<T>
     /**
      * Methode zum Ausgeben des Index eines bekannten Objektes
      * @param object Objekt des Typen T
-     * @param equality Benutzer spezifizierte Funktion zum Ueberpruefen
+     * @param equality Benutzer spezifizierte Funktion zum Überprüfen
      *                   der Gleichheit zweier Objekte
      * @return Index des Objektes
      */
@@ -179,9 +179,9 @@ public class List<T> implements Iterable<T>
     }
 
     /**
-     * Methode zum Ueberpruefen, ob die Liste ein Objekt enthaelt
+     * Methode zum Überprüfen, ob die Liste ein Objekt enthält
      * @param object Objekt des Typen T
-     * @param equality Benutzer spezifizierte Funktion zum Ueberpruefen
+     * @param equality Benutzer spezifizierte Funktion zum Überprüfen
      *                 der Gleichheit zweier Objekte
      * @return Wahrheitswert, ob sich das Objekt in der Liste befindet
      */
@@ -200,7 +200,7 @@ public class List<T> implements Iterable<T>
     }
 
     /**
-     * Methode zum Ausgeben eines Iterators ueber der Liste
+     * Methode zum Ausgeben eines Iterators über der Liste
      * @return Iterator der Liste
      */
     public Iterator<T> iterator()
@@ -208,7 +208,7 @@ public class List<T> implements Iterable<T>
         /*
          * Der Iterator ist hier ein effizienterer Weg die Objekte in der
          * Liste mit einer foreach Schleife zu referenzieren als dies
-         * Anderweitig moeglich waere
+         * Anderweitig möglich wäre
          */
 
         return new ListIterator<>(this);
@@ -232,10 +232,10 @@ public class List<T> implements Iterable<T>
     }
 
     /**
-     * Methode zum Ausgeben der Objekte in der Liste, gemaeÃŸ danach,
-     * ob sie ein gegebenes Kriterium erfuellen
-     * @param predicate Funktion zum Ueberpruefen des Kriteriums
-     * @return Liste mit den Objekten, welche das Kriterium erfuellen
+     * Methode zum Ausgeben der Objekte in der Liste, gemäß danach,
+     * ob sie ein gegebenes Kriterium erfüllen
+     * @param predicate Funktion zum Überprüfen des Kriteriums
+     * @return Liste mit den Objekten, welche das Kriterium erfüllen
      */
     public List<T> filter(Predicate<T> predicate)
     {

@@ -1,7 +1,7 @@
 package src.Controller.Component;
 
 /**
- * Datenfeld fuer Integer
+ * Datenfeld für Integer
  */
 public class WholeNumberField extends TextDataField<Integer>
 {

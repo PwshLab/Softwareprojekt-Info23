@@ -16,13 +16,13 @@ import java.util.Random;
 
 /**
  * Hauptklasse des Models.
- * Zustaendig fuer die Verwaltung der Daten
+ * Zuständig für die Verwaltung der Daten
  */
 public class Model extends Observable
 {
     private static final int interconnectedness = 3;
     private static final double distanceVariance = 0.25;
-    private static final int worldBound = 200; // Wird in jede richtung vom Ursprung gezaehlt
+    private static final int worldBound = 200; // Wird in jede richtung vom Ursprung gezählt
     private static final double minGenDistance = 20;
 
     private final Random rnd;
@@ -51,7 +51,7 @@ public class Model extends Observable
 
     /**
      * Methode zum Ausgeben der gespeicherten Elemente
-     * @return Liste an Lokalitaeten
+     * @return Liste an Lokalitäten
      */
     public List<Locality> getElements()
     {
@@ -59,9 +59,9 @@ public class Model extends Observable
     }
 
     /**
-     * Methode zum Ausgeben der Elemente, moeglicherweise
-     * eingeschraenkt durch die Suchbegrenzung ueber die Entfernung
-     * @return Liste an Lokalitaeten
+     * Methode zum Ausgeben der Elemente, möglicherweise
+     * eingeschränkt durch die Suchbegrenzung über die Entfernung
+     * @return Liste an Lokalitäten
      */
     public List<Locality> getElementsFiltered()
     {
@@ -111,23 +111,19 @@ public class Model extends Observable
     /**
      * Methode zum Ausgeben der Elemente mit einer bestimmten sortierung
      * @param order Integer Wert, welcher die Sortierung festlegt
-     * @return Liste an Lokalitaeten
+     * @return Liste an Lokalitäten
      */
     public List<Locality> getElements(int order)
     {
         // 1: Sortierung nach der Nummerierung
         // 2: Sortierung nach dem Namen
         // 3: Sortierung nach dem Typen
-        List<Locality> elements;
-        switch (Math.abs(order))
+        List<Locality> elements = switch (Math.abs(order))
         {
-            case 2:
-                elements = new SortedList<>(getElements(), LocalityOrder::ByName);
-            case 3:
-                elements = new SortedList<>(getElements(), LocalityOrder::ByType);
-            default:
-                elements = getElements();
-        }
+            case 2 -> new SortedList<>(getElements(), LocalityOrder::ByName);
+            case 3 -> new SortedList<>(getElements(), LocalityOrder::ByType);
+            default -> getElements();
+        };
 
         // Negativer Wert: Umgekehrte Sortierung
         if (order < 0)
@@ -140,7 +136,7 @@ public class Model extends Observable
      * Methode zum Ausgeben der Elemente, gefiltert nach der Entfernung
      * @param position Position, von der die Entfernung Ausgeht
      * @param distance Maximale Distanz zu der festgelegten Position
-     * @return Liste an Lokalitaeten
+     * @return Liste an Lokalitäten
      */
     public List<Locality> getElementsByDistance(Vector2 position, double distance)
     {
@@ -149,8 +145,8 @@ public class Model extends Observable
     }
 
     /**
-     * Methode zum Hinzufuegen eines Elementes
-     * @param locality Hinzuzufuegende Lokalitaet
+     * Methode zum Hinzufügen eines Elementes
+     * @param locality Hinzuzufügende Lokalität
      */
     public void addElement(Locality locality)
     {
@@ -160,8 +156,8 @@ public class Model extends Observable
     }
 
     /**
-     * Methode zum Entfernen einer Lokalitaet
-     * @param locality Zu entfernende Lokalitaet
+     * Methode zum Entfernen einer Lokalität
+     * @param locality Zu entfernende Lokalität
      */
     public void removeElement(Locality locality)
     {
@@ -170,9 +166,9 @@ public class Model extends Observable
     }
 
     /**
-     * Methode zum Ueberschreiben einer Lokalitaet
-     * @param index Index einer Lokalitaet
-     * @param locality Neue Lokalitaet
+     * Methode zum Überschreiben einer Lokalität
+     * @param index Index einer Lokalität
+     * @param locality Neue Lokalität
      */
     public void setElement(int index, Locality locality)
     {
@@ -199,8 +195,8 @@ public class Model extends Observable
 
     /**
      * Methode zum Ausgeben eines Kantenwertes im Graphen
-     * @param l1 Erste Lokalitaet
-     * @param l2 Zweite Lokalitaet
+     * @param l1 Erste Lokalität
+     * @param l2 Zweite Lokalität
      * @return Kantenwert als Double
      */
     public double getEdge(Locality l1, Locality l2)
@@ -208,11 +204,9 @@ public class Model extends Observable
         return graph.getEdge(l1, l2, Object::equals);
     }
 
-    // TODO: Fix generated points not always being fully connected
-
     /**
-     * Methode zum Generieren der Kanten einer Lokalitaet
-     * @param locality Eine gegebene Lokalitaet
+     * Methode zum Generieren der Kanten einer Lokalität
+     * @param locality Eine gegebene Lokalität
      * @return Liste an Kanten
      */
     private List<Pair<Locality, Double>> generateEdges(Locality locality)
@@ -240,10 +234,10 @@ public class Model extends Observable
     }
 
     /**
-     * Methode zum Bestimmen des kuerzesten Weges zwischen zwei Lokalitaeten
-     * @param loc1 Erste Lokalitaet
-     * @param loc2 Zweite Lokalitaet
-     * @return Weg zwischen den Lokalitaeten als Liste von Indices
+     * Methode zum Bestimmen des kürzesten Weges zwischen zwei Lokalitäten
+     * @param loc1 Erste Lokalität
+     * @param loc2 Zweite Lokalität
+     * @return Weg zwischen den Lokalitäten als Liste von Indices
      */
     public List<Integer> getPath(Locality loc1, Locality loc2)
     {
@@ -256,8 +250,8 @@ public class Model extends Observable
     }
 
     /**
-     * Methode zum Ausgeben des zuletzt bestimmten kuerzesten Weges
-     * @return Weg zwischen den Lokalitaeten als Liste von Indices
+     * Methode zum Ausgeben des zuletzt bestimmten kürzesten Weges
+     * @return Weg zwischen den Lokalitäten als Liste von Indices
      */
     public List<Integer> getLastPath()
     {
@@ -265,7 +259,7 @@ public class Model extends Observable
     }
 
     /**
-     * Methode zum Zuruecksetzen des zuletzt bestimmten kuerzesten Weges
+     * Methode zum Zurücksetzen des zuletzt bestimmten kürzesten Weges
      */
     public void clearLastPath()
     {
@@ -274,8 +268,8 @@ public class Model extends Observable
     }
 
     /**
-     * Methode zum neuberechnen der Kanten einer Lokalitaet im Graph
-     * @param locality Eine gegebene Lokalitaet
+     * Methode zum neuberechnen der Kanten einer Lokalität im Graph
+     * @param locality Eine gegebene Lokalität
      */
     private void recalculateEdges(Locality locality)
     {
@@ -285,24 +279,24 @@ public class Model extends Observable
     }
 
     /**
-     * Methode zum Generieren einer neuen Postion einer Lokalitaet,
-     * unter beruecksichtigung des Mindestabstandes und der WeltgroeÃŸe
-     * @return Moegliche Position der Lokalitaet als Vektor2
+     * Methode zum Generieren einer neuen Postion einer Lokalität,
+     * unter berücksichtigung des Mindestabstandes und der Weltgröße
+     * @return Mögliche Position der Lokalität als Vektor2
      */
     public Vector2 generatePosition()
     {
         Vector2 position = null;
         while (position == null || getElementsByDistance(position, minGenDistance).count() > 0)
             position = new Vector2(
-                    rnd.nextInt(worldBound * 2) - worldBound,
-                    rnd.nextInt(worldBound * 2) - worldBound
+                    rnd.nextInt(-worldBound, worldBound),
+                    rnd.nextInt(-worldBound, worldBound)
             );
         return position;
     }
 
     /**
-     * Methode zum Ausgeben der festgelegten WeltgroeÃŸe
-     * @return WeltgroeÃŸe als Integer Wert
+     * Methode zum Ausgeben der festgelegten Weltgröße
+     * @return Weltgröße als Integer Wert
      */
     public int getWorldBound()
     {
@@ -310,7 +304,7 @@ public class Model extends Observable
     }
 
     /**
-     * Methode zum Festlegen des Distanzfilters fuer die beschraenkte Ausgabe
+     * Methode zum Festlegen des Distanzfilters für die beschränkte Ausgabe
      * @param newFilterPosition Neue Filterposition
      * @param newFilterDistance Neue Filterdistanz
      */
@@ -323,7 +317,7 @@ public class Model extends Observable
     }
 
     /**
-     * Methode zum Zuruecksetzen des Distanzfilters
+     * Methode zum Zurücksetzen des Distanzfilters
      */
     public void resetFilterByDistance()
     {
@@ -332,9 +326,9 @@ public class Model extends Observable
     }
 
     /**
-     * Methoden zum Ueberpruefen, ob einem Index eine Lokalitaet zugeordnet ist
+     * Methoden zum Überprüfen, ob einem Index eine Lokalität zugeordnet ist
      * @param index Ein gegebener Index
-     * @return Boolean Wert, ob der Index gueltig ist
+     * @return Boolean Wert, ob der Index gültig ist
      */
     public boolean checkIndexBounds(int index)
     {

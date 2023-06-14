@@ -7,7 +7,7 @@ import javax.swing.table.TableModel;
 import java.awt.*;
 
 /**
- * Panel fuer die Detailansicht der Lokalitaeten-Liste
+ * Panel für die Detailansicht der Lokalitäten-Liste
  */
 public class ListDetailDisplay extends JPanel implements ListSelectionListener
 {
@@ -92,7 +92,14 @@ public class ListDetailDisplay extends JPanel implements ListSelectionListener
         {
             if (index >= 0 && index < table.getRowCount())
             {
-                columnContent = columnClasses[i].cast(table.getValueAt(index, i)).toString();
+                try
+                {
+                    columnContent = columnClasses[i].cast(table.getValueAt(index, i)).toString();
+                } catch (IndexOutOfBoundsException ignored)
+                {
+                    columnContent = "";
+                }
+
                 displayFields[i].setContent(columnContent);
             }
             else

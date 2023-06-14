@@ -4,15 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 
 /**
- * Abstrakte Klasse fuer ein generelles Eingabefeld
+ * Abstrakte Klasse für ein generelles Eingabefeld
  * @param <T> Beliebiger Datentyp des Eingabefelds
  */
 public abstract class DataField<T> extends JPanel
 {
     private final JPanel panel;
-
-    // TODO : Fix JLabel and TextField misalignment (medium priority)
-    // Possibly left align jLabel
 
     /**
      * Standardkonstruktor eines DataFields
@@ -34,7 +31,7 @@ public abstract class DataField<T> extends JPanel
     }
 
     /**
-     * Methode, um festzulegen, dass das Eingabefeld einen Fehler enthaelt
+     * Methode, um festzulegen, dass das Eingabefeld einen Fehler enthält
      */
     private void setError()
     {
@@ -42,7 +39,7 @@ public abstract class DataField<T> extends JPanel
     }
 
     /**
-     * Methode, um den Fehlerstatus des Eingabefeldes zurueckzusetzen
+     * Methode, um den Fehlerstatus des Eingabefeldes zurückzusetzen
      */
     private void clearError()
     {
@@ -50,8 +47,8 @@ public abstract class DataField<T> extends JPanel
     }
 
     /**
-     * Methode zum Ausgeben, ob das Eingabefeld einen Fehler enthaelt
-     * @return Boolean, ob das Eingabefeld einen Fehler enthaelt
+     * Methode zum Ausgeben, ob das Eingabefeld einen Fehler enthält
+     * @return Boolean, ob das Eingabefeld einen Fehler enthält
      */
     public boolean hasError()
     {
@@ -68,13 +65,13 @@ public abstract class DataField<T> extends JPanel
     }
 
     /**
-     * Methode zum Ueberpruefen, ob das Eingabefeld einen Fehler enthaelt
-     * @return Boolean, ob das Eingabefeld einen Fehler enthaelt
+     * Methode zum Überprüfen, ob das Eingabefeld einen Fehler enthält
+     * @return Boolean, ob das Eingabefeld einen Fehler enthält
      */
     protected abstract boolean checkError();
 
     /**
-     * Methode zum Zurueckgeben der Daten im Eingabefeld
+     * Methode zum Zurückgeben der Daten im Eingabefeld
      * @return Daten des Eingabefeldes
      */
     protected abstract T parseData();
@@ -98,13 +95,13 @@ public abstract class DataField<T> extends JPanel
     public abstract void writeData(T newData);
 
     /**
-     * Methode zum Zuruecksetzen der Daten des Eingabefeldes
+     * Methode zum Zurücksetzen der Daten des Eingabefeldes
      */
     public abstract void resetData();
 
     /**
      * Methode, um dem Eingabefeld mitzuteilen, dass
-     * auÃŸerhalb ein fehler mit den zurueckgegebenen
+     * außerhalb ein fehler mit den zurückgegebenen
      * Daten festgestellt wurde
      */
     public void notifyError()

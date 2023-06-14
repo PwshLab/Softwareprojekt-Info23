@@ -3,7 +3,7 @@ package src.Model.Data.LinkedList;
 import java.util.Iterator;
 
 /**
- * Iterator der verknuepften Liste.
+ * Iterator der verknüpften Liste.
  * Diese Klasse wurde aus einer bestehenden Implementierung eines
  * solchen Iterators abgewandelt.
  * Original Quellcode: <a href="https://www.geeksforgeeks.org/java-implementing-iterator-and-iterable-interface/">Java | Implementing Iterator and Iterable Interface</a>

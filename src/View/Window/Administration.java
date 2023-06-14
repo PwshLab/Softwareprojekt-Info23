@@ -50,7 +50,7 @@ public class Administration extends JPanel
         panelRight.setPreferredSize(new Dimension(600, 600));
         mainPanel.add(panelRight);
 
-        panelLeft.add(new PanelTitle("Lokalitaeten"));
+        panelLeft.add(new PanelTitle("Lokalitäten"));
         listView = new ListView(model);
         panelLeft.add(listView);
 
