@@ -72,10 +72,17 @@ public class SearchPath extends JPanel implements ActionListener
     private void displayPath(List<Integer> path)
     {
         StringBuilder pathString = new StringBuilder("Kürzester Weg: ");
-        for (Integer i: path)
-            pathString.append(i).append(", ");
-        if (pathString.lastIndexOf(",") >= 0)
-            pathString.deleteCharAt(pathString.lastIndexOf(","));
+        if (path != null)
+        {
+            for (Integer i: path)
+                pathString.append(i).append(", ");
+            if (pathString.lastIndexOf(",") >= 0)
+                pathString.deleteCharAt(pathString.lastIndexOf(","));
+        }
+        else
+        {
+            pathString.append("Nicht Vorhanden");
+        }
         textArea.setText(pathString.toString());
     }
 
@@ -100,7 +107,13 @@ public class SearchPath extends JPanel implements ActionListener
             return;
         }
 
-        List<Integer> path =  model.getPath(localities[0], localities[1]);
-        displayPath(path);
+        try
+        {
+            List<Integer> path = model.getPath(localities[0], localities[1]);
+            displayPath(path);
+        } catch (ArrayIndexOutOfBoundsException ignored)
+        {
+            displayPath(null);
+        }
     }
 }
